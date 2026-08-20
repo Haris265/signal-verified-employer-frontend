@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #faf9fc;
+  --foreground: #1a1525;
+  --primary: #7c3aed;
+  --primary-foreground: #faf9fc;
+  --brand: #c026f5;
+  --secondary: #f3f0f7;
+  --muted: #f3f0f7;
+  --muted-foreground: #6b6578;
+  --border: #e8e4ef;
+  --card: #ffffff;
+  --radius: 0.625rem;
+  /* Exact showcase stack */
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-[0.625rem] border border-border bg-white px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-muted disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .input-field {
+    @apply w-full rounded-[0.625rem] border border-border bg-white px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-brand-400 focus:ring-2 focus:ring-brand-100;
+  }
+
+  .card-surface {
+    @apply rounded-[0.625rem] border border-border bg-white shadow-soft;
+  }
+}
+
+/* Login left-panel concentric arcs (showcase parity) */
+.login-arc {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(134, 239, 172, 0.45);
+  pointer-events: none;
+}
+
+.login-arc-1 {
+  width: 140%;
+  height: 140%;
+  left: -55%;
+  top: -20%;
+  border-color: rgba(167, 243, 208, 0.55);
+}
+
+.login-arc-2 {
+  width: 110%;
+  height: 110%;
+  left: -40%;
+  top: -5%;
+  border-color: rgba(196, 181, 253, 0.4);
+}
+
+.login-arc-3 {
+  width: 85%;
+  height: 85%;
+  left: -28%;
+  top: 8%;
+  border-color: rgba(167, 243, 208, 0.35);
+}
+
+.login-checkbox {
+  accent-color: #c026f5;
+  color: #c026f5;
+}
+
+.login-checkbox:checked {
+  background-color: #c026f5;
+  border-color: #c026f5;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .print-area {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
