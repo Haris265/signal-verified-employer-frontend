@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/Logo";
 import { getToken, getUser, isEmployer } from "@/lib/auth";
@@ -150,12 +151,12 @@ export default function LoginPage() {
           className="pointer-events-none absolute -bottom-40 -left-24 h-[28rem] w-[28rem] rounded-full border border-signal/35"
         />
 
-        <a
+        <Link
           href="/"
           className="relative inline-flex w-fit items-center rounded-xl border border-brand-soft/40 bg-card px-4 py-3 shadow-sm"
         >
           <Logo height={56} className="h-14 w-auto" />
-        </a>
+        </Link>
 
         <div className="relative mt-12 max-w-md lg:mt-0">
           <h2 className="text-[2.1rem] font-semibold leading-[1.08] tracking-[-0.02em] text-foreground lg:text-[2.5rem]">
