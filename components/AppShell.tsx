@@ -8,7 +8,7 @@ import { clearSession, getUser } from "@/lib/auth";
 import type { AuthUser, Entitlement } from "@/lib/types";
 
 export function AppShell({
-  children,
+  children, 
   orgName,
   entitlement,
   mainClassName = "",
