@@ -182,12 +182,12 @@ export default function LoginPage() {
         <div className="flex justify-end text-[13px] text-muted-foreground">
           <span>
             Not a member?{" "}
-            <a
-              href={CONTACT_MAIL}
+            <Link
+              href="/persona"
               className="rounded font-medium text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             >
               Sign up now
-            </a>
+            </Link>
           </span>
         </div>
 
@@ -297,8 +297,8 @@ export default function LoginPage() {
               <span className="h-px flex-1 bg-border" />
             </div>
 
-            <a
-              href={CONTACT_MAIL}
+            <Link
+              href="/persona"
               className="mt-6 flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-left transition hover:border-input hover:bg-secondary/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
             >
               <span>
@@ -310,7 +310,7 @@ export default function LoginPage() {
                 </span>
               </span>
               <ArrowRightIcon className="h-4 w-4 shrink-0 text-muted-foreground" />
-            </a>
+            </Link>
 
             <p className="mt-8 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
               <ShieldCheckIcon />

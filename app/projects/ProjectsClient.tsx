@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { ProjectCardItem } from "@/components/ProjectCard";
 import { getEntitlement, getProjects, ApiError } from "@/lib/api";
+import { canRequestNewProject } from "@/lib/entitlement";
 import type { Entitlement, ProjectCard } from "@/lib/types";
 
 type Filter = "All" | "Programs" | "Hiring" | "Archived";
@@ -100,6 +101,11 @@ export default function ProjectsClient() {
     (p) => p.status === "Active" || p.status === "Scoping" || p.status === "Requested"
   ).length;
 
+  const canRequest = canRequestNewProject(entitlement);
+  const licenseHint =
+    entitlement?.display_text ||
+    "New projects require an active license. Contact SignalVerified to continue.";
+
   return (
     <AppShell entitlement={entitlement}>
       {banner && (
@@ -122,11 +128,33 @@ export default function ProjectsClient() {
             {activeCount} active project{activeCount === 1 ? "" : "s"} · Updated today
           </p>
         </div>
-        <Link href="/projects/new" className="btn-primary">
-          <PlusIcon />
-          New project
-        </Link>
+        {canRequest ? (
+          <Link href="/projects/new" className="btn-primary">
+            <PlusIcon />
+            New project
+          </Link>
+        ) : (
+          <span
+            title={licenseHint}
+            className="inline-flex h-10 cursor-not-allowed items-center gap-2 rounded-lg bg-primary/40 px-4 text-sm font-medium text-primary-foreground opacity-60"
+          >
+            <PlusIcon />
+            New project
+          </span>
+        )}
       </div>
+
+      {!canRequest && !loading && (
+        <p className="mt-3 text-sm text-muted-foreground">
+          {licenseHint}{" "}
+          <a
+            href="mailto:questions@signalverified.net?subject=License%20inquiry"
+            className="font-medium text-primary underline-offset-4 hover:underline"
+          >
+            Contact sales
+          </a>
+        </p>
+      )}
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-4">
         <div className="flex flex-wrap items-center gap-1">
@@ -169,16 +197,29 @@ export default function ProjectsClient() {
           {filtered.map((project) => (
             <ProjectCardItem key={project.id} project={project} />
           ))}
-          <Link
-            href="/projects/new"
-            className="flex min-h-[11rem] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border p-6 text-sm text-muted-foreground transition hover:border-primary/40 hover:text-foreground"
-          >
-            <PlusIcon className="h-5 w-5" />
-            Start a new project
-            <span className="text-xs text-muted-foreground">
-              Programs and hiring cohorts live side by side
-            </span>
-          </Link>
+          {canRequest ? (
+            <Link
+              href="/projects/new"
+              className="flex min-h-[11rem] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border p-6 text-sm text-muted-foreground transition hover:border-primary/40 hover:text-foreground"
+            >
+              <PlusIcon className="h-5 w-5" />
+              Start a new project
+              <span className="text-xs text-muted-foreground">
+                Programs and hiring cohorts live side by side
+              </span>
+            </Link>
+          ) : (
+            <div
+              title={licenseHint}
+              className="flex min-h-[11rem] cursor-not-allowed flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border bg-secondary/40 p-6 text-sm text-muted-foreground opacity-60"
+            >
+              <PlusIcon className="h-5 w-5" />
+              Start a new project
+              <span className="max-w-[14rem] text-center text-xs text-muted-foreground">
+                Available with an active contractual license
+              </span>
+            </div>
+          )}
         </div>
       )}
     </AppShell>

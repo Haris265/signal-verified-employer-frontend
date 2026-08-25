@@ -79,6 +79,27 @@ export async function login(email: string, password: string) {
   return { message: json.message, raw: json };
 }
 
+/** B2C candidate self-registration. Falls back to mailto if endpoint is unavailable. */
+export async function registerCandidate(payload: {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+}) {
+  return apiFetch<ApiEnvelope<{ id?: string }>>(
+    "/authentication/v1/user/register/",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        ...payload,
+        role: "candidate",
+        persona: "candidate",
+      }),
+    },
+    false,
+  );
+}
+
 export async function getEntitlement() {
   return apiFetch<
     ApiEnvelope<{

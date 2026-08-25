@@ -1,0 +1,2590 @@
+{
+  "language": "en",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.96,
+      "text": "Let's walk about, okay, I'm sure"
+    },
+    {
+      "start": 5.32,
+      "end": 11.4,
+      "text": "sure settings, I always forget how to do this."
+    },
+    {
+      "start": 12.16,
+      "end": 14.52,
+      "text": "And just one second."
+    },
+    {
+      "start": 15.6,
+      "end": 21.96,
+      "text": "Oh, it's two, all right, you should be with this right now."
+    },
+    {
+      "start": 31.12,
+      "end": 35.08,
+      "text": "Okay, so let me show the screen."
+    },
+    {
+      "start": 35.92,
+      "end": 38.8,
+      "text": "Okay, let me know once you can see it, okay?"
+    },
+    {
+      "start": 39.16,
+      "end": 41.76,
+      "text": "Yep, okay, so you can see the screen."
+    },
+    {
+      "start": 42.16,
+      "end": 42.76,
+      "text": "Yes, I can."
+    },
+    {
+      "start": 43.32,
+      "end": 44.64,
+      "text": "Okay, perfect."
+    },
+    {
+      "start": 44.84,
+      "end": 47.88,
+      "text": "Okay, right now is on my, you know, development server, right?"
+    },
+    {
+      "start": 47.88,
+      "end": 50.32,
+      "text": "But I will migrate it once everything looks good, okay?"
+    },
+    {
+      "start": 50.32,
+      "end": 53.84,
+      "text": "So yeah, okay, so this will be the, you know, okay."
+    },
+    {
+      "start": 54.88,
+      "end": 57.24,
+      "text": "First, let me show you, then we will discuss on the things, right?"
+    },
+    {
+      "start": 57.64,
+      "end": 61.52,
+      "text": "Okay, so this will, how they will go on a log in, right?"
+    },
+    {
+      "start": 62.48,
+      "end": 64.68,
+      "text": "How they will have their account, right?"
+    },
+    {
+      "start": 64.68,
+      "end": 67.48,
+      "text": "Because we need to create some place from where they can"
+    },
+    {
+      "start": 67.48,
+      "end": 71.96,
+      "text": "be able to, you know, blog into their, you know, portal, right?"
+    },
+    {
+      "start": 72.24,
+      "end": 77.84,
+      "text": "So admin will create just like how admin create reviewers account, you know,"
+    },
+    {
+      "start": 78.08,
+      "end": 81.16,
+      "text": "in a similar way, the admin you will create."
+    },
+    {
+      "start": 81.16,
+      "end": 83.96,
+      "text": "I implore us account as well, just like reviewer, right?"
+    },
+    {
+      "start": 83.96,
+      "end": 88.2,
+      "text": "That you will add new employer, right?"
+    },
+    {
+      "start": 88.8,
+      "end": 92.88,
+      "text": "Because we are not giving them option to create by themselves, right?"
+    },
+    {
+      "start": 93.28,
+      "end": 96.28,
+      "text": "Even though we can do that, but we will discuss after this, right?"
+    },
+    {
+      "start": 96.6,
+      "end": 98.08,
+      "text": "So yeah, but for now, right?"
+    },
+    {
+      "start": 98.08,
+      "end": 103.64,
+      "text": "I made it in a way that only the admin can able to create an employee's account, okay?"
+    },
+    {
+      "start": 103.64,
+      "end": 109.08,
+      "text": "And once it's created, then it will go to them via notification over the email, right?"
+    },
+    {
+      "start": 109.24,
+      "end": 111.08,
+      "text": "Or how everyone to send them, right?"
+    },
+    {
+      "start": 111.28,
+      "end": 115.92,
+      "text": "Right now it will send on a notification or via email and they will call the"
+    },
+    {
+      "start": 115.92,
+      "end": 116.6,
+      "text": "credentials."
+    },
+    {
+      "start": 116.6,
+      "end": 119.6,
+      "text": "Once they got the credentials, they will land here, okay?"
+    },
+    {
+      "start": 119.88,
+      "end": 122.08,
+      "text": "Now I have told you this, right?"
+    },
+    {
+      "start": 122.08,
+      "end": 125.96,
+      "text": "That how they will have the account now, how they will use it, I'm showing you that, right?"
+    },
+    {
+      "start": 126.32,
+      "end": 129.44,
+      "text": "Once they have their credentials from the admin, right?"
+    },
+    {
+      "start": 129.44,
+      "end": 132.24,
+      "text": "While email, they will simply go and this will be the page, right?"
+    },
+    {
+      "start": 132.72,
+      "end": 135.68,
+      "text": "They will go and sign in with their credentials, right?"
+    },
+    {
+      "start": 136.44,
+      "end": 137.6,
+      "text": "Once they sign in, right?"
+    },
+    {
+      "start": 137.6,
+      "end": 139.2,
+      "text": "They will see this dashboard."
+    },
+    {
+      "start": 139.2,
+      "end": 142.48,
+      "text": "Every employer will have their separate dashboard like this, okay?"
+    },
+    {
+      "start": 142.72,
+      "end": 145.4,
+      "text": "Which will be like, this is the loyal dashboard, okay?"
+    },
+    {
+      "start": 145.4,
+      "end": 148.52,
+      "text": "As you can see that everywhere next to the single verified, right?"
+    },
+    {
+      "start": 148.52,
+      "end": 152.24,
+      "text": "There's an employer company's name, which is a lawyer, right?"
+    },
+    {
+      "start": 152.76,
+      "end": 156.24,
+      "text": "Here they have all the projects, which is going on."
+    },
+    {
+      "start": 156.28,
+      "end": 159.32,
+      "text": "Right? They can even see the filter it out as well, right?"
+    },
+    {
+      "start": 159.6,
+      "end": 162.92,
+      "text": "But yeah, so for now, this is all for a, you know, testing purpose, right?"
+    },
+    {
+      "start": 162.92,
+      "end": 165.16,
+      "text": "You can also able to play on your end as well, right?"
+    },
+    {
+      "start": 165.36,
+      "end": 166.96,
+      "text": "So these are the four projects, right?"
+    },
+    {
+      "start": 166.96,
+      "end": 170.16,
+      "text": "What I have, you know, showed over here for now, right?"
+    },
+    {
+      "start": 170.48,
+      "end": 172.52,
+      "text": "Okay, as you can see, four active projects, right?"
+    },
+    {
+      "start": 172.76,
+      "end": 174.8,
+      "text": "If I go any one of the project, right?"
+    },
+    {
+      "start": 174.8,
+      "end": 178.48,
+      "text": "Like, for example, let's go for this and lower your brand marketing finalist, right?"
+    },
+    {
+      "start": 178.48,
+      "end": 181.76,
+      "text": "Started 20 July to 18 September 2006."
+    },
+    {
+      "start": 182.56,
+      "end": 183.96,
+      "text": "Law will tell it, right?"
+    },
+    {
+      "start": 183.96,
+      "end": 186.28,
+      "text": "Two participants to complete interview and all."
+    },
+    {
+      "start": 186.28,
+      "end": 191.72,
+      "text": "If I go into this, right, you will see the more in size of this information, right?"
+    },
+    {
+      "start": 192.8,
+      "end": 196.4,
+      "text": "The way you send me as well, so I try to make it, you know, exactly like that."
+    },
+    {
+      "start": 196.4,
+      "end": 199.44,
+      "text": "But yeah, we will discuss once I give you the entire demo, okay?"
+    },
+    {
+      "start": 199.68,
+      "end": 201.72,
+      "text": "So and you can go back as well, right?"
+    },
+    {
+      "start": 201.72,
+      "end": 204.72,
+      "text": "If you go back, we will land on a main dashboard again, right?"
+    },
+    {
+      "start": 204.72,
+      "end": 206.52,
+      "text": "Here you will see that it will keep going on."
+    },
+    {
+      "start": 206.52,
+      "end": 208.8,
+      "text": "You can able to create a new startup new project."
+    },
+    {
+      "start": 209.04,
+      "end": 212.36,
+      "text": "If you even click on this, it will take you to request a new project."
+    },
+    {
+      "start": 212.36,
+      "end": 213.6,
+      "text": "I'll show you this, okay?"
+    },
+    {
+      "start": 213.88,
+      "end": 220.32,
+      "text": "But first, let's go on the existing project, okay?"
+    },
+    {
+      "start": 220.6,
+      "end": 222.96,
+      "text": "And you can even see the project brief, right?"
+    },
+    {
+      "start": 222.96,
+      "end": 224.6,
+      "text": "In a PDF format, right?"
+    },
+    {
+      "start": 224.6,
+      "end": 226.16,
+      "text": "If I click into this, right?"
+    },
+    {
+      "start": 226.16,
+      "end": 227.28,
+      "text": "So it will open the PDF."
+    },
+    {
+      "start": 227.28,
+      "end": 230.28,
+      "text": "For now, I don't have any PDF, but yes, we can have that."
+    },
+    {
+      "start": 230.84,
+      "end": 233.32,
+      "text": "So and you can see that two participants, right?"
+    },
+    {
+      "start": 233.32,
+      "end": 235.32,
+      "text": "Two out of two has been completed, right?"
+    },
+    {
+      "start": 235.32,
+      "end": 237.32,
+      "text": "Two meets the criteria."
+    },
+    {
+      "start": 237.32,
+      "end": 241.68,
+      "text": "The result distribution is that two participants, which meets the ASCO, right?"
+    },
+    {
+      "start": 241.68,
+      "end": 243.52,
+      "text": "The one is the Amina Kant, right?"
+    },
+    {
+      "start": 243.52,
+      "end": 244.6,
+      "text": "The state is complete."
+    },
+    {
+      "start": 244.6,
+      "end": 247.64,
+      "text": "The result it meets when and ignore that."
+    },
+    {
+      "start": 247.64,
+      "end": 248.56,
+      "text": "Go for now, right?"
+    },
+    {
+      "start": 248.56,
+      "end": 249.8,
+      "text": "That is for a testing purpose."
+    },
+    {
+      "start": 249.8,
+      "end": 253.04,
+      "text": "So it will be below four, obviously, but yeah, but this is how it will want to work."
+    },
+    {
+      "start": 253.04,
+      "end": 258.88,
+      "text": "Because it's not functional in a way that is not connected with a main centralized database"
+    },
+    {
+      "start": 258.88,
+      "end": 260.04,
+      "text": "for now, right?"
+    },
+    {
+      "start": 260.04,
+      "end": 265.04,
+      "text": "But at some place, it has a separate database, which I will want to sync it, right?"
+    },
+    {
+      "start": 265.04,
+      "end": 266.36,
+      "text": "On Monday's morning, right?"
+    },
+    {
+      "start": 266.36,
+      "end": 268.2,
+      "text": "So then it will be all together, right?"
+    },
+    {
+      "start": 268.2,
+      "end": 271.56,
+      "text": "But okay, the second is Luca Moretti, right?"
+    },
+    {
+      "start": 271.56,
+      "end": 274.04,
+      "text": "He has code 3.55 out of four, right?"
+    },
+    {
+      "start": 274.04,
+      "end": 278.04,
+      "text": "If you want to go, you know, and see their particular information, right?"
+    },
+    {
+      "start": 278.04,
+      "end": 279.88,
+      "text": "So we can go in, right?"
+    },
+    {
+      "start": 279.88,
+      "end": 282.64,
+      "text": "For now, I haven't made that screen, right?"
+    },
+    {
+      "start": 282.64,
+      "end": 285.64,
+      "text": "And but this is how it will want to see it, right?"
+    },
+    {
+      "start": 285.64,
+      "end": 292.88,
+      "text": "So once I go in, you can see that Luca Moretti participants, it has the result meets 3.55 out of four."
+    },
+    {
+      "start": 292.88,
+      "end": 297.84,
+      "text": "Everything summary, computer, challenge, the solid, commercial, framing, relevance, score is 3.6."
+    },
+    {
+      "start": 297.84,
+      "end": 302.52,
+      "text": "Mastery is 3.50, which meets communication 3.70, right?"
+    },
+    {
+      "start": 302.52,
+      "end": 304.76,
+      "text": "The collaboration is 3.40, right?"
+    },
+    {
+      "start": 304.76,
+      "end": 305.92,
+      "text": "There's trends and the more."
+    },
+    {
+      "start": 305.92,
+      "end": 309.2,
+      "text": "So this is the detail page of the Luca Moretti."
+    },
+    {
+      "start": 309.2,
+      "end": 313.12,
+      "text": "And you can be able to print it out as well in a PDF as you can see, right?"
+    },
+    {
+      "start": 313.12,
+      "end": 315.6,
+      "text": "So all these options are in a working, right?"
+    },
+    {
+      "start": 315.6,
+      "end": 317.52,
+      "text": "If I go back, right?"
+    },
+    {
+      "start": 317.52,
+      "end": 319.08,
+      "text": "And come on this way."
+    },
+    {
+      "start": 319.08,
+      "end": 321.48,
+      "text": "So similarly, in a way, right?"
+    },
+    {
+      "start": 321.48,
+      "end": 323.76,
+      "text": "You can see for others as well."
+    },
+    {
+      "start": 323.76,
+      "end": 324.88,
+      "text": "In a summary, right?"
+    },
+    {
+      "start": 324.88,
+      "end": 328.96,
+      "text": "You can see the project inside the relevance is 4 out of 4, masters, this, this, this, this,"
+    },
+    {
+      "start": 328.96,
+      "end": 330.72,
+      "text": "the strong capability communication, right?"
+    },
+    {
+      "start": 330.72,
+      "end": 333.8,
+      "text": "So I've highlighted all the things accordingly, right?"
+    },
+    {
+      "start": 333.8,
+      "end": 338.08,
+      "text": "If they have more than 10 participants or many, right?"
+    },
+    {
+      "start": 338.08,
+      "end": 341.24,
+      "text": "So I put a search bar, right?"
+    },
+    {
+      "start": 341.24,
+      "end": 344.4,
+      "text": "Where they can be able to search for any candidate."
+    },
+    {
+      "start": 344.4,
+      "end": 346.72,
+      "text": "As you can see, I just started right Luca, right?"
+    },
+    {
+      "start": 346.72,
+      "end": 349.44,
+      "text": "And Luca is highlighted and filtered out, right?"
+    },
+    {
+      "start": 349.44,
+      "end": 351.28,
+      "text": "If I write Amina, right?"
+    },
+    {
+      "start": 351.28,
+      "end": 353.04,
+      "text": "So you can see, and if I write anything, right?"
+    },
+    {
+      "start": 353.04,
+      "end": 358.04,
+      "text": "So it will filter it out directly without refreshing on a real time on this section, as"
+    },
+    {
+      "start": 358.04,
+      "end": 359.32,
+      "text": "I just showed you, right?"
+    },
+    {
+      "start": 359.32,
+      "end": 360.72,
+      "text": "If you want to see the filters, right?"
+    },
+    {
+      "start": 360.72,
+      "end": 362.36,
+      "text": "Now, there's only two means, right?"
+    },
+    {
+      "start": 362.36,
+      "end": 365.16,
+      "text": "If there were other as well, right?"
+    },
+    {
+      "start": 365.16,
+      "end": 367.72,
+      "text": "So you can able to filter it out according to that, right?"
+    },
+    {
+      "start": 367.72,
+      "end": 368.72,
+      "text": "Right?"
+    },
+    {
+      "start": 368.72,
+      "end": 369.72,
+      "text": "Now there's two means."
+    },
+    {
+      "start": 369.72,
+      "end": 373.72,
+      "text": "So you can see that two is written next to the means as going criteria, right?"
+    },
+    {
+      "start": 373.72,
+      "end": 375.56,
+      "text": "And you can filter it out as well."
+    },
+    {
+      "start": 375.56,
+      "end": 376.56,
+      "text": "If we have more, okay?"
+    },
+    {
+      "start": 376.56,
+      "end": 378.88,
+      "text": "So it's all in a working condition, right?"
+    },
+    {
+      "start": 378.88,
+      "end": 379.88,
+      "text": "So you can see that."
+    },
+    {
+      "start": 379.88,
+      "end": 385.44,
+      "text": "And even though you can download this summary as well by just clicking on a download summary"
+    },
+    {
+      "start": 385.44,
+      "end": 387.72,
+      "text": "in a proper way, right?"
+    },
+    {
+      "start": 387.72,
+      "end": 388.72,
+      "text": "So here you go."
+    },
+    {
+      "start": 388.72,
+      "end": 389.72,
+      "text": "Right?"
+    },
+    {
+      "start": 389.72,
+      "end": 394.12,
+      "text": "Obviously, I will send you this link so you can also play with it out yourself, right?"
+    },
+    {
+      "start": 394.12,
+      "end": 399.56,
+      "text": "Here, you can say, I can able to switch directly because all my other programs, you know,"
+    },
+    {
+      "start": 399.56,
+      "end": 401.52,
+      "text": "is for Laurean, right?"
+    },
+    {
+      "start": 401.52,
+      "end": 403.52,
+      "text": "So instead of going back, right?"
+    },
+    {
+      "start": 403.52,
+      "end": 406.68,
+      "text": "Obviously, just a better interactivity with the platform, right?"
+    },
+    {
+      "start": 406.68,
+      "end": 410.48,
+      "text": "So I've added a lot of things from my side as well, right?"
+    },
+    {
+      "start": 410.48,
+      "end": 411.64,
+      "text": "Which you haven't mentioned, right?"
+    },
+    {
+      "start": 411.64,
+      "end": 413.44,
+      "text": "But yeah, we will discuss on that, right?"
+    },
+    {
+      "start": 413.44,
+      "end": 416.52,
+      "text": "So they can able to, they were in this one, right?"
+    },
+    {
+      "start": 416.52,
+      "end": 420.16,
+      "text": "But they can able to switch it from this to there as well or they can able to collect"
+    },
+    {
+      "start": 420.16,
+      "end": 423.08,
+      "text": "you all project, which will take them to the dashboard, okay?"
+    },
+    {
+      "start": 423.08,
+      "end": 425.16,
+      "text": "So I'm just switching it from here, right?"
+    },
+    {
+      "start": 425.16,
+      "end": 428.6,
+      "text": "So I select the early talent program, right?"
+    },
+    {
+      "start": 428.6,
+      "end": 430.64,
+      "text": "And you see, it's just got changed."
+    },
+    {
+      "start": 430.64,
+      "end": 434.84,
+      "text": "And in this program, in this project, I have one participant, which has been completed."
+    },
+    {
+      "start": 434.84,
+      "end": 436.6,
+      "text": "This is the name, which is emerging, right?"
+    },
+    {
+      "start": 436.6,
+      "end": 440.4,
+      "text": "And now you can see that automatically the participant filters has been changed with emerging"
+    },
+    {
+      "start": 440.4,
+      "end": 441.4,
+      "text": "to one."
+    },
+    {
+      "start": 441.4,
+      "end": 445.6,
+      "text": "If there were meet as well, so the second time will automatically appear with a meet with"
+    },
+    {
+      "start": 445.6,
+      "end": 452.88,
+      "text": "the number, what is, what it would be in a dashboard, right?"
+    },
+    {
+      "start": 452.88,
+      "end": 456.64,
+      "text": "And then it will be like all to end to an encryption according to that."
+    },
+    {
+      "start": 456.64,
+      "end": 463.36,
+      "text": "If I go back, right, now as you can see, right, that we will got the status as well, right?"
+    },
+    {
+      "start": 463.36,
+      "end": 464.36,
+      "text": "And all those things, right?"
+    },
+    {
+      "start": 464.36,
+      "end": 466.88,
+      "text": "So you can able to see all the existing project like this."
+    },
+    {
+      "start": 466.88,
+      "end": 471.0,
+      "text": "If you, if I also made it, you know, the filters over here, right, that if I want to just"
+    },
+    {
+      "start": 471.0,
+      "end": 474.24,
+      "text": "want to see the program because not all of them are programs, right?"
+    },
+    {
+      "start": 474.24,
+      "end": 475.24,
+      "text": "This is the program, right?"
+    },
+    {
+      "start": 475.24,
+      "end": 478.64,
+      "text": "But these are the hiring, you can see the status, right?"
+    },
+    {
+      "start": 478.64,
+      "end": 481.72,
+      "text": "These are the hiring things and these are the programs, right?"
+    },
+    {
+      "start": 481.72,
+      "end": 486.32,
+      "text": "So I, although also made it in a filter way, right, that if they just want to see the program"
+    },
+    {
+      "start": 486.32,
+      "end": 490.36,
+      "text": "information, so you can see, and if they want to see the hiring, so it will filter out"
+    },
+    {
+      "start": 490.36,
+      "end": 492.52,
+      "text": "the hiring projects, right?"
+    },
+    {
+      "start": 492.52,
+      "end": 497.44,
+      "text": "Archive means, you know, right, that if I, you know, if they have, you know, put an archive"
+    },
+    {
+      "start": 497.44,
+      "end": 498.44,
+      "text": "that project, right?"
+    },
+    {
+      "start": 498.44,
+      "end": 501.52,
+      "text": "So that will come under the archive project and they can do that, right?"
+    },
+    {
+      "start": 501.52,
+      "end": 504.8,
+      "text": "So yes, now I will going to create a new project, right?"
+    },
+    {
+      "start": 504.8,
+      "end": 509.52,
+      "text": "So even you can able to click over here, fly, or even you can able to click over here, both"
+    },
+    {
+      "start": 509.52,
+      "end": 511.04,
+      "text": "will take you to the new project, right?"
+    },
+    {
+      "start": 511.04,
+      "end": 513.64,
+      "text": "So let me go from there, okay?"
+    },
+    {
+      "start": 514.56,
+      "end": 515.96,
+      "text": "So the way I did it, right?"
+    },
+    {
+      "start": 515.96,
+      "end": 517.72,
+      "text": "Obviously we can modify it, right?"
+    },
+    {
+      "start": 517.72,
+      "end": 519.36,
+      "text": "As this is the first draft, right?"
+    },
+    {
+      "start": 519.36,
+      "end": 523.72,
+      "text": "But yeah, so you can select that you want to create a project for a program or you want"
+    },
+    {
+      "start": 523.72,
+      "end": 526.4,
+      "text": "to create this project as a hiring, right?"
+    },
+    {
+      "start": 526.4,
+      "end": 530.76,
+      "text": "So I select program, so I will know automatically, you know, the things will change according to"
+    },
+    {
+      "start": 530.76,
+      "end": 531.76,
+      "text": "that, right?"
+    },
+    {
+      "start": 531.76,
+      "end": 534.48,
+      "text": "So I said that, okay, this is the role of program names, right?"
+    },
+    {
+      "start": 534.48,
+      "end": 541.48,
+      "text": "I'm just creating in front of you a testing description."
+    },
+    {
+      "start": 543.72,
+      "end": 547.2,
+      "text": "Okay, choose file, this is the project brief, right?"
+    },
+    {
+      "start": 547.2,
+      "end": 557.4,
+      "text": "So if I, you know, should I upload, okay, let's upload this, okay?"
+    },
+    {
+      "start": 557.4,
+      "end": 561.6,
+      "text": "Okay, so for now, I just upload this, expected number of finalists of participants, you can"
+    },
+    {
+      "start": 561.6,
+      "end": 563.16,
+      "text": "restrict it as well, right?"
+    },
+    {
+      "start": 563.16,
+      "end": 570.18,
+      "text": "So I said that, okay, the maximum I can handle is time, okay?"
+    },
+    {
+      "start": 570.18,
+      "end": 572.46,
+      "text": "The target completion date, select that, right?"
+    },
+    {
+      "start": 572.46,
+      "end": 577.02,
+      "text": "The target completion date is 2nd of September, right?"
+    },
+    {
+      "start": 577.02,
+      "end": 580.82,
+      "text": "I can put the notes for the signal, verify team, which is optional, okay?"
+    },
+    {
+      "start": 580.82,
+      "end": 586.38,
+      "text": "And I can, and like, you know, the employer can submit to the admin, right?"
+    },
+    {
+      "start": 586.38,
+      "end": 590.74,
+      "text": "Once you submit it, okay, you will see, okay?"
+    },
+    {
+      "start": 590.74,
+      "end": 595.18,
+      "text": "So it has been submitted, thank someone from, obviously we will change the word bit, right?"
+    },
+    {
+      "start": 595.18,
+      "end": 598.54,
+      "text": "Thanks someone from senior welfare will reach out within one business there to schedule your"
+    },
+    {
+      "start": 598.54,
+      "end": 600.46,
+      "text": "housekeeping call, okay?"
+    },
+    {
+      "start": 600.46,
+      "end": 603.18,
+      "text": "And again, we can change the word page, right?"
+    },
+    {
+      "start": 603.18,
+      "end": 608.62,
+      "text": "As you can see, this has been created, but I cannot use it until it will be approved by"
+    },
+    {
+      "start": 608.62,
+      "end": 609.62,
+      "text": "the admin, right?"
+    },
+    {
+      "start": 609.62,
+      "end": 612.46,
+      "text": "As you can see, awaiting is coping call, okay?"
+    },
+    {
+      "start": 612.46,
+      "end": 618.94,
+      "text": "And yeah, it is created, it shows that there is, it is created, but it's not active until"
+    },
+    {
+      "start": 618.94,
+      "end": 620.26,
+      "text": "it is approved by the admin, right?"
+    },
+    {
+      "start": 620.26,
+      "end": 621.5,
+      "text": "The others are active, right?"
+    },
+    {
+      "start": 621.5,
+      "end": 623.98,
+      "text": "This is, this is the same situation, right?"
+    },
+    {
+      "start": 623.98,
+      "end": 626.62,
+      "text": "I cannot able to use it until it is approved."
+    },
+    {
+      "start": 626.62,
+      "end": 628.18,
+      "text": "Once you go to the admin panel, right?"
+    },
+    {
+      "start": 628.18,
+      "end": 633.5,
+      "text": "You will see under the employers that Lawreal has requested for these two programs and you"
+    },
+    {
+      "start": 633.5,
+      "end": 635.86,
+      "text": "will even approve it or you will reject it, right?"
+    },
+    {
+      "start": 635.86,
+      "end": 639.5,
+      "text": "So you can do it from the admin panel and whatever you will do, they will effect over here"
+    },
+    {
+      "start": 639.5,
+      "end": 642.06,
+      "text": "on the employer portal directly, okay?"
+    },
+    {
+      "start": 642.06,
+      "end": 646.1,
+      "text": "So they can start using it and having it and all those stuff accordingly, right?"
+    },
+    {
+      "start": 646.1,
+      "end": 648.66,
+      "text": "So that's all done, okay?"
+    },
+    {
+      "start": 648.66,
+      "end": 649.66,
+      "text": "What else?"
+    },
+    {
+      "start": 649.66,
+      "end": 650.66,
+      "text": "Right?"
+    },
+    {
+      "start": 650.66,
+      "end": 656.42,
+      "text": "Yeah, so I have showed you this, I have showed you, yeah, people, I didn't work on it"
+    },
+    {
+      "start": 656.46,
+      "end": 657.78,
+      "text": "yet, right?"
+    },
+    {
+      "start": 657.78,
+      "end": 660.18,
+      "text": "But that would be like, if they had their staff members, right?"
+    },
+    {
+      "start": 660.18,
+      "end": 663.34,
+      "text": "So they can able to, you know, add them as well, right?"
+    },
+    {
+      "start": 663.34,
+      "end": 665.98,
+      "text": "So yeah, that is one thing, okay?"
+    },
+    {
+      "start": 665.98,
+      "end": 670.34,
+      "text": "But the rest of the thing, I think I have showed you, I've showed you the program, detail pages,"
+    },
+    {
+      "start": 670.34,
+      "end": 671.34,
+      "text": "right?"
+    },
+    {
+      "start": 671.34,
+      "end": 678.58,
+      "text": "And specific students page, switching of the programs, and again, this is all for Lawreal, right?"
+    },
+    {
+      "start": 678.58,
+      "end": 683.62,
+      "text": "They will be the, you know, the only, you know, access to have, right?"
+    },
+    {
+      "start": 683.74,
+      "end": 686.7,
+      "text": "And similarly like this, there will be other employers, right?"
+    },
+    {
+      "start": 686.7,
+      "end": 692.06,
+      "text": "Which will be going to use the portals like this by their own, right?"
+    },
+    {
+      "start": 692.06,
+      "end": 694.34,
+      "text": "And they can manage all the things within that."
+    },
+    {
+      "start": 694.34,
+      "end": 703.53,
+      "text": "So yeah, so, so, so, yeah, can you, can you show me what the admin would see?"
+    },
+    {
+      "start": 703.53,
+      "end": 704.53,
+      "text": "Right?"
+    },
+    {
+      "start": 704.53,
+      "end": 707.73,
+      "text": "Yeah, yeah, I could not show you that now, but I'll show you that."
+    },
+    {
+      "start": 707.73,
+      "end": 709.77,
+      "text": "Okay, that's fine, that's fine, that's fine, that's fine, that's fine."
+    },
+    {
+      "start": 709.77,
+      "end": 712.93,
+      "text": "But I need to sync it, yeah, okay, but I need to sync it, right?"
+    },
+    {
+      "start": 712.93,
+      "end": 720.93,
+      "text": "So I have always did this on the database, but I need to go back to the very, yeah,"
+    },
+    {
+      "start": 720.93,
+      "end": 727.85,
+      "text": "let's go back to the first page, yeah, no, like the login page."
+    },
+    {
+      "start": 727.85,
+      "end": 729.65,
+      "text": "Okay, sure."
+    },
+    {
+      "start": 729.65,
+      "end": 737.17,
+      "text": "And I want to see if you're logging in for the very first time, can you click on that first"
+    },
+    {
+      "start": 737.17,
+      "end": 738.17,
+      "text": "time here?"
+    },
+    {
+      "start": 738.17,
+      "end": 745.58,
+      "text": "Okay, sorry, let me sign out again and go to this, right?"
+    },
+    {
+      "start": 745.58,
+      "end": 748.66,
+      "text": "You know, it will do nothing, right?"
+    },
+    {
+      "start": 748.66,
+      "end": 753.62,
+      "text": "And it will just take you for now, the questions and sign a verified.net and it will take you"
+    },
+    {
+      "start": 753.62,
+      "end": 759.42,
+      "text": "to the email so they can able to request, right, that I want to create an account, right?"
+    },
+    {
+      "start": 759.42,
+      "end": 761.1,
+      "text": "Now, how I did this thing, right?"
+    },
+    {
+      "start": 761.1,
+      "end": 763.86,
+      "text": "I forgot to mention this as well, right?"
+    },
+    {
+      "start": 763.86,
+      "end": 765.94,
+      "text": "That if there are first time here, right?"
+    },
+    {
+      "start": 765.94,
+      "end": 768.1,
+      "text": "And they do not have any account credentials, right?"
+    },
+    {
+      "start": 768.14,
+      "end": 771.06,
+      "text": "They can request via email, right?"
+    },
+    {
+      "start": 771.06,
+      "end": 779.1,
+      "text": "That, you know, hello, you know, I'm, you know, Ali and I wanted to have an account, right?"
+    },
+    {
+      "start": 779.1,
+      "end": 783.54,
+      "text": "And you will get this and then you will create their credentials on behalf of their request."
+    },
+    {
+      "start": 783.54,
+      "end": 784.9,
+      "text": "So this is how it's supposed to be."
+    },
+    {
+      "start": 784.9,
+      "end": 788.38,
+      "text": "So when I click on this, right, it will take me to the email template, right?"
+    },
+    {
+      "start": 788.38,
+      "end": 790.94,
+      "text": "And this is the email I have added for now."
+    },
+    {
+      "start": 790.94,
+      "end": 795.02,
+      "text": "I can change it as well if you want, which is questions as sign a verified.net."
+    },
+    {
+      "start": 795.06,
+      "end": 796.58,
+      "text": "They will write the subjects, right?"
+    },
+    {
+      "start": 796.58,
+      "end": 797.78,
+      "text": "Email it and send it to you."
+    },
+    {
+      "start": 797.78,
+      "end": 801.9,
+      "text": "Once it's sent to you, you will receive it and then you will create a, you know, credential"
+    },
+    {
+      "start": 801.9,
+      "end": 806.1,
+      "text": "on behalf of them and send them back and then they can log in just like sign in what I have"
+    },
+    {
+      "start": 806.1,
+      "end": 807.46,
+      "text": "already shown it to you."
+    },
+    {
+      "start": 807.46,
+      "end": 808.46,
+      "text": "So yeah."
+    },
+    {
+      "start": 808.46,
+      "end": 809.46,
+      "text": "All right."
+    },
+    {
+      "start": 809.46,
+      "end": 818.58,
+      "text": "So you're thinking here, this is the, the B to B implementation, right?"
+    },
+    {
+      "start": 818.58,
+      "end": 819.58,
+      "text": "Yes."
+    },
+    {
+      "start": 819.58,
+      "end": 820.58,
+      "text": "For the employers."
+    },
+    {
+      "start": 820.58,
+      "end": 821.58,
+      "text": "Yes."
+    },
+    {
+      "start": 821.58,
+      "end": 822.58,
+      "text": "Yeah, for the employers."
+    },
+    {
+      "start": 822.58,
+      "end": 823.58,
+      "text": "Yes."
+    },
+    {
+      "start": 824.58,
+      "end": 827.06,
+      "text": "I can, I can also make it like for B to C, right?"
+    },
+    {
+      "start": 827.06,
+      "end": 832.38,
+      "text": "But I think like because I don't need to, I just need to create a registration form, right?"
+    },
+    {
+      "start": 832.38,
+      "end": 835.86,
+      "text": "So instead of the add them, they can do it by themselves, they can register by themselves,"
+    },
+    {
+      "start": 835.86,
+      "end": 836.86,
+      "text": "right?"
+    },
+    {
+      "start": 836.86,
+      "end": 837.86,
+      "text": "Sorry."
+    },
+    {
+      "start": 837.86,
+      "end": 838.86,
+      "text": "Yeah."
+    },
+    {
+      "start": 838.86,
+      "end": 839.86,
+      "text": "It's just one page of increase and increase."
+    },
+    {
+      "start": 839.86,
+      "end": 843.5,
+      "text": "But so yeah, I can also make it like that, but we need to come up with what the port would"
+    },
+    {
+      "start": 843.5,
+      "end": 844.5,
+      "text": "be the best."
+    },
+    {
+      "start": 844.5,
+      "end": 845.5,
+      "text": "So."
+    },
+    {
+      "start": 845.5,
+      "end": 846.5,
+      "text": "All right."
+    },
+    {
+      "start": 846.5,
+      "end": 847.5,
+      "text": "Can you see my screen?"
+    },
+    {
+      "start": 847.5,
+      "end": 848.5,
+      "text": "Not here."
+    },
+    {
+      "start": 848.5,
+      "end": 849.5,
+      "text": "Let me stop mine."
+    },
+    {
+      "start": 849.5,
+      "end": 859.5,
+      "text": "But yes, once again, let me, once again, oh, yes, I can see it, okay."
+    },
+    {
+      "start": 859.5,
+      "end": 860.5,
+      "text": "Okay."
+    },
+    {
+      "start": 860.5,
+      "end": 861.5,
+      "text": "All right."
+    },
+    {
+      "start": 861.5,
+      "end": 862.5,
+      "text": "So I want to go very quick here."
+    },
+    {
+      "start": 862.5,
+      "end": 869.14,
+      "text": "So first, thanks, Holly, for moving quickly on the, on the mock up, I think, good progress."
+    },
+    {
+      "start": 869.14,
+      "end": 873.9,
+      "text": "I think it's aligned with what we're trying to show and what we're trying to do."
+    },
+    {
+      "start": 873.9,
+      "end": 879.26,
+      "text": "And also the way this is designed, it's not my idea."
+    },
+    {
+      "start": 879.5,
+      "end": 889.34,
+      "text": "This was based on talking to a UX designer, so what we're showing here is based on a lot"
+    },
+    {
+      "start": 889.34,
+      "end": 893.78,
+      "text": "of research and talking from a heuristic perspective."
+    },
+    {
+      "start": 893.78,
+      "end": 905.46,
+      "text": "This is the UI and UX that will, will drive the right behaviors from a, from an user perspective."
+    },
+    {
+      "start": 905.46,
+      "end": 907.78,
+      "text": "So that's, that's what I want to share with you."
+    },
+    {
+      "start": 907.78,
+      "end": 912.42,
+      "text": "So from what I saw, everything looks aligned."
+    },
+    {
+      "start": 912.42,
+      "end": 919.42,
+      "text": "However, for B2B, I agree we should set up the accounts for the end user."
+    },
+    {
+      "start": 919.42,
+      "end": 929.51,
+      "text": "But for B2C, and I need to think about this some more, but for B2C, we want to, we want"
+    },
+    {
+      "start": 929.51,
+      "end": 934.79,
+      "text": "to have the option to set up the account for the individual, right?"
+    },
+    {
+      "start": 934.79,
+      "end": 941.75,
+      "text": "So in this scenario, you can see here, we have made that an option."
+    },
+    {
+      "start": 941.75,
+      "end": 944.79,
+      "text": "Again, this is a B2C situation."
+    },
+    {
+      "start": 944.79,
+      "end": 953.91,
+      "text": "They click here, once they log in, and then they, they select, yes, which persona are they,"
+    },
+    {
+      "start": 953.91,
+      "end": 959.83,
+      "text": "are they going to use it for an organization, are they a student or candidate?"
+    },
+    {
+      "start": 959.83,
+      "end": 962.43,
+      "text": "And if they're a candidate, they would click here."
+    },
+    {
+      "start": 962.43,
+      "end": 969.47,
+      "text": "And then, this is a bug here, but they would then go back and, and see the project."
+    },
+    {
+      "start": 969.47,
+      "end": 976.87,
+      "text": "So I want us to, I want us to think about this like, what's the right flow, but, we do need"
+    },
+    {
+      "start": 976.87,
+      "end": 988.51,
+      "text": "to have a, you know, in the previous design, right, what you had was, you had this, right?"
+    },
+    {
+      "start": 989.51,
+      "end": 990.51,
+      "text": "Yeah."
+    },
+    {
+      "start": 990.51,
+      "end": 993.51,
+      "text": "And I will change it with that later with them, so yeah."
+    },
+    {
+      "start": 993.51,
+      "end": 994.51,
+      "text": "Okay."
+    },
+    {
+      "start": 994.51,
+      "end": 1003.83,
+      "text": "So, um, so I want, I want this, and I'm not sure if you saw this because I, I think I added"
+    },
+    {
+      "start": 1003.83,
+      "end": 1004.83,
+      "text": "it pretty, you know, later."
+    },
+    {
+      "start": 1004.83,
+      "end": 1005.83,
+      "text": "Yeah."
+    },
+    {
+      "start": 1005.83,
+      "end": 1006.83,
+      "text": "I didn't see it yet."
+    },
+    {
+      "start": 1006.83,
+      "end": 1007.83,
+      "text": "So yeah."
+    },
+    {
+      "start": 1007.83,
+      "end": 1008.83,
+      "text": "Okay."
+    },
+    {
+      "start": 1008.83,
+      "end": 1009.83,
+      "text": "And that's fine."
+    },
+    {
+      "start": 1009.83,
+      "end": 1010.83,
+      "text": "That's fine."
+    },
+    {
+      "start": 1010.83,
+      "end": 1011.83,
+      "text": "But we want this."
+    },
+    {
+      "start": 1011.83,
+      "end": 1018.23,
+      "text": "So this is what you'll see when a first time user logs in, they have to select which persona."
+    },
+    {
+      "start": 1018.23,
+      "end": 1023.47,
+      "text": "And this was also recommended by the UX advisor."
+    },
+    {
+      "start": 1023.47,
+      "end": 1024.47,
+      "text": "Okay."
+    },
+    {
+      "start": 1024.47,
+      "end": 1025.47,
+      "text": "Yeah."
+    },
+    {
+      "start": 1025.47,
+      "end": 1026.47,
+      "text": "That makes sense."
+    },
+    {
+      "start": 1026.47,
+      "end": 1027.47,
+      "text": "Yeah."
+    },
+    {
+      "start": 1027.47,
+      "end": 1033.67,
+      "text": "But only one thing I wanted to know over here, right, that, okay, for the students, right,"
+    },
+    {
+      "start": 1033.67,
+      "end": 1037.19,
+      "text": "we have both B2B and B2C, right, for the B2C, right?"
+    },
+    {
+      "start": 1037.19,
+      "end": 1042.47,
+      "text": "We don't even need to show this screen to them, so they can register themselves."
+    },
+    {
+      "start": 1042.47,
+      "end": 1045.71,
+      "text": "This screen will only be visible to the B2C candidates, right?"
+    },
+    {
+      "start": 1045.71,
+      "end": 1046.71,
+      "text": "Right."
+    },
+    {
+      "start": 1046.71,
+      "end": 1053.03,
+      "text": "And I will make it in that way with the, you know, the styling and UI you actually showing"
+    },
+    {
+      "start": 1053.03,
+      "end": 1056.03,
+      "text": "me, I will simply change it with that no problem at all, right?"
+    },
+    {
+      "start": 1056.03,
+      "end": 1062.27,
+      "text": "But for the employer, for the organization, right, will they able to create their own account"
+    },
+    {
+      "start": 1062.27,
+      "end": 1063.27,
+      "text": "as well?"
+    },
+    {
+      "start": 1063.27,
+      "end": 1066.51,
+      "text": "Do you want to make an employer organization as B2C?"
+    },
+    {
+      "start": 1066.51,
+      "end": 1067.51,
+      "text": "No."
+    },
+    {
+      "start": 1067.51,
+      "end": 1068.51,
+      "text": "I agree."
+    },
+    {
+      "start": 1068.51,
+      "end": 1069.51,
+      "text": "I agree."
+    },
+    {
+      "start": 1069.51,
+      "end": 1076.79,
+      "text": "For, for B2B, because it's their talent pool, they're the ones that, that's managing who"
+    },
+    {
+      "start": 1076.79,
+      "end": 1081.79,
+      "text": "gets interviewed, they have to tell us who that list is and their emails."
+    },
+    {
+      "start": 1081.79,
+      "end": 1082.79,
+      "text": "So."
+    },
+    {
+      "start": 1082.79,
+      "end": 1086.75,
+      "text": "And in fact, it is very important, right, because candidate can able to register themselves,"
+    },
+    {
+      "start": 1086.75,
+      "end": 1087.75,
+      "text": "right?"
+    },
+    {
+      "start": 1087.75,
+      "end": 1091.91,
+      "text": "But no organization will register like this of a B2C approach, right?"
+    },
+    {
+      "start": 1091.91,
+      "end": 1096.67,
+      "text": "They will consult you for us, right, that, okay, Michael, we would have to more collaborate"
+    },
+    {
+      "start": 1096.67,
+      "end": 1098.55,
+      "text": "and be in your platform wise."
+    },
+    {
+      "start": 1098.55,
+      "end": 1108.19,
+      "text": "So please assist us and, you know, give a, they will, like 95% of, you know, organizations"
+    },
+    {
+      "start": 1108.19,
+      "end": 1113.59,
+      "text": "will ask for your support instead of managing their, so yeah."
+    },
+    {
+      "start": 1113.59,
+      "end": 1114.59,
+      "text": "Right."
+    },
+    {
+      "start": 1114.59,
+      "end": 1115.59,
+      "text": "So run the same page."
+    },
+    {
+      "start": 1115.59,
+      "end": 1116.59,
+      "text": "Okay."
+    },
+    {
+      "start": 1116.59,
+      "end": 1117.59,
+      "text": "So that's clear."
+    },
+    {
+      "start": 1117.59,
+      "end": 1124.07,
+      "text": "The other thing I wanted to talk about real quickly here is, um, everything that you"
+    },
+    {
+      "start": 1124.07,
+      "end": 1126.39,
+      "text": "share was, was good."
+    },
+    {
+      "start": 1126.39,
+      "end": 1134.51,
+      "text": "What I don't want to show is the score on the, on the, the list or the repository."
+    },
+    {
+      "start": 1134.51,
+      "end": 1136.39,
+      "text": "We don't want to show the score."
+    },
+    {
+      "start": 1136.39,
+      "end": 1144.67,
+      "text": "So just remove that and when the employer clicks on, in this case, Alia Brooks, we want them"
+    },
+    {
+      "start": 1144.67,
+      "end": 1150.35,
+      "text": "to see the exact summary, not a savvy, okay."
+    },
+    {
+      "start": 1150.35,
+      "end": 1155.23,
+      "text": "So it needs to be consistent with the actual, the signal."
+    },
+    {
+      "start": 1155.23,
+      "end": 1165.67,
+      "text": "And it needs to look like it's, it's a web, you know, HTML, uh, design, it wants to, yeah,"
+    },
+    {
+      "start": 1165.67,
+      "end": 1166.67,
+      "text": "yeah."
+    },
+    {
+      "start": 1166.67,
+      "end": 1169.51,
+      "text": "And if they want to design it, or if they want, or if they want to, you know, download it,"
+    },
+    {
+      "start": 1169.51,
+      "end": 1176.79,
+      "text": "they can do that here, um, so that's, that's one other change I like you to make."
+    },
+    {
+      "start": 1176.79,
+      "end": 1182.83,
+      "text": "Now one other thing here, um, you know, we call, we had two different versions for the"
+    },
+    {
+      "start": 1182.83,
+      "end": 1187.35,
+      "text": "signal, B to B and B to C, yeah."
+    },
+    {
+      "start": 1187.35,
+      "end": 1194.83,
+      "text": "For this particular scenario, um, this is a B to B implementation."
+    },
+    {
+      "start": 1194.83,
+      "end": 1200.59,
+      "text": "We're only showing the final score, we're not showing the score for each of the four buckets."
+    },
+    {
+      "start": 1200.59,
+      "end": 1201.59,
+      "text": "Okay."
+    },
+    {
+      "start": 1201.59,
+      "end": 1202.59,
+      "text": "Correct."
+    },
+    {
+      "start": 1202.59,
+      "end": 1203.59,
+      "text": "Okay."
+    },
+    {
+      "start": 1203.59,
+      "end": 1230.51,
+      "text": "So, um, just, we, we need to be really crystal clear on, um, what the signal looks like for"
+    },
+    {
+      "start": 1230.51,
+      "end": 1234.35,
+      "text": "B to B and B to C, okay."
+    },
+    {
+      "start": 1234.35,
+      "end": 1235.35,
+      "text": "Is that clear?"
+    },
+    {
+      "start": 1235.35,
+      "end": 1236.35,
+      "text": "Right."
+    },
+    {
+      "start": 1236.35,
+      "end": 1237.35,
+      "text": "Yep."
+    },
+    {
+      "start": 1237.35,
+      "end": 1238.35,
+      "text": "Okay."
+    },
+    {
+      "start": 1238.35,
+      "end": 1242.47,
+      "text": "Um, so that's, that's those are the quick changes, right?"
+    },
+    {
+      "start": 1242.47,
+      "end": 1249.19,
+      "text": "So, you know, history cap, let's remove the scoring, yep, on the summary page."
+    },
+    {
+      "start": 1249.19,
+      "end": 1254.07,
+      "text": "Let's make sure that when they click, it goes directly to the signal for each respective"
+    },
+    {
+      "start": 1254.07,
+      "end": 1261.59,
+      "text": "individual and they can see the entire, you know, signal document, but it needs to be"
+    },
+    {
+      "start": 1261.59,
+      "end": 1265.07,
+      "text": "HTML, not a PDF, right?"
+    },
+    {
+      "start": 1265.07,
+      "end": 1271.03,
+      "text": "They want the PDF and they have to click here or download, right?"
+    },
+    {
+      "start": 1271.03,
+      "end": 1282.03,
+      "text": "And everything else, it was consistent and I'm not sure if you had now one thing, um, the,"
+    },
+    {
+      "start": 1282.03,
+      "end": 1291.15,
+      "text": "the projects now on the, the lovable tool here, it just goes straight to an email."
+    },
+    {
+      "start": 1291.15,
+      "end": 1292.15,
+      "text": "Oh."
+    },
+    {
+      "start": 1292.15,
+      "end": 1293.15,
+      "text": "Yeah."
+    },
+    {
+      "start": 1293.15,
+      "end": 1295.15,
+      "text": "I, I, I, I, yeah."
+    },
+    {
+      "start": 1295.15,
+      "end": 1296.15,
+      "text": "Yeah."
+    },
+    {
+      "start": 1296.15,
+      "end": 1297.15,
+      "text": "Yeah."
+    },
+    {
+      "start": 1297.15,
+      "end": 1298.15,
+      "text": "Right."
+    },
+    {
+      "start": 1298.15,
+      "end": 1302.95,
+      "text": "And I have made it in a way that they can able to fill that information because I think that"
+    },
+    {
+      "start": 1302.95,
+      "end": 1306.23,
+      "text": "that information is a part of it because we don't know what they will write."
+    },
+    {
+      "start": 1306.23,
+      "end": 1309.95,
+      "text": "And that would be a lot of hustle for us to manage their projects."
+    },
+    {
+      "start": 1309.95,
+      "end": 1310.95,
+      "text": "Right."
+    },
+    {
+      "start": 1310.95,
+      "end": 1313.79,
+      "text": "Project creation should be their duties."
+    },
+    {
+      "start": 1313.79,
+      "end": 1314.79,
+      "text": "Yeah."
+    },
+    {
+      "start": 1314.79,
+      "end": 1315.79,
+      "text": "And I love it."
+    },
+    {
+      "start": 1315.79,
+      "end": 1321.03,
+      "text": "I think what you did is definitely it's sophisticated and it helps streamline the process."
+    },
+    {
+      "start": 1321.03,
+      "end": 1327.63,
+      "text": "The challenge though is that it really comes down to what contractual relationship we have"
+    },
+    {
+      "start": 1327.63,
+      "end": 1330.15,
+      "text": "with that employer."
+    },
+    {
+      "start": 1330.15,
+      "end": 1339.87,
+      "text": "So the only time we want people to add a project is if they have a license, an annual license"
+    },
+    {
+      "start": 1339.87,
+      "end": 1345.99,
+      "text": "or a long-term agreement with us, if they don't, then they're not allowed to do this."
+    },
+    {
+      "start": 1345.99,
+      "end": 1351.83,
+      "text": "So let's think about that and for that, I have already put the approval system."
+    },
+    {
+      "start": 1351.83,
+      "end": 1353.99,
+      "text": "They cannot create a project directly."
+    },
+    {
+      "start": 1353.99,
+      "end": 1358.67,
+      "text": "They can create a project, but it will first go on in a pool to the admin, which I showed"
+    },
+    {
+      "start": 1358.67,
+      "end": 1362.87,
+      "text": "you are waiting for the scoping, right, scoping call, right there."
+    },
+    {
+      "start": 1362.87,
+      "end": 1368.51,
+      "text": "We can restrict them, right, that you are not, you know, associated with us with any terms,"
+    },
+    {
+      "start": 1368.51,
+      "end": 1370.75,
+      "text": "right, which we wanted to, right."
+    },
+    {
+      "start": 1370.75,
+      "end": 1378.59,
+      "text": "So we will, okay, and then we will just because at the end, we have the control to make a project"
+    },
+    {
+      "start": 1378.59,
+      "end": 1379.59,
+      "text": "life or not."
+    },
+    {
+      "start": 1379.59,
+      "end": 1380.59,
+      "text": "Okay."
+    },
+    {
+      "start": 1380.59,
+      "end": 1381.59,
+      "text": "So here's what."
+    },
+    {
+      "start": 1381.59,
+      "end": 1382.59,
+      "text": "Yeah."
+    },
+    {
+      "start": 1382.59,
+      "end": 1383.59,
+      "text": "Great."
+    },
+    {
+      "start": 1383.59,
+      "end": 1389.39,
+      "text": "So here's what we could do is we can keep it as is as you did, but if there are not a contractual"
+    },
+    {
+      "start": 1389.39,
+      "end": 1394.07,
+      "text": "partner and that's what the admin can control, it's great out."
+    },
+    {
+      "start": 1394.07,
+      "end": 1395.07,
+      "text": "It's great out."
+    },
+    {
+      "start": 1395.07,
+      "end": 1396.07,
+      "text": "Does that make sense?"
+    },
+    {
+      "start": 1396.07,
+      "end": 1397.07,
+      "text": "Right."
+    },
+    {
+      "start": 1397.07,
+      "end": 1398.07,
+      "text": "Yeah."
+    },
+    {
+      "start": 1398.07,
+      "end": 1403.27,
+      "text": "That shows some sense of, hey, you know, I like what we did here, I want to do another"
+    },
+    {
+      "start": 1403.27,
+      "end": 1404.27,
+      "text": "one."
+    },
+    {
+      "start": 1404.27,
+      "end": 1408.07,
+      "text": "Well, if you want to do another one, let's have a conversation, right, and that's where we"
+    },
+    {
+      "start": 1408.07,
+      "end": 1411.19,
+      "text": "create some stickiness to see the verify."
+    },
+    {
+      "start": 1411.19,
+      "end": 1412.19,
+      "text": "Yes."
+    },
+    {
+      "start": 1412.19,
+      "end": 1413.19,
+      "text": "So you get it."
+    },
+    {
+      "start": 1413.19,
+      "end": 1414.19,
+      "text": "You understand it."
+    },
+    {
+      "start": 1414.19,
+      "end": 1419.71,
+      "text": "So, um, love what you did on the, on the, on the new project and I'd like the options, do"
+    },
+    {
+      "start": 1419.71,
+      "end": 1423.15,
+      "text": "you want a program or do you want a hiring decision?"
+    },
+    {
+      "start": 1423.15,
+      "end": 1431.79,
+      "text": "What I'd like to do, though, is let's cap the number of candidates from like one, two,"
+    },
+    {
+      "start": 1431.79,
+      "end": 1432.79,
+      "text": "three."
+    },
+    {
+      "start": 1432.79,
+      "end": 1433.79,
+      "text": "Okay."
+    },
+    {
+      "start": 1433.79,
+      "end": 1434.79,
+      "text": "Okay."
+    },
+    {
+      "start": 1434.79,
+      "end": 1446.39,
+      "text": "Because, um, we want to use the signal for the ladder stage of the hiring process."
+    },
+    {
+      "start": 1446.39,
+      "end": 1453.63,
+      "text": "When you have, you know, um, two or three finalists, that's when you want to use the signal"
+    },
+    {
+      "start": 1453.63,
+      "end": 1456.07,
+      "text": "for a hiring decision."
+    },
+    {
+      "start": 1456.07,
+      "end": 1466.23,
+      "text": "So what we are becoming, Ali, signal verified is becoming decision infrastructure for organizations."
+    },
+    {
+      "start": 1466.23,
+      "end": 1467.23,
+      "text": "Perfect."
+    },
+    {
+      "start": 1467.23,
+      "end": 1468.23,
+      "text": "Okay."
+    },
+    {
+      "start": 1468.23,
+      "end": 1469.23,
+      "text": "Right."
+    },
+    {
+      "start": 1469.23,
+      "end": 1475.35,
+      "text": "And we want this to be used to help inform who to hire, right?"
+    },
+    {
+      "start": 1475.35,
+      "end": 1478.79,
+      "text": "So that's why less is more."
+    },
+    {
+      "start": 1478.79,
+      "end": 1485.23,
+      "text": "Now for programs, like what we're going to do with Lori L, it's going to be about 15 students."
+    },
+    {
+      "start": 1485.23,
+      "end": 1486.23,
+      "text": "Okay."
+    },
+    {
+      "start": 1486.23,
+      "end": 1491.59,
+      "text": "15 students will go through the program and they will all have projects."
+    },
+    {
+      "start": 1491.59,
+      "end": 1495.39,
+      "text": "Um, it's, it's, it's early in the funnel."
+    },
+    {
+      "start": 1495.39,
+      "end": 1496.39,
+      "text": "It's early in the funnel."
+    },
+    {
+      "start": 1496.39,
+      "end": 1497.39,
+      "text": "It's a pilot, right?"
+    },
+    {
+      "start": 1497.39,
+      "end": 1503.67,
+      "text": "So, but it's an exceptional case, but going forward for, you know, long term engagements"
+    },
+    {
+      "start": 1503.67,
+      "end": 1505.67,
+      "text": "we want less."
+    },
+    {
+      "start": 1505.67,
+      "end": 1506.67,
+      "text": "Okay."
+    },
+    {
+      "start": 1506.67,
+      "end": 1507.67,
+      "text": "Okay."
+    },
+    {
+      "start": 1507.67,
+      "end": 1508.67,
+      "text": "Great."
+    },
+    {
+      "start": 1508.67,
+      "end": 1509.67,
+      "text": "All right."
+    },
+    {
+      "start": 1509.67,
+      "end": 1510.67,
+      "text": "So yeah."
+    },
+    {
+      "start": 1510.67,
+      "end": 1520.35,
+      "text": "So I got this all right and sure, I'll continue on Monday morning, right to, you know, whatever"
+    },
+    {
+      "start": 1520.35,
+      "end": 1521.35,
+      "text": "we discussed, right?"
+    },
+    {
+      "start": 1521.35,
+      "end": 1524.59,
+      "text": "And by hopefully one Monday night, I'll able to do this thing."
+    },
+    {
+      "start": 1524.59,
+      "end": 1527.27,
+      "text": "If not, then use the morning for sure."
+    },
+    {
+      "start": 1527.27,
+      "end": 1528.27,
+      "text": "And sure."
+    },
+    {
+      "start": 1528.27,
+      "end": 1529.27,
+      "text": "Yeah."
+    },
+    {
+      "start": 1529.27,
+      "end": 1530.27,
+      "text": "Sounds good."
+    },
+    {
+      "start": 1530.27,
+      "end": 1531.27,
+      "text": "All right."
+    },
+    {
+      "start": 1531.27,
+      "end": 1535.74,
+      "text": "So I think you might be able to get this done by next week."
+    },
+    {
+      "start": 1535.74,
+      "end": 1536.74,
+      "text": "Yeah."
+    },
+    {
+      "start": 1536.74,
+      "end": 1537.74,
+      "text": "Yeah."
+    },
+    {
+      "start": 1537.74,
+      "end": 1538.74,
+      "text": "Exactly."
+    },
+    {
+      "start": 1538.74,
+      "end": 1539.74,
+      "text": "Right."
+    },
+    {
+      "start": 1539.74,
+      "end": 1542.74,
+      "text": "And that's my plan is right to, you know, like do it as soon as possible, right?"
+    },
+    {
+      "start": 1542.74,
+      "end": 1545.74,
+      "text": "Because, you know, I have some, you know, at a commitment as well."
+    },
+    {
+      "start": 1545.74,
+      "end": 1547.74,
+      "text": "So I don't want to linger this on, right?"
+    },
+    {
+      "start": 1547.74,
+      "end": 1550.74,
+      "text": "And that's why I'm, you know, even on Saturday, right?"
+    },
+    {
+      "start": 1550.74,
+      "end": 1555.3,
+      "text": "I have a commitment after two hours, right, Friday night, right?"
+    },
+    {
+      "start": 1555.3,
+      "end": 1559.86,
+      "text": "So I, you know, thought that first meet with you and showed you, right?"
+    },
+    {
+      "start": 1559.86,
+      "end": 1560.86,
+      "text": "And whatever the feedback."
+    },
+    {
+      "start": 1560.86,
+      "end": 1562.7,
+      "text": "So then I can continue on Monday morning."
+    },
+    {
+      "start": 1562.7,
+      "end": 1563.7,
+      "text": "So yeah."
+    },
+    {
+      "start": 1563.7,
+      "end": 1564.7,
+      "text": "All right."
+    },
+    {
+      "start": 1564.7,
+      "end": 1565.7,
+      "text": "Awesome."
+    },
+    {
+      "start": 1565.7,
+      "end": 1566.7,
+      "text": "Great."
+    },
+    {
+      "start": 1566.7,
+      "end": 1567.7,
+      "text": "Great work."
+    },
+    {
+      "start": 1567.7,
+      "end": 1571.7,
+      "text": "Thank you for the, for the experience and the speed and the intention or the intentionality"
+    },
+    {
+      "start": 1571.7,
+      "end": 1572.7,
+      "text": "care."
+    },
+    {
+      "start": 1572.7,
+      "end": 1573.7,
+      "text": "No."
+    },
+    {
+      "start": 1573.7,
+      "end": 1575.7,
+      "text": "This is becoming real."
+    },
+    {
+      "start": 1575.7,
+      "end": 1576.7,
+      "text": "Yes."
+    },
+    {
+      "start": 1576.7,
+      "end": 1577.7,
+      "text": "It is."
+    },
+    {
+      "start": 1577.7,
+      "end": 1578.7,
+      "text": "It is."
+    },
+    {
+      "start": 1578.7,
+      "end": 1579.7,
+      "text": "And I'm glad."
+    },
+    {
+      "start": 1579.7,
+      "end": 1580.7,
+      "text": "Right."
+    },
+    {
+      "start": 1580.7,
+      "end": 1586.7,
+      "text": "And obviously, right, like, you know, I always, you know, admire you in this way, right, that you"
+    },
+    {
+      "start": 1586.7,
+      "end": 1589.7,
+      "text": "come up with a very good solution, right?"
+    },
+    {
+      "start": 1589.7,
+      "end": 1596.18,
+      "text": "I don't even recall from where we have started with air table, you know, and where we are at"
+    },
+    {
+      "start": 1596.18,
+      "end": 1597.18,
+      "text": "now."
+    },
+    {
+      "start": 1597.18,
+      "end": 1603.66,
+      "text": "It's a major significant progress, you know, I can, obviously, because I've coded it right,"
+    },
+    {
+      "start": 1603.66,
+      "end": 1607.18,
+      "text": "so I can see, right, that from where we started and where we are at now, right?"
+    },
+    {
+      "start": 1607.18,
+      "end": 1613.94,
+      "text": "So we are going in a very good direction, right, which is, you know, in a, in a, in a right"
+    },
+    {
+      "start": 1613.94,
+      "end": 1618.18,
+      "text": "direction, right, that what we are targeting, we are making it for them, right?"
+    },
+    {
+      "start": 1618.18,
+      "end": 1624.18,
+      "text": "And we also discussed one thing which I will, you know, prefer to do it after this entire"
+    },
+    {
+      "start": 1624.18,
+      "end": 1629.94,
+      "text": "employer, you know, portal, right, that about a short listing, right, that we can have a"
+    },
+    {
+      "start": 1629.94,
+      "end": 1631.94,
+      "text": "bot, right?"
+    },
+    {
+      "start": 1631.94,
+      "end": 1638.1,
+      "text": "And we discuss applicant, applicant signal, you remember, right, that it wouldn't be like,"
+    },
+    {
+      "start": 1638.1,
+      "end": 1645.18,
+      "text": "there would be another layer, right, that our applicant signal would be short listing"
+    },
+    {
+      "start": 1645.18,
+      "end": 1649.5,
+      "text": "all the candidates and putting them directly into this employer portal, right?"
+    },
+    {
+      "start": 1649.5,
+      "end": 1656.86,
+      "text": "So it will be a more layer which will be automated and making it more easier for organization"
+    },
+    {
+      "start": 1656.86,
+      "end": 1658.86,
+      "text": "to manage it with Singapore."
+    },
+    {
+      "start": 1658.86,
+      "end": 1667.86,
+      "text": "Yeah, so that is another product and I, yes, I am working on a, a mockup of that."
+    },
+    {
+      "start": 1667.86,
+      "end": 1668.86,
+      "text": "Yeah."
+    },
+    {
+      "start": 1668.86,
+      "end": 1675.1,
+      "text": "And I'm looking to do a partnership with a small recruiting agency, it's a boutique recruiting"
+    },
+    {
+      "start": 1675.1,
+      "end": 1676.74,
+      "text": "agency."
+    },
+    {
+      "start": 1676.74,
+      "end": 1681.74,
+      "text": "And we're first going to just, because I want to make this a light lift, and I want us to"
+    },
+    {
+      "start": 1681.74,
+      "end": 1692.18,
+      "text": "stay focused on lower, yeah, but we're going to start with using cloud and a off the shelf"
+    },
+    {
+      "start": 1692.18,
+      "end": 1697.94,
+      "text": "survey called type form to manage the type form."
+    },
+    {
+      "start": 1697.94,
+      "end": 1702.18,
+      "text": "So that's what I'm thinking for this first phase, but maybe we could talk more about that"
+    },
+    {
+      "start": 1702.18,
+      "end": 1708.62,
+      "text": "next week, because I want you to be informed on that, that it's going to be, but long term,"
+    },
+    {
+      "start": 1708.62,
+      "end": 1714.26,
+      "text": "applicant signal and the signal will be two products, but we want it to come together."
+    },
+    {
+      "start": 1714.26,
+      "end": 1724.02,
+      "text": "The applicant signal is exactly, exactly the short list, and then the signal is to conform"
+    },
+    {
+      "start": 1724.02,
+      "end": 1731.02,
+      "text": "with, yeah, and giving them what they want, yeah, a complete pipeline, yeah, like in our"
+    },
+    {
+      "start": 1731.02,
+      "end": 1737.22,
+      "text": "words, right, in our technical jargons, right, we say this end-to-end pipeline, so yeah,"
+    },
+    {
+      "start": 1737.22,
+      "end": 1738.22,
+      "text": "end-to-end pipeline."
+    },
+    {
+      "start": 1738.22,
+      "end": 1742.3,
+      "text": "All right, I'll have a good weekend, talk to you on Monday, I appreciate it."
+    },
+    {
+      "start": 1742.3,
+      "end": 1750.82,
+      "text": "Okay, thank you, man, see you, bye-bye, and if you don't mind, right, would you do a"
+    },
+    {
+      "start": 1750.82,
+      "end": 1756.58,
+      "text": "450 on Monday, or you can do today, like, put it in, right, put it, or put it in, in, in"
+    },
+    {
+      "start": 1756.58,
+      "end": 1757.58,
+      "text": "deal, the platform."
+    },
+    {
+      "start": 1757.58,
+      "end": 1763.58,
+      "text": "Oh, okay, okay, and then you will notify it, and okay, yeah, put it in deal, and if there's"
+    },
+    {
+      "start": 1763.58,
+      "end": 1767.1,
+      "text": "any set of changes that we need to make, just let me know, but everything has to be deal."
+    },
+    {
+      "start": 1767.1,
+      "end": 1768.62,
+      "text": "All right, thanks."
+    },
+    {
+      "start": 1769.62,
+      "end": 1771.62,
+      "text": "Okay, Michael, see you then, bye-bye, take care."
+    },
+    {
+      "start": 1771.62,
+      "end": 1772.62,
+      "text": "Bye-bye."
+    }
+  ]
+}

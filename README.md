@@ -7,10 +7,12 @@ Showcase-inspired employer UI wired to the Django `/employer/v1/` APIs.
 | Route | Purpose |
 |---|---|
 | `/` | Employer login |
+| `/persona` | First-time persona selection (org vs student/candidate) |
+| `/register` | B2C candidate self-registration |
 | `/projects` | Projects list + entitlement panel |
-| `/projects/new` | Request new project |
-| `/projects/[projectId]` | Project detail + participants |
-| `/projects/[projectId]/participants/[assignmentId]` | Participant evidence profile |
+| `/projects/new` | Request new project (licensed orgs only; hiring capped 1–3) |
+| `/projects/[projectId]` | Project detail + participants (no list scores) |
+| `/projects/[projectId]/participants/[assignmentId]` | B2B HTML Signal (final score only; PDF download separate) |
 
 ## Prerequisites
 
@@ -44,6 +46,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Notes
 
-- Only employer role (`role === 3`) can use this portal.
-- Sign up is intentionally not offered; SignalVerified provisions access.
+- Only employer role (`role === 3`) can use the projects portal.
+- B2B orgs are provisioned by SignalVerified; B2C candidates self-register via `/persona` → `/register`.
+- `Entitlement.contact_sales === true` greys out New project (admin license gate).
 - CORS for `http://localhost:3000` is enabled in Django settings.

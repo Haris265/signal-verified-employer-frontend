@@ -1,0 +1,517 @@
+[    0.0 ->     4.0] Let's walk about, okay, I'm sure
+[    5.3 ->    11.4] sure settings, I always forget how to do this.
+[   12.2 ->    14.5] And just one second.
+[   15.6 ->    22.0] Oh, it's two, all right, you should be with this right now.
+[   31.1 ->    35.1] Okay, so let me show the screen.
+[   35.9 ->    38.8] Okay, let me know once you can see it, okay?
+[   39.2 ->    41.8] Yep, okay, so you can see the screen.
+[   42.2 ->    42.8] Yes, I can.
+[   43.3 ->    44.6] Okay, perfect.
+[   44.8 ->    47.9] Okay, right now is on my, you know, development server, right?
+[   47.9 ->    50.3] But I will migrate it once everything looks good, okay?
+[   50.3 ->    53.8] So yeah, okay, so this will be the, you know, okay.
+[   54.9 ->    57.2] First, let me show you, then we will discuss on the things, right?
+[   57.6 ->    61.5] Okay, so this will, how they will go on a log in, right?
+[   62.5 ->    64.7] How they will have their account, right?
+[   64.7 ->    67.5] Because we need to create some place from where they can
+[   67.5 ->    72.0] be able to, you know, blog into their, you know, portal, right?
+[   72.2 ->    77.8] So admin will create just like how admin create reviewers account, you know,
+[   78.1 ->    81.2] in a similar way, the admin you will create.
+[   81.2 ->    84.0] I implore us account as well, just like reviewer, right?
+[   84.0 ->    88.2] That you will add new employer, right?
+[   88.8 ->    92.9] Because we are not giving them option to create by themselves, right?
+[   93.3 ->    96.3] Even though we can do that, but we will discuss after this, right?
+[   96.6 ->    98.1] So yeah, but for now, right?
+[   98.1 ->   103.6] I made it in a way that only the admin can able to create an employee's account, okay?
+[  103.6 ->   109.1] And once it's created, then it will go to them via notification over the email, right?
+[  109.2 ->   111.1] Or how everyone to send them, right?
+[  111.3 ->   115.9] Right now it will send on a notification or via email and they will call the
+[  115.9 ->   116.6] credentials.
+[  116.6 ->   119.6] Once they got the credentials, they will land here, okay?
+[  119.9 ->   122.1] Now I have told you this, right?
+[  122.1 ->   126.0] That how they will have the account now, how they will use it, I'm showing you that, right?
+[  126.3 ->   129.4] Once they have their credentials from the admin, right?
+[  129.4 ->   132.2] While email, they will simply go and this will be the page, right?
+[  132.7 ->   135.7] They will go and sign in with their credentials, right?
+[  136.4 ->   137.6] Once they sign in, right?
+[  137.6 ->   139.2] They will see this dashboard.
+[  139.2 ->   142.5] Every employer will have their separate dashboard like this, okay?
+[  142.7 ->   145.4] Which will be like, this is the loyal dashboard, okay?
+[  145.4 ->   148.5] As you can see that everywhere next to the single verified, right?
+[  148.5 ->   152.2] There's an employer company's name, which is a lawyer, right?
+[  152.8 ->   156.2] Here they have all the projects, which is going on.
+[  156.3 ->   159.3] Right? They can even see the filter it out as well, right?
+[  159.6 ->   162.9] But yeah, so for now, this is all for a, you know, testing purpose, right?
+[  162.9 ->   165.2] You can also able to play on your end as well, right?
+[  165.4 ->   167.0] So these are the four projects, right?
+[  167.0 ->   170.2] What I have, you know, showed over here for now, right?
+[  170.5 ->   172.5] Okay, as you can see, four active projects, right?
+[  172.8 ->   174.8] If I go any one of the project, right?
+[  174.8 ->   178.5] Like, for example, let's go for this and lower your brand marketing finalist, right?
+[  178.5 ->   181.8] Started 20 July to 18 September 2006.
+[  182.6 ->   184.0] Law will tell it, right?
+[  184.0 ->   186.3] Two participants to complete interview and all.
+[  186.3 ->   191.7] If I go into this, right, you will see the more in size of this information, right?
+[  192.8 ->   196.4] The way you send me as well, so I try to make it, you know, exactly like that.
+[  196.4 ->   199.4] But yeah, we will discuss once I give you the entire demo, okay?
+[  199.7 ->   201.7] So and you can go back as well, right?
+[  201.7 ->   204.7] If you go back, we will land on a main dashboard again, right?
+[  204.7 ->   206.5] Here you will see that it will keep going on.
+[  206.5 ->   208.8] You can able to create a new startup new project.
+[  209.0 ->   212.4] If you even click on this, it will take you to request a new project.
+[  212.4 ->   213.6] I'll show you this, okay?
+[  213.9 ->   220.3] But first, let's go on the existing project, okay?
+[  220.6 ->   223.0] And you can even see the project brief, right?
+[  223.0 ->   224.6] In a PDF format, right?
+[  224.6 ->   226.2] If I click into this, right?
+[  226.2 ->   227.3] So it will open the PDF.
+[  227.3 ->   230.3] For now, I don't have any PDF, but yes, we can have that.
+[  230.8 ->   233.3] So and you can see that two participants, right?
+[  233.3 ->   235.3] Two out of two has been completed, right?
+[  235.3 ->   237.3] Two meets the criteria.
+[  237.3 ->   241.7] The result distribution is that two participants, which meets the ASCO, right?
+[  241.7 ->   243.5] The one is the Amina Kant, right?
+[  243.5 ->   244.6] The state is complete.
+[  244.6 ->   247.6] The result it meets when and ignore that.
+[  247.6 ->   248.6] Go for now, right?
+[  248.6 ->   249.8] That is for a testing purpose.
+[  249.8 ->   253.0] So it will be below four, obviously, but yeah, but this is how it will want to work.
+[  253.0 ->   258.9] Because it's not functional in a way that is not connected with a main centralized database
+[  258.9 ->   260.0] for now, right?
+[  260.0 ->   265.0] But at some place, it has a separate database, which I will want to sync it, right?
+[  265.0 ->   266.4] On Monday's morning, right?
+[  266.4 ->   268.2] So then it will be all together, right?
+[  268.2 ->   271.6] But okay, the second is Luca Moretti, right?
+[  271.6 ->   274.0] He has code 3.55 out of four, right?
+[  274.0 ->   278.0] If you want to go, you know, and see their particular information, right?
+[  278.0 ->   279.9] So we can go in, right?
+[  279.9 ->   282.6] For now, I haven't made that screen, right?
+[  282.6 ->   285.6] And but this is how it will want to see it, right?
+[  285.6 ->   292.9] So once I go in, you can see that Luca Moretti participants, it has the result meets 3.55 out of four.
+[  292.9 ->   297.8] Everything summary, computer, challenge, the solid, commercial, framing, relevance, score is 3.6.
+[  297.8 ->   302.5] Mastery is 3.50, which meets communication 3.70, right?
+[  302.5 ->   304.8] The collaboration is 3.40, right?
+[  304.8 ->   305.9] There's trends and the more.
+[  305.9 ->   309.2] So this is the detail page of the Luca Moretti.
+[  309.2 ->   313.1] And you can be able to print it out as well in a PDF as you can see, right?
+[  313.1 ->   315.6] So all these options are in a working, right?
+[  315.6 ->   317.5] If I go back, right?
+[  317.5 ->   319.1] And come on this way.
+[  319.1 ->   321.5] So similarly, in a way, right?
+[  321.5 ->   323.8] You can see for others as well.
+[  323.8 ->   324.9] In a summary, right?
+[  324.9 ->   329.0] You can see the project inside the relevance is 4 out of 4, masters, this, this, this, this,
+[  329.0 ->   330.7] the strong capability communication, right?
+[  330.7 ->   333.8] So I've highlighted all the things accordingly, right?
+[  333.8 ->   338.1] If they have more than 10 participants or many, right?
+[  338.1 ->   341.2] So I put a search bar, right?
+[  341.2 ->   344.4] Where they can be able to search for any candidate.
+[  344.4 ->   346.7] As you can see, I just started right Luca, right?
+[  346.7 ->   349.4] And Luca is highlighted and filtered out, right?
+[  349.4 ->   351.3] If I write Amina, right?
+[  351.3 ->   353.0] So you can see, and if I write anything, right?
+[  353.0 ->   358.0] So it will filter it out directly without refreshing on a real time on this section, as
+[  358.0 ->   359.3] I just showed you, right?
+[  359.3 ->   360.7] If you want to see the filters, right?
+[  360.7 ->   362.4] Now, there's only two means, right?
+[  362.4 ->   365.2] If there were other as well, right?
+[  365.2 ->   367.7] So you can able to filter it out according to that, right?
+[  367.7 ->   368.7] Right?
+[  368.7 ->   369.7] Now there's two means.
+[  369.7 ->   373.7] So you can see that two is written next to the means as going criteria, right?
+[  373.7 ->   375.6] And you can filter it out as well.
+[  375.6 ->   376.6] If we have more, okay?
+[  376.6 ->   378.9] So it's all in a working condition, right?
+[  378.9 ->   379.9] So you can see that.
+[  379.9 ->   385.4] And even though you can download this summary as well by just clicking on a download summary
+[  385.4 ->   387.7] in a proper way, right?
+[  387.7 ->   388.7] So here you go.
+[  388.7 ->   389.7] Right?
+[  389.7 ->   394.1] Obviously, I will send you this link so you can also play with it out yourself, right?
+[  394.1 ->   399.6] Here, you can say, I can able to switch directly because all my other programs, you know,
+[  399.6 ->   401.5] is for Laurean, right?
+[  401.5 ->   403.5] So instead of going back, right?
+[  403.5 ->   406.7] Obviously, just a better interactivity with the platform, right?
+[  406.7 ->   410.5] So I've added a lot of things from my side as well, right?
+[  410.5 ->   411.6] Which you haven't mentioned, right?
+[  411.6 ->   413.4] But yeah, we will discuss on that, right?
+[  413.4 ->   416.5] So they can able to, they were in this one, right?
+[  416.5 ->   420.2] But they can able to switch it from this to there as well or they can able to collect
+[  420.2 ->   423.1] you all project, which will take them to the dashboard, okay?
+[  423.1 ->   425.2] So I'm just switching it from here, right?
+[  425.2 ->   428.6] So I select the early talent program, right?
+[  428.6 ->   430.6] And you see, it's just got changed.
+[  430.6 ->   434.8] And in this program, in this project, I have one participant, which has been completed.
+[  434.8 ->   436.6] This is the name, which is emerging, right?
+[  436.6 ->   440.4] And now you can see that automatically the participant filters has been changed with emerging
+[  440.4 ->   441.4] to one.
+[  441.4 ->   445.6] If there were meet as well, so the second time will automatically appear with a meet with
+[  445.6 ->   452.9] the number, what is, what it would be in a dashboard, right?
+[  452.9 ->   456.6] And then it will be like all to end to an encryption according to that.
+[  456.6 ->   463.4] If I go back, right, now as you can see, right, that we will got the status as well, right?
+[  463.4 ->   464.4] And all those things, right?
+[  464.4 ->   466.9] So you can able to see all the existing project like this.
+[  466.9 ->   471.0] If you, if I also made it, you know, the filters over here, right, that if I want to just
+[  471.0 ->   474.2] want to see the program because not all of them are programs, right?
+[  474.2 ->   475.2] This is the program, right?
+[  475.2 ->   478.6] But these are the hiring, you can see the status, right?
+[  478.6 ->   481.7] These are the hiring things and these are the programs, right?
+[  481.7 ->   486.3] So I, although also made it in a filter way, right, that if they just want to see the program
+[  486.3 ->   490.4] information, so you can see, and if they want to see the hiring, so it will filter out
+[  490.4 ->   492.5] the hiring projects, right?
+[  492.5 ->   497.4] Archive means, you know, right, that if I, you know, if they have, you know, put an archive
+[  497.4 ->   498.4] that project, right?
+[  498.4 ->   501.5] So that will come under the archive project and they can do that, right?
+[  501.5 ->   504.8] So yes, now I will going to create a new project, right?
+[  504.8 ->   509.5] So even you can able to click over here, fly, or even you can able to click over here, both
+[  509.5 ->   511.0] will take you to the new project, right?
+[  511.0 ->   513.6] So let me go from there, okay?
+[  514.6 ->   516.0] So the way I did it, right?
+[  516.0 ->   517.7] Obviously we can modify it, right?
+[  517.7 ->   519.4] As this is the first draft, right?
+[  519.4 ->   523.7] But yeah, so you can select that you want to create a project for a program or you want
+[  523.7 ->   526.4] to create this project as a hiring, right?
+[  526.4 ->   530.8] So I select program, so I will know automatically, you know, the things will change according to
+[  530.8 ->   531.8] that, right?
+[  531.8 ->   534.5] So I said that, okay, this is the role of program names, right?
+[  534.5 ->   541.5] I'm just creating in front of you a testing description.
+[  543.7 ->   547.2] Okay, choose file, this is the project brief, right?
+[  547.2 ->   557.4] So if I, you know, should I upload, okay, let's upload this, okay?
+[  557.4 ->   561.6] Okay, so for now, I just upload this, expected number of finalists of participants, you can
+[  561.6 ->   563.2] restrict it as well, right?
+[  563.2 ->   570.2] So I said that, okay, the maximum I can handle is time, okay?
+[  570.2 ->   572.5] The target completion date, select that, right?
+[  572.5 ->   577.0] The target completion date is 2nd of September, right?
+[  577.0 ->   580.8] I can put the notes for the signal, verify team, which is optional, okay?
+[  580.8 ->   586.4] And I can, and like, you know, the employer can submit to the admin, right?
+[  586.4 ->   590.7] Once you submit it, okay, you will see, okay?
+[  590.7 ->   595.2] So it has been submitted, thank someone from, obviously we will change the word bit, right?
+[  595.2 ->   598.5] Thanks someone from senior welfare will reach out within one business there to schedule your
+[  598.5 ->   600.5] housekeeping call, okay?
+[  600.5 ->   603.2] And again, we can change the word page, right?
+[  603.2 ->   608.6] As you can see, this has been created, but I cannot use it until it will be approved by
+[  608.6 ->   609.6] the admin, right?
+[  609.6 ->   612.5] As you can see, awaiting is coping call, okay?
+[  612.5 ->   618.9] And yeah, it is created, it shows that there is, it is created, but it's not active until
+[  618.9 ->   620.3] it is approved by the admin, right?
+[  620.3 ->   621.5] The others are active, right?
+[  621.5 ->   624.0] This is, this is the same situation, right?
+[  624.0 ->   626.6] I cannot able to use it until it is approved.
+[  626.6 ->   628.2] Once you go to the admin panel, right?
+[  628.2 ->   633.5] You will see under the employers that Lawreal has requested for these two programs and you
+[  633.5 ->   635.9] will even approve it or you will reject it, right?
+[  635.9 ->   639.5] So you can do it from the admin panel and whatever you will do, they will effect over here
+[  639.5 ->   642.1] on the employer portal directly, okay?
+[  642.1 ->   646.1] So they can start using it and having it and all those stuff accordingly, right?
+[  646.1 ->   648.7] So that's all done, okay?
+[  648.7 ->   649.7] What else?
+[  649.7 ->   650.7] Right?
+[  650.7 ->   656.4] Yeah, so I have showed you this, I have showed you, yeah, people, I didn't work on it
+[  656.5 ->   657.8] yet, right?
+[  657.8 ->   660.2] But that would be like, if they had their staff members, right?
+[  660.2 ->   663.3] So they can able to, you know, add them as well, right?
+[  663.3 ->   666.0] So yeah, that is one thing, okay?
+[  666.0 ->   670.3] But the rest of the thing, I think I have showed you, I've showed you the program, detail pages,
+[  670.3 ->   671.3] right?
+[  671.3 ->   678.6] And specific students page, switching of the programs, and again, this is all for Lawreal, right?
+[  678.6 ->   683.6] They will be the, you know, the only, you know, access to have, right?
+[  683.7 ->   686.7] And similarly like this, there will be other employers, right?
+[  686.7 ->   692.1] Which will be going to use the portals like this by their own, right?
+[  692.1 ->   694.3] And they can manage all the things within that.
+[  694.3 ->   703.5] So yeah, so, so, so, yeah, can you, can you show me what the admin would see?
+[  703.5 ->   704.5] Right?
+[  704.5 ->   707.7] Yeah, yeah, I could not show you that now, but I'll show you that.
+[  707.7 ->   709.8] Okay, that's fine, that's fine, that's fine, that's fine, that's fine.
+[  709.8 ->   712.9] But I need to sync it, yeah, okay, but I need to sync it, right?
+[  712.9 ->   720.9] So I have always did this on the database, but I need to go back to the very, yeah,
+[  720.9 ->   727.9] let's go back to the first page, yeah, no, like the login page.
+[  727.9 ->   729.6] Okay, sure.
+[  729.6 ->   737.2] And I want to see if you're logging in for the very first time, can you click on that first
+[  737.2 ->   738.2] time here?
+[  738.2 ->   745.6] Okay, sorry, let me sign out again and go to this, right?
+[  745.6 ->   748.7] You know, it will do nothing, right?
+[  748.7 ->   753.6] And it will just take you for now, the questions and sign a verified.net and it will take you
+[  753.6 ->   759.4] to the email so they can able to request, right, that I want to create an account, right?
+[  759.4 ->   761.1] Now, how I did this thing, right?
+[  761.1 ->   763.9] I forgot to mention this as well, right?
+[  763.9 ->   765.9] That if there are first time here, right?
+[  765.9 ->   768.1] And they do not have any account credentials, right?
+[  768.1 ->   771.1] They can request via email, right?
+[  771.1 ->   779.1] That, you know, hello, you know, I'm, you know, Ali and I wanted to have an account, right?
+[  779.1 ->   783.5] And you will get this and then you will create their credentials on behalf of their request.
+[  783.5 ->   784.9] So this is how it's supposed to be.
+[  784.9 ->   788.4] So when I click on this, right, it will take me to the email template, right?
+[  788.4 ->   790.9] And this is the email I have added for now.
+[  790.9 ->   795.0] I can change it as well if you want, which is questions as sign a verified.net.
+[  795.1 ->   796.6] They will write the subjects, right?
+[  796.6 ->   797.8] Email it and send it to you.
+[  797.8 ->   801.9] Once it's sent to you, you will receive it and then you will create a, you know, credential
+[  801.9 ->   806.1] on behalf of them and send them back and then they can log in just like sign in what I have
+[  806.1 ->   807.5] already shown it to you.
+[  807.5 ->   808.5] So yeah.
+[  808.5 ->   809.5] All right.
+[  809.5 ->   818.6] So you're thinking here, this is the, the B to B implementation, right?
+[  818.6 ->   819.6] Yes.
+[  819.6 ->   820.6] For the employers.
+[  820.6 ->   821.6] Yes.
+[  821.6 ->   822.6] Yeah, for the employers.
+[  822.6 ->   823.6] Yes.
+[  824.6 ->   827.1] I can, I can also make it like for B to C, right?
+[  827.1 ->   832.4] But I think like because I don't need to, I just need to create a registration form, right?
+[  832.4 ->   835.9] So instead of the add them, they can do it by themselves, they can register by themselves,
+[  835.9 ->   836.9] right?
+[  836.9 ->   837.9] Sorry.
+[  837.9 ->   838.9] Yeah.
+[  838.9 ->   839.9] It's just one page of increase and increase.
+[  839.9 ->   843.5] But so yeah, I can also make it like that, but we need to come up with what the port would
+[  843.5 ->   844.5] be the best.
+[  844.5 ->   845.5] So.
+[  845.5 ->   846.5] All right.
+[  846.5 ->   847.5] Can you see my screen?
+[  847.5 ->   848.5] Not here.
+[  848.5 ->   849.5] Let me stop mine.
+[  849.5 ->   859.5] But yes, once again, let me, once again, oh, yes, I can see it, okay.
+[  859.5 ->   860.5] Okay.
+[  860.5 ->   861.5] All right.
+[  861.5 ->   862.5] So I want to go very quick here.
+[  862.5 ->   869.1] So first, thanks, Holly, for moving quickly on the, on the mock up, I think, good progress.
+[  869.1 ->   873.9] I think it's aligned with what we're trying to show and what we're trying to do.
+[  873.9 ->   879.3] And also the way this is designed, it's not my idea.
+[  879.5 ->   889.3] This was based on talking to a UX designer, so what we're showing here is based on a lot
+[  889.3 ->   893.8] of research and talking from a heuristic perspective.
+[  893.8 ->   905.5] This is the UI and UX that will, will drive the right behaviors from a, from an user perspective.
+[  905.5 ->   907.8] So that's, that's what I want to share with you.
+[  907.8 ->   912.4] So from what I saw, everything looks aligned.
+[  912.4 ->   919.4] However, for B2B, I agree we should set up the accounts for the end user.
+[  919.4 ->   929.5] But for B2C, and I need to think about this some more, but for B2C, we want to, we want
+[  929.5 ->   934.8] to have the option to set up the account for the individual, right?
+[  934.8 ->   941.8] So in this scenario, you can see here, we have made that an option.
+[  941.8 ->   944.8] Again, this is a B2C situation.
+[  944.8 ->   953.9] They click here, once they log in, and then they, they select, yes, which persona are they,
+[  953.9 ->   959.8] are they going to use it for an organization, are they a student or candidate?
+[  959.8 ->   962.4] And if they're a candidate, they would click here.
+[  962.4 ->   969.5] And then, this is a bug here, but they would then go back and, and see the project.
+[  969.5 ->   976.9] So I want us to, I want us to think about this like, what's the right flow, but, we do need
+[  976.9 ->   988.5] to have a, you know, in the previous design, right, what you had was, you had this, right?
+[  989.5 ->   990.5] Yeah.
+[  990.5 ->   993.5] And I will change it with that later with them, so yeah.
+[  993.5 ->   994.5] Okay.
+[  994.5 ->  1003.8] So, um, so I want, I want this, and I'm not sure if you saw this because I, I think I added
+[ 1003.8 ->  1004.8] it pretty, you know, later.
+[ 1004.8 ->  1005.8] Yeah.
+[ 1005.8 ->  1006.8] I didn't see it yet.
+[ 1006.8 ->  1007.8] So yeah.
+[ 1007.8 ->  1008.8] Okay.
+[ 1008.8 ->  1009.8] And that's fine.
+[ 1009.8 ->  1010.8] That's fine.
+[ 1010.8 ->  1011.8] But we want this.
+[ 1011.8 ->  1018.2] So this is what you'll see when a first time user logs in, they have to select which persona.
+[ 1018.2 ->  1023.5] And this was also recommended by the UX advisor.
+[ 1023.5 ->  1024.5] Okay.
+[ 1024.5 ->  1025.5] Yeah.
+[ 1025.5 ->  1026.5] That makes sense.
+[ 1026.5 ->  1027.5] Yeah.
+[ 1027.5 ->  1033.7] But only one thing I wanted to know over here, right, that, okay, for the students, right,
+[ 1033.7 ->  1037.2] we have both B2B and B2C, right, for the B2C, right?
+[ 1037.2 ->  1042.5] We don't even need to show this screen to them, so they can register themselves.
+[ 1042.5 ->  1045.7] This screen will only be visible to the B2C candidates, right?
+[ 1045.7 ->  1046.7] Right.
+[ 1046.7 ->  1053.0] And I will make it in that way with the, you know, the styling and UI you actually showing
+[ 1053.0 ->  1056.0] me, I will simply change it with that no problem at all, right?
+[ 1056.0 ->  1062.3] But for the employer, for the organization, right, will they able to create their own account
+[ 1062.3 ->  1063.3] as well?
+[ 1063.3 ->  1066.5] Do you want to make an employer organization as B2C?
+[ 1066.5 ->  1067.5] No.
+[ 1067.5 ->  1068.5] I agree.
+[ 1068.5 ->  1069.5] I agree.
+[ 1069.5 ->  1076.8] For, for B2B, because it's their talent pool, they're the ones that, that's managing who
+[ 1076.8 ->  1081.8] gets interviewed, they have to tell us who that list is and their emails.
+[ 1081.8 ->  1082.8] So.
+[ 1082.8 ->  1086.8] And in fact, it is very important, right, because candidate can able to register themselves,
+[ 1086.8 ->  1087.8] right?
+[ 1087.8 ->  1091.9] But no organization will register like this of a B2C approach, right?
+[ 1091.9 ->  1096.7] They will consult you for us, right, that, okay, Michael, we would have to more collaborate
+[ 1096.7 ->  1098.5] and be in your platform wise.
+[ 1098.5 ->  1108.2] So please assist us and, you know, give a, they will, like 95% of, you know, organizations
+[ 1108.2 ->  1113.6] will ask for your support instead of managing their, so yeah.
+[ 1113.6 ->  1114.6] Right.
+[ 1114.6 ->  1115.6] So run the same page.
+[ 1115.6 ->  1116.6] Okay.
+[ 1116.6 ->  1117.6] So that's clear.
+[ 1117.6 ->  1124.1] The other thing I wanted to talk about real quickly here is, um, everything that you
+[ 1124.1 ->  1126.4] share was, was good.
+[ 1126.4 ->  1134.5] What I don't want to show is the score on the, on the, the list or the repository.
+[ 1134.5 ->  1136.4] We don't want to show the score.
+[ 1136.4 ->  1144.7] So just remove that and when the employer clicks on, in this case, Alia Brooks, we want them
+[ 1144.7 ->  1150.3] to see the exact summary, not a savvy, okay.
+[ 1150.3 ->  1155.2] So it needs to be consistent with the actual, the signal.
+[ 1155.2 ->  1165.7] And it needs to look like it's, it's a web, you know, HTML, uh, design, it wants to, yeah,
+[ 1165.7 ->  1166.7] yeah.
+[ 1166.7 ->  1169.5] And if they want to design it, or if they want, or if they want to, you know, download it,
+[ 1169.5 ->  1176.8] they can do that here, um, so that's, that's one other change I like you to make.
+[ 1176.8 ->  1182.8] Now one other thing here, um, you know, we call, we had two different versions for the
+[ 1182.8 ->  1187.3] signal, B to B and B to C, yeah.
+[ 1187.3 ->  1194.8] For this particular scenario, um, this is a B to B implementation.
+[ 1194.8 ->  1200.6] We're only showing the final score, we're not showing the score for each of the four buckets.
+[ 1200.6 ->  1201.6] Okay.
+[ 1201.6 ->  1202.6] Correct.
+[ 1202.6 ->  1203.6] Okay.
+[ 1203.6 ->  1230.5] So, um, just, we, we need to be really crystal clear on, um, what the signal looks like for
+[ 1230.5 ->  1234.3] B to B and B to C, okay.
+[ 1234.3 ->  1235.3] Is that clear?
+[ 1235.3 ->  1236.3] Right.
+[ 1236.3 ->  1237.3] Yep.
+[ 1237.3 ->  1238.3] Okay.
+[ 1238.3 ->  1242.5] Um, so that's, that's those are the quick changes, right?
+[ 1242.5 ->  1249.2] So, you know, history cap, let's remove the scoring, yep, on the summary page.
+[ 1249.2 ->  1254.1] Let's make sure that when they click, it goes directly to the signal for each respective
+[ 1254.1 ->  1261.6] individual and they can see the entire, you know, signal document, but it needs to be
+[ 1261.6 ->  1265.1] HTML, not a PDF, right?
+[ 1265.1 ->  1271.0] They want the PDF and they have to click here or download, right?
+[ 1271.0 ->  1282.0] And everything else, it was consistent and I'm not sure if you had now one thing, um, the,
+[ 1282.0 ->  1291.2] the projects now on the, the lovable tool here, it just goes straight to an email.
+[ 1291.2 ->  1292.2] Oh.
+[ 1292.2 ->  1293.2] Yeah.
+[ 1293.2 ->  1295.2] I, I, I, I, yeah.
+[ 1295.2 ->  1296.2] Yeah.
+[ 1296.2 ->  1297.2] Yeah.
+[ 1297.2 ->  1298.2] Right.
+[ 1298.2 ->  1303.0] And I have made it in a way that they can able to fill that information because I think that
+[ 1303.0 ->  1306.2] that information is a part of it because we don't know what they will write.
+[ 1306.2 ->  1310.0] And that would be a lot of hustle for us to manage their projects.
+[ 1310.0 ->  1311.0] Right.
+[ 1311.0 ->  1313.8] Project creation should be their duties.
+[ 1313.8 ->  1314.8] Yeah.
+[ 1314.8 ->  1315.8] And I love it.
+[ 1315.8 ->  1321.0] I think what you did is definitely it's sophisticated and it helps streamline the process.
+[ 1321.0 ->  1327.6] The challenge though is that it really comes down to what contractual relationship we have
+[ 1327.6 ->  1330.2] with that employer.
+[ 1330.2 ->  1339.9] So the only time we want people to add a project is if they have a license, an annual license
+[ 1339.9 ->  1346.0] or a long-term agreement with us, if they don't, then they're not allowed to do this.
+[ 1346.0 ->  1351.8] So let's think about that and for that, I have already put the approval system.
+[ 1351.8 ->  1354.0] They cannot create a project directly.
+[ 1354.0 ->  1358.7] They can create a project, but it will first go on in a pool to the admin, which I showed
+[ 1358.7 ->  1362.9] you are waiting for the scoping, right, scoping call, right there.
+[ 1362.9 ->  1368.5] We can restrict them, right, that you are not, you know, associated with us with any terms,
+[ 1368.5 ->  1370.8] right, which we wanted to, right.
+[ 1370.8 ->  1378.6] So we will, okay, and then we will just because at the end, we have the control to make a project
+[ 1378.6 ->  1379.6] life or not.
+[ 1379.6 ->  1380.6] Okay.
+[ 1380.6 ->  1381.6] So here's what.
+[ 1381.6 ->  1382.6] Yeah.
+[ 1382.6 ->  1383.6] Great.
+[ 1383.6 ->  1389.4] So here's what we could do is we can keep it as is as you did, but if there are not a contractual
+[ 1389.4 ->  1394.1] partner and that's what the admin can control, it's great out.
+[ 1394.1 ->  1395.1] It's great out.
+[ 1395.1 ->  1396.1] Does that make sense?
+[ 1396.1 ->  1397.1] Right.
+[ 1397.1 ->  1398.1] Yeah.
+[ 1398.1 ->  1403.3] That shows some sense of, hey, you know, I like what we did here, I want to do another
+[ 1403.3 ->  1404.3] one.
+[ 1404.3 ->  1408.1] Well, if you want to do another one, let's have a conversation, right, and that's where we
+[ 1408.1 ->  1411.2] create some stickiness to see the verify.
+[ 1411.2 ->  1412.2] Yes.
+[ 1412.2 ->  1413.2] So you get it.
+[ 1413.2 ->  1414.2] You understand it.
+[ 1414.2 ->  1419.7] So, um, love what you did on the, on the, on the new project and I'd like the options, do
+[ 1419.7 ->  1423.2] you want a program or do you want a hiring decision?
+[ 1423.2 ->  1431.8] What I'd like to do, though, is let's cap the number of candidates from like one, two,
+[ 1431.8 ->  1432.8] three.
+[ 1432.8 ->  1433.8] Okay.
+[ 1433.8 ->  1434.8] Okay.
+[ 1434.8 ->  1446.4] Because, um, we want to use the signal for the ladder stage of the hiring process.
+[ 1446.4 ->  1453.6] When you have, you know, um, two or three finalists, that's when you want to use the signal
+[ 1453.6 ->  1456.1] for a hiring decision.
+[ 1456.1 ->  1466.2] So what we are becoming, Ali, signal verified is becoming decision infrastructure for organizations.
+[ 1466.2 ->  1467.2] Perfect.
+[ 1467.2 ->  1468.2] Okay.
+[ 1468.2 ->  1469.2] Right.
+[ 1469.2 ->  1475.3] And we want this to be used to help inform who to hire, right?
+[ 1475.3 ->  1478.8] So that's why less is more.
+[ 1478.8 ->  1485.2] Now for programs, like what we're going to do with Lori L, it's going to be about 15 students.
+[ 1485.2 ->  1486.2] Okay.
+[ 1486.2 ->  1491.6] 15 students will go through the program and they will all have projects.
+[ 1491.6 ->  1495.4] Um, it's, it's, it's early in the funnel.
+[ 1495.4 ->  1496.4] It's early in the funnel.
+[ 1496.4 ->  1497.4] It's a pilot, right?
+[ 1497.4 ->  1503.7] So, but it's an exceptional case, but going forward for, you know, long term engagements
+[ 1503.7 ->  1505.7] we want less.
+[ 1505.7 ->  1506.7] Okay.
+[ 1506.7 ->  1507.7] Okay.
+[ 1507.7 ->  1508.7] Great.
+[ 1508.7 ->  1509.7] All right.
+[ 1509.7 ->  1510.7] So yeah.
+[ 1510.7 ->  1520.3] So I got this all right and sure, I'll continue on Monday morning, right to, you know, whatever
+[ 1520.3 ->  1521.3] we discussed, right?
+[ 1521.3 ->  1524.6] And by hopefully one Monday night, I'll able to do this thing.
+[ 1524.6 ->  1527.3] If not, then use the morning for sure.
+[ 1527.3 ->  1528.3] And sure.
+[ 1528.3 ->  1529.3] Yeah.
+[ 1529.3 ->  1530.3] Sounds good.
+[ 1530.3 ->  1531.3] All right.
+[ 1531.3 ->  1535.7] So I think you might be able to get this done by next week.
+[ 1535.7 ->  1536.7] Yeah.
+[ 1536.7 ->  1537.7] Yeah.
+[ 1537.7 ->  1538.7] Exactly.
+[ 1538.7 ->  1539.7] Right.
+[ 1539.7 ->  1542.7] And that's my plan is right to, you know, like do it as soon as possible, right?
+[ 1542.7 ->  1545.7] Because, you know, I have some, you know, at a commitment as well.
+[ 1545.7 ->  1547.7] So I don't want to linger this on, right?
+[ 1547.7 ->  1550.7] And that's why I'm, you know, even on Saturday, right?
+[ 1550.7 ->  1555.3] I have a commitment after two hours, right, Friday night, right?
+[ 1555.3 ->  1559.9] So I, you know, thought that first meet with you and showed you, right?
+[ 1559.9 ->  1560.9] And whatever the feedback.
+[ 1560.9 ->  1562.7] So then I can continue on Monday morning.
+[ 1562.7 ->  1563.7] So yeah.
+[ 1563.7 ->  1564.7] All right.
+[ 1564.7 ->  1565.7] Awesome.
+[ 1565.7 ->  1566.7] Great.
+[ 1566.7 ->  1567.7] Great work.
+[ 1567.7 ->  1571.7] Thank you for the, for the experience and the speed and the intention or the intentionality
+[ 1571.7 ->  1572.7] care.
+[ 1572.7 ->  1573.7] No.
+[ 1573.7 ->  1575.7] This is becoming real.
+[ 1575.7 ->  1576.7] Yes.
+[ 1576.7 ->  1577.7] It is.
+[ 1577.7 ->  1578.7] It is.
+[ 1578.7 ->  1579.7] And I'm glad.
+[ 1579.7 ->  1580.7] Right.
+[ 1580.7 ->  1586.7] And obviously, right, like, you know, I always, you know, admire you in this way, right, that you
+[ 1586.7 ->  1589.7] come up with a very good solution, right?
+[ 1589.7 ->  1596.2] I don't even recall from where we have started with air table, you know, and where we are at
+[ 1596.2 ->  1597.2] now.
+[ 1597.2 ->  1603.7] It's a major significant progress, you know, I can, obviously, because I've coded it right,
+[ 1603.7 ->  1607.2] so I can see, right, that from where we started and where we are at now, right?
+[ 1607.2 ->  1613.9] So we are going in a very good direction, right, which is, you know, in a, in a, in a right
+[ 1613.9 ->  1618.2] direction, right, that what we are targeting, we are making it for them, right?
+[ 1618.2 ->  1624.2] And we also discussed one thing which I will, you know, prefer to do it after this entire
+[ 1624.2 ->  1629.9] employer, you know, portal, right, that about a short listing, right, that we can have a
+[ 1629.9 ->  1631.9] bot, right?
+[ 1631.9 ->  1638.1] And we discuss applicant, applicant signal, you remember, right, that it wouldn't be like,
+[ 1638.1 ->  1645.2] there would be another layer, right, that our applicant signal would be short listing
+[ 1645.2 ->  1649.5] all the candidates and putting them directly into this employer portal, right?
+[ 1649.5 ->  1656.9] So it will be a more layer which will be automated and making it more easier for organization
+[ 1656.9 ->  1658.9] to manage it with Singapore.
+[ 1658.9 ->  1667.9] Yeah, so that is another product and I, yes, I am working on a, a mockup of that.
+[ 1667.9 ->  1668.9] Yeah.
+[ 1668.9 ->  1675.1] And I'm looking to do a partnership with a small recruiting agency, it's a boutique recruiting
+[ 1675.1 ->  1676.7] agency.
+[ 1676.7 ->  1681.7] And we're first going to just, because I want to make this a light lift, and I want us to
+[ 1681.7 ->  1692.2] stay focused on lower, yeah, but we're going to start with using cloud and a off the shelf
+[ 1692.2 ->  1697.9] survey called type form to manage the type form.
+[ 1697.9 ->  1702.2] So that's what I'm thinking for this first phase, but maybe we could talk more about that
+[ 1702.2 ->  1708.6] next week, because I want you to be informed on that, that it's going to be, but long term,
+[ 1708.6 ->  1714.3] applicant signal and the signal will be two products, but we want it to come together.
+[ 1714.3 ->  1724.0] The applicant signal is exactly, exactly the short list, and then the signal is to conform
+[ 1724.0 ->  1731.0] with, yeah, and giving them what they want, yeah, a complete pipeline, yeah, like in our
+[ 1731.0 ->  1737.2] words, right, in our technical jargons, right, we say this end-to-end pipeline, so yeah,
+[ 1737.2 ->  1738.2] end-to-end pipeline.
+[ 1738.2 ->  1742.3] All right, I'll have a good weekend, talk to you on Monday, I appreciate it.
+[ 1742.3 ->  1750.8] Okay, thank you, man, see you, bye-bye, and if you don't mind, right, would you do a
+[ 1750.8 ->  1756.6] 450 on Monday, or you can do today, like, put it in, right, put it, or put it in, in, in
+[ 1756.6 ->  1757.6] deal, the platform.
+[ 1757.6 ->  1763.6] Oh, okay, okay, and then you will notify it, and okay, yeah, put it in deal, and if there's
+[ 1763.6 ->  1767.1] any set of changes that we need to make, just let me know, but everything has to be deal.
+[ 1767.1 ->  1768.6] All right, thanks.
+[ 1769.6 ->  1771.6] Okay, Michael, see you then, bye-bye, take care.
+[ 1771.6 ->  1772.6] Bye-bye.

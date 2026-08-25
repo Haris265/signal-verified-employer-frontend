@@ -3,6 +3,9 @@ import { EMPLOYER_ROLE } from "./types";
 
 const TOKEN_KEY = "sv_employer_token";
 const USER_KEY = "sv_employer_user";
+const PERSONA_KEY = "sv_persona";
+
+export type Persona = "organization" | "candidate";
 
 export function getToken(): string | null {
   if (typeof window === "undefined") return null;
@@ -28,6 +31,21 @@ export function setSession(token: string, user: AuthUser) {
 export function clearSession() {
   localStorage.removeItem(TOKEN_KEY);
   localStorage.removeItem(USER_KEY);
+}
+
+export function getPersona(): Persona | null {
+  if (typeof window === "undefined") return null;
+  const value = localStorage.getItem(PERSONA_KEY);
+  if (value === "organization" || value === "candidate") return value;
+  return null;
+}
+
+export function setPersona(persona: Persona) {
+  localStorage.setItem(PERSONA_KEY, persona);
+}
+
+export function clearPersona() {
+  localStorage.removeItem(PERSONA_KEY);
 }
 
 export function isEmployer(user: AuthUser | null): boolean {

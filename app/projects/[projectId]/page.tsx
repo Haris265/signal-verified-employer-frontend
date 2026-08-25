@@ -160,7 +160,6 @@ function ProjectDetailInner() {
   const [tableLabel, setTableLabel] = useState("Participants");
   const [search, setSearch] = useState("");
   const [resultFilter, setResultFilter] = useState("All");
-  const [sortDesc, setSortDesc] = useState(true);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -223,21 +222,15 @@ function ProjectDetailInner() {
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    let rows = participants.filter((row) => {
-      if (resultFilter !== "All" && normalizeResult(row) !== resultFilter) return false;
-      if (!q) return true;
-      return row.name.toLowerCase().includes(q);
-    });
-    rows = [...rows].sort((a, b) => {
-      const av = a.overall_score;
-      const bv = b.overall_score;
-      if (av == null && bv == null) return 0;
-      if (av == null) return 1;
-      if (bv == null) return -1;
-      return sortDesc ? bv - av : av - bv;
-    });
-    return rows;
-  }, [participants, search, resultFilter, sortDesc]);
+    return participants
+      .filter((row) => {
+        if (resultFilter !== "All" && normalizeResult(row) !== resultFilter) return false;
+        if (!q) return true;
+        return row.name.toLowerCase().includes(q);
+      })
+      .slice()
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [participants, search, resultFilter]);
 
   if (loading) {
     return (
@@ -467,19 +460,6 @@ function ProjectDetailInner() {
                 <th className="px-6 py-3">Name</th>
                 <th className="px-6 py-3">Status</th>
                 <th className="px-6 py-3">Result</th>
-                <th className="px-6 py-3 text-right">
-                  <button
-                    type="button"
-                    onClick={() => setSortDesc((v) => !v)}
-                    className="inline-flex items-center gap-1 uppercase tracking-wider text-foreground transition hover:text-foreground"
-                  >
-                    Score
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3" aria-hidden>
-                      <path d="M12 5v14" />
-                      <path d={sortDesc ? "m19 12-7 7-7-7" : "m5 12 7-7 7 7"} />
-                    </svg>
-                  </button>
-                </th>
                 <th className="w-10 px-6 py-3" />
               </tr>
             </thead>
@@ -507,21 +487,6 @@ function ProjectDetailInner() {
                         <ResultBadge result={result} />
                       </Link>
                     </td>
-                    <td className="p-0">
-                      <Link
-                        href={href}
-                        className="flex items-center justify-end px-6 py-3.5 text-right tabular-nums text-foreground"
-                      >
-                        {row.overall_score != null ? (
-                          <>
-                            {row.overall_score.toFixed(2)}
-                            <span className="ml-1 text-xs text-muted-foreground">/ 4.00</span>
-                          </>
-                        ) : (
-                          <span className="text-muted-foreground">—</span>
-                        )}
-                      </Link>
-                    </td>
                     <td className="px-6 py-3.5">
                       <ChevronRightIcon />
                     </td>
@@ -530,7 +495,7 @@ function ProjectDetailInner() {
               })}
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="px-6 py-8 text-center text-muted-foreground">
+                  <td colSpan={4} className="px-6 py-8 text-center text-muted-foreground">
                     No participants to show.
                   </td>
                 </tr>

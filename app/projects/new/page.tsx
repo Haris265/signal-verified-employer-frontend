@@ -1,40 +1,61 @@
 "use client";
 
-import { FormEvent, Suspense, useState } from "react";
+import { FormEvent, Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
 import { RequireEmployer } from "@/components/RequireEmployer";
 import { requestProject, getEntitlement, ApiError } from "@/lib/api";
+import {
+  canRequestNewProject,
+  clampFinalistCount,
+  finalistBounds,
+} from "@/lib/entitlement";
 import type { Entitlement } from "@/lib/types";
-import { useEffect } from "react";
 
 function RequestProjectInner() {
   const router = useRouter();
   const [entitlement, setEntitlement] = useState<Entitlement | null>(null);
+  const [entLoaded, setEntLoaded] = useState(false);
   const [engagementType, setEngagementType] = useState<1 | 2>(1);
   const [roleName, setRoleName] = useState("");
   const [jdText, setJdText] = useState("");
   const [jdFile, setJdFile] = useState<File | null>(null);
-  const [count, setCount] = useState(8);
+  const [count, setCount] = useState(() => finalistBounds(1).defaultCount);
   const [targetDate, setTargetDate] = useState("");
   const [notes, setNotes] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const bounds = finalistBounds(engagementType);
+  const canRequest = canRequestNewProject(entitlement);
+
   useEffect(() => {
     getEntitlement()
       .then((res) => setEntitlement(res.data?.primary || null))
-      .catch(() => undefined);
+      .catch(() => setEntitlement(null))
+      .finally(() => setEntLoaded(true));
   }, []);
+
+  function setType(next: 1 | 2) {
+    setEngagementType(next);
+    setCount((prev) => clampFinalistCount(next, prev));
+  }
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setError("");
+    if (!canRequest) {
+      setError("Your organization does not have an active license to request new projects.");
+      return;
+    }
     if (!jdText.trim() && !jdFile) {
       setError("Provide a job/program description as text or upload a PDF.");
       return;
     }
+    const finalCount = clampFinalistCount(engagementType, count);
+    if (finalCount !== count) setCount(finalCount);
+
     setLoading(true);
     try {
       await requestProject({
@@ -42,7 +63,7 @@ function RequestProjectInner() {
         requested_role_name: roleName.trim(),
         requested_jd_text: jdText,
         requested_jd_file: jdFile,
-        requested_finalist_count: count,
+        requested_finalist_count: finalCount,
         target_completion_date: targetDate,
         notes_to_ops: notes,
       });
@@ -54,9 +75,34 @@ function RequestProjectInner() {
     }
   }
 
+  if (entLoaded && !canRequest) {
+    return (
+      <AppShell entitlement={entitlement}>
+        <Link href="/projects" className="text-sm font-medium text-primary hover:underline">
+          ← Projects
+        </Link>
+        <h1 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.02em] text-foreground sm:text-[2rem]">
+          Request new project
+        </h1>
+        <div className="mt-6 max-w-xl rounded-lg border border-border bg-secondary/50 px-4 py-4 text-sm text-muted-foreground">
+          <p>
+            {entitlement?.display_text ||
+              "New projects require an active contractual license. Contact SignalVerified to unlock this."}
+          </p>
+          <a
+            href="mailto:questions@signalverified.net?subject=License%20inquiry"
+            className="mt-3 inline-block font-medium text-primary underline-offset-4 hover:underline"
+          >
+            Contact sales
+          </a>
+        </div>
+      </AppShell>
+    );
+  }
+
   return (
     <AppShell entitlement={entitlement}>
-      <Link href="/projects" className="text-sm font-medium text-brand-600 hover:underline">
+      <Link href="/projects" className="text-sm font-medium text-primary hover:underline">
         ← Projects
       </Link>
       <h1 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.02em] text-foreground sm:text-[2rem]">
@@ -76,7 +122,7 @@ function RequestProjectInner() {
                 type="radio"
                 name="engagement_type"
                 checked={engagementType === 1}
-                onChange={() => setEngagementType(1)}
+                onChange={() => setType(1)}
               />
               Hiring
             </label>
@@ -85,7 +131,7 @@ function RequestProjectInner() {
                 type="radio"
                 name="engagement_type"
                 checked={engagementType === 2}
-                onChange={() => setEngagementType(2)}
+                onChange={() => setType(2)}
               />
               Program
             </label>
@@ -134,17 +180,27 @@ function RequestProjectInner() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label className="mb-1.5 block text-sm font-medium text-foreground" htmlFor="count">
-              Expected number of finalists or participants
+              {engagementType === 1
+                ? "Expected number of finalists"
+                : "Expected number of participants"}
             </label>
             <input
               id="count"
               type="number"
-              min={1}
+              min={bounds.min}
+              max={bounds.max}
               required
               className="input-field"
               value={count}
-              onChange={(e) => setCount(Number(e.target.value))}
+              onChange={(e) =>
+                setCount(clampFinalistCount(engagementType, Number(e.target.value)))
+              }
             />
+            <p className="mt-1.5 text-xs text-muted-foreground">
+              {engagementType === 1
+                ? `Hiring decisions use Signal for late-stage finalists (${bounds.min}–${bounds.max}).`
+                : `Programs may include more participants (${bounds.min}–${bounds.max}).`}
+            </p>
           </div>
           <div>
             <label className="mb-1.5 block text-sm font-medium text-foreground" htmlFor="date">

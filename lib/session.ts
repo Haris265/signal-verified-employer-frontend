@@ -1,5 +1,5 @@
 import { login as loginRequest } from "./api";
-import { setSession } from "./auth";
+import { setPersona, setSession } from "./auth";
 import { EMPLOYER_ROLE, type AuthUser } from "./types";
 
 type LoginResponse = {
@@ -22,5 +22,6 @@ export async function loginEmployer(email: string, password: string) {
   }
 
   setSession(token, user);
+  setPersona("organization");
   return user;
 }

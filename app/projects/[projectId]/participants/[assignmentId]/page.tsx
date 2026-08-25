@@ -8,6 +8,27 @@ import { RequireEmployer } from "@/components/RequireEmployer";
 import { getEntitlement, getParticipantDetail, ApiError } from "@/lib/api";
 import type { Entitlement, ParticipantDetail } from "@/lib/types";
 
+function DownloadIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4"
+      aria-hidden
+    >
+      <path d="M12 15V3" />
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <path d="m7 10 5 5 5-5" />
+    </svg>
+  );
+}
+
+/** B2B Signal: HTML document with final score only — no capability buckets. */
 function ParticipantDetailInner() {
   const params = useParams();
   const projectId = String(params.projectId || "");
@@ -46,7 +67,7 @@ function ParticipantDetailInner() {
   if (loading) {
     return (
       <AppShell entitlement={entitlement}>
-        <p className="text-sm text-muted-foreground">Loading participant…</p>
+        <p className="text-sm text-muted-foreground">Loading Signal…</p>
       </AppShell>
     );
   }
@@ -56,7 +77,7 @@ function ParticipantDetailInner() {
       <AppShell entitlement={entitlement}>
         <Link
           href={`/projects/${projectId}`}
-          className="text-sm font-medium text-brand-600 hover:underline"
+          className="text-sm font-medium text-primary hover:underline"
         >
           ← Back to project
         </Link>
@@ -69,86 +90,77 @@ function ParticipantDetailInner() {
 
   return (
     <AppShell entitlement={entitlement}>
-      <div className="no-print mb-4 flex flex-wrap items-center justify-between gap-3">
+      <div className="no-print mb-6 flex flex-wrap items-center justify-between gap-3">
         <Link
           href={`/projects/${projectId}`}
-          className="text-sm font-medium text-brand-600 hover:underline"
+          className="text-sm font-medium text-primary hover:underline"
         >
           ← {detail.project.name}
         </Link>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {detail.the_signal_url && (
             <a
               href={detail.the_signal_url}
               target="_blank"
               rel="noreferrer"
-              className="btn-primary"
+              className="btn-secondary inline-flex items-center gap-2"
             >
-              View TheSignal
+              <DownloadIcon />
+              Download PDF
             </a>
           )}
-          <button type="button" className="btn-secondary" onClick={() => window.print()}>
-            Print / Save as PDF
+          <button
+            type="button"
+            className="btn-secondary inline-flex items-center gap-2"
+            onClick={() => window.print()}
+          >
+            <DownloadIcon />
+            {detail.the_signal_url ? "Print" : "Download PDF"}
           </button>
         </div>
       </div>
 
-      <article className="print-area card-surface p-6 sm:p-8">
-        <p className="text-sm text-muted-foreground">
-          {detail.project.name} · {detail.project.engagement_type}
-        </p>
-        <h1 className="mt-1 text-[1.875rem] font-semibold leading-tight tracking-[-0.02em] text-foreground sm:text-[2rem]">
-          {detail.name}
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">{detail.role}</p>
+      <article className="print-area card-surface mx-auto max-w-3xl p-6 sm:p-10">
+        <header className="border-b border-border pb-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            The Signal · B2B
+          </p>
+          <h1 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.02em] text-foreground sm:text-[2rem]">
+            {detail.name}
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">{detail.role}</p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {detail.project.name} · {detail.project.engagement_type}
+          </p>
+        </header>
 
-        <div className="mt-8 rounded-[0.625rem] bg-brand-50 p-8 text-center ring-1 ring-brand-100">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Result</p>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-brand-600">
+        <div className="mt-8 rounded-[0.625rem] border border-border bg-secondary/50 px-6 py-8 text-center">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Final result
+          </p>
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-primary">
             {detail.designation || "—"}
           </p>
           {detail.overall_score != null && (
-            <p className="mt-2 text-sm text-muted-foreground">
-              Overall score {detail.overall_score.toFixed(2)} / 4.00
+            <p className="mt-3 text-sm tabular-nums text-foreground">
+              Overall score{" "}
+              <span className="font-semibold">{detail.overall_score.toFixed(2)}</span>
+              <span className="text-muted-foreground"> / 4.00</span>
             </p>
           )}
         </div>
 
-        <section className="mt-8">
+        <section className="mt-10">
           <h2 className="text-lg font-semibold text-foreground">Evidence summary</h2>
-          <p className="mt-2 text-sm leading-relaxed text-foreground">
+          <p className="mt-3 text-sm leading-relaxed text-foreground">
             {detail.evidence_summary || "No evidence summary available yet."}
           </p>
         </section>
 
-        <section className="mt-8">
-          <h2 className="text-lg font-semibold text-foreground">Capabilities</h2>
-          <div className="mt-4 space-y-4">
-            {detail.capabilities.map((cap) => (
-              <div key={cap.capability} className="rounded-[0.625rem] border border-border p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="font-medium text-foreground">{cap.capability}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {cap.score != null ? `${cap.score.toFixed(2)} · ${cap.label || ""}` : "—"}
-                  </p>
-                </div>
-                <div className="mt-2 h-2 overflow-hidden rounded-full bg-border">
-                  <div
-                    className="h-full rounded-full bg-brand-500"
-                    style={{
-                      width: `${cap.score != null ? Math.min((cap.score / 4) * 100, 100) : 0}%`,
-                    }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-8 border-t border-border pt-10 md:grid-cols-2">
           <section>
             <h2 className="text-lg font-semibold text-foreground">Strengths</h2>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground">
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground">
               {(detail.strengths || []).length > 0 ? (
                 detail.strengths.map((item) => <li key={item}>{item}</li>)
               ) : (
@@ -158,7 +170,7 @@ function ParticipantDetailInner() {
           </section>
           <section>
             <h2 className="text-lg font-semibold text-foreground">Watch areas</h2>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground">
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground">
               {(detail.watch_areas || []).length > 0 ? (
                 detail.watch_areas.map((item) => <li key={item}>{item}</li>)
               ) : (
