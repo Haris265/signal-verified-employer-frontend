@@ -4,6 +4,8 @@ import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/Logo";
+import { Button } from "@/components/ui/Button";
+import { Spinner } from "@/components/ui/Spinner";
 import { getToken, getUser, isEmployer } from "@/lib/auth";
 import { loginEmployer } from "@/lib/session";
 import { ApiError } from "@/lib/api";
@@ -253,7 +255,7 @@ export default function LoginPage() {
                   <button
                     type="button"
                     aria-label={showPassword ? "Hide password" : "Show password"}
-                    className="absolute right-1.5 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground transition hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="absolute right-1.5 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground transition hover:bg-mist hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                     onClick={() => setShowPassword((v) => !v)}
                   >
                     <EyeIcon open={!showPassword} />
@@ -277,16 +279,23 @@ export default function LoginPage() {
                 </div>
               )}
 
-              <button
+              <Button
                 type="submit"
                 disabled={loading}
-                className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary text-sm font-medium text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25 disabled:opacity-70"
+                className="group h-11 w-full font-medium"
               >
-                {loading ? "Signing in…" : "Sign in"}
-                {!loading && (
-                  <ArrowRightIcon className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                {loading ? (
+                  <span className="inline-flex items-center gap-2">
+                    <Spinner variant="inline" className="h-4 w-4 border-white/30 border-t-white" />
+                    Signing in…
+                  </span>
+                ) : (
+                  <>
+                    Sign in
+                    <ArrowRightIcon className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                  </>
                 )}
-              </button>
+              </Button>
             </form>
 
             <div className="mt-6 flex items-center gap-3">
@@ -299,7 +308,7 @@ export default function LoginPage() {
 
             <Link
               href="/persona"
-              className="mt-6 flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-left transition hover:border-input hover:bg-secondary/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
+              className="mt-6 flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-left transition hover:border-primary/25 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
             >
               <span>
                 <span className="block text-[13.5px] font-medium text-foreground">

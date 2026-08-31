@@ -4,6 +4,8 @@ import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/Logo";
+import { Button } from "@/components/ui/Button";
+import { Spinner } from "@/components/ui/Spinner";
 import { getPersona, setPersona } from "@/lib/auth";
 import { registerCandidate, ApiError } from "@/lib/api";
 
@@ -339,7 +341,7 @@ export default function RegisterPage() {
                     type="button"
                     aria-label={showPassword ? "Hide password" : "Show password"}
                     onClick={() => setShowPassword((v) => !v)}
-                    className="absolute right-1.5 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground transition hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="absolute right-1.5 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground transition hover:bg-mist hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   >
                     <EyeIcon open={!showPassword} />
                   </button>
@@ -384,14 +386,23 @@ export default function RegisterPage() {
                 </div>
               )}
 
-              <button
+              <Button
                 type="submit"
                 disabled={loading}
-                className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-primary text-sm font-medium text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25 disabled:opacity-70"
+                className="group h-11 w-full font-medium"
               >
-                {loading ? "Creating account…" : "Continue"}
-                {!loading && <ArrowRightIcon />}
-              </button>
+                {loading ? (
+                  <span className="inline-flex items-center gap-2">
+                    <Spinner variant="inline" className="h-4 w-4 border-white/30 border-t-white" />
+                    Creating account…
+                  </span>
+                ) : (
+                  <>
+                    Continue
+                    <ArrowRightIcon />
+                  </>
+                )}
+              </Button>
 
               <p className="text-center text-[12px] text-muted-foreground sm:hidden">
                 Already a member?{" "}

@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
 import { RequireEmployer } from "@/components/RequireEmployer";
+import { LoadingState } from "@/components/ui/LoadingState";
+import { Spinner } from "@/components/ui/Spinner";
 import { requestProject, getEntitlement, ApiError } from "@/lib/api";
 import {
   canRequestNewProject,
@@ -238,7 +240,14 @@ function RequestProjectInner() {
 
         <div className="flex gap-3">
           <button type="submit" className="btn-primary" disabled={loading}>
-            {loading ? "Submitting…" : "Submit request"}
+            {loading ? (
+              <span className="inline-flex items-center gap-2">
+                <Spinner variant="inline" className="h-4 w-4 border-white/30 border-t-white" />
+                Submitting…
+              </span>
+            ) : (
+              "Submit request"
+            )}
           </button>
           <Link href="/projects" className="btn-secondary">
             Cancel
@@ -252,7 +261,7 @@ function RequestProjectInner() {
 export default function RequestProjectPage() {
   return (
     <RequireEmployer>
-      <Suspense fallback={<div className="p-10 text-sm text-muted-foreground">Loading…</div>}>
+      <Suspense fallback={<LoadingState />}>
         <RequestProjectInner />
       </Suspense>
     </RequireEmployer>

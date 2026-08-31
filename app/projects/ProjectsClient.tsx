@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { ProjectCardItem } from "@/components/ProjectCard";
+import { LoadingState } from "@/components/ui/LoadingState";
 import { getEntitlement, getProjects, ApiError } from "@/lib/api";
 import { canRequestNewProject } from "@/lib/entitlement";
 import type { Entitlement, ProjectCard } from "@/lib/types";
@@ -156,71 +157,76 @@ export default function ProjectsClient() {
         </p>
       )}
 
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-4">
-        <div className="flex flex-wrap items-center gap-1">
-          {(["All", "Programs", "Hiring", "Archived"] as Filter[]).map((f) => (
-            <button
-              key={f}
-              type="button"
-              onClick={() => setFilter(f)}
-              className={`rounded-lg px-3 py-1.5 text-sm transition ${
-                filter === f
-                  ? "bg-secondary font-medium text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-        <div className="relative">
-          <SearchIcon />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search projects"
-            className="h-9 w-64 rounded-lg border border-input bg-background pl-9 pr-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-primary/50 focus:ring-4 focus:ring-primary/10"
-          />
-        </div>
-      </div>
+      {loading ? (
+        <LoadingState />
+      ) : (
+        <>
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-4">
+            <div className="flex flex-wrap items-center gap-1">
+              {(["All", "Programs", "Hiring", "Archived"] as Filter[]).map((f) => (
+                <button
+                  key={f}
+                  type="button"
+                  onClick={() => setFilter(f)}
+                  className={`rounded-lg px-3 py-1.5 text-sm transition ${
+                    filter === f
+                      ? "bg-secondary font-medium text-foreground"
+                      : "text-muted-foreground hover:text-ink"
+                  }`}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+            <div className="relative">
+              <SearchIcon />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search projects"
+                className="h-9 w-64 rounded-lg border border-input bg-background pl-9 pr-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-primary/50 focus:ring-4 focus:ring-primary/10"
+              />
+            </div>
+          </div>
 
-      {loading && <p className="mt-10 text-sm text-muted-foreground">Loading projects…</p>}
-      {error && (
-        <div className="mt-6 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
-          {error}
-        </div>
-      )}
-
-      {!loading && !error && (
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {filtered.map((project) => (
-            <ProjectCardItem key={project.id} project={project} />
-          ))}
-          {canRequest ? (
-            <Link
-              href="/projects/new"
-              className="flex min-h-[11rem] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border p-6 text-sm text-muted-foreground transition hover:border-primary/40 hover:text-foreground"
-            >
-              <PlusIcon className="h-5 w-5" />
-              Start a new project
-              <span className="text-xs text-muted-foreground">
-                Programs and hiring cohorts live side by side
-              </span>
-            </Link>
-          ) : (
-            <div
-              title={licenseHint}
-              className="flex min-h-[11rem] cursor-not-allowed flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border bg-secondary/40 p-6 text-sm text-muted-foreground opacity-60"
-            >
-              <PlusIcon className="h-5 w-5" />
-              Start a new project
-              <span className="max-w-[14rem] text-center text-xs text-muted-foreground">
-                Available with an active contractual license
-              </span>
+          {error && (
+            <div className="mt-6 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+              {error}
             </div>
           )}
-        </div>
+
+          {!error && (
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {filtered.map((project) => (
+                <ProjectCardItem key={project.id} project={project} />
+              ))}
+              {canRequest ? (
+                <Link
+                  href="/projects/new"
+                  className="flex min-h-[11rem] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border p-6 text-sm text-muted-foreground transition hover:border-primary/25 hover:text-foreground"
+                >
+                  <PlusIcon className="h-5 w-5" />
+                  Start a new project
+                  <span className="text-xs text-muted-foreground">
+                    Programs and hiring cohorts live side by side
+                  </span>
+                </Link>
+              ) : (
+                <div
+                  title={licenseHint}
+                  className="flex min-h-[11rem] cursor-not-allowed flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-border bg-secondary/40 p-6 text-sm text-muted-foreground opacity-60"
+                >
+                  <PlusIcon className="h-5 w-5" />
+                  Start a new project
+                  <span className="max-w-[14rem] text-center text-xs text-muted-foreground">
+                    Available with an active contractual license
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
+        </>
       )}
     </AppShell>
   );
