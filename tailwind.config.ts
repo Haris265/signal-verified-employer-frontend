@@ -31,10 +31,11 @@ const config: Config = {
           foreground: "#166534",
         },
         primary: {
-          DEFAULT: "#7C3AED",
+          DEFAULT: "rgb(var(--primary) / <alpha-value>)",
           foreground: "#FAF9FC",
           soft: "#F3F0F7",
         },
+        "primary-dark": "rgb(var(--primary-dark) / <alpha-value>)",
         secondary: {
           DEFAULT: "#F3F0F7",
           foreground: "#1A1525",
@@ -47,9 +48,8 @@ const config: Config = {
           DEFAULT: "#FFFFFF",
           foreground: "#1A1525",
         },
-        border: "#E8E4EF",
-        input: "#E8E4EF",
         ink: {
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
           50: "#FAF9FC",
           100: "#F3F0F7",
           200: "#E8E4EF",
@@ -57,6 +57,10 @@ const config: Config = {
           700: "#3D3750",
           900: "#1A1525",
         },
+        mist: "rgb(var(--mist) / <alpha-value>)",
+        border: "rgb(var(--border) / <alpha-value>)",
+        input: "rgb(var(--border) / <alpha-value>)",
+        destructive: "rgb(var(--destructive) / <alpha-value>)",
       },
       borderRadius: {
         DEFAULT: "0.625rem",
@@ -72,6 +76,7 @@ const config: Config = {
         soft: "0 1px 2px rgba(26, 21, 37, 0.04), 0 6px 20px rgba(26, 21, 37, 0.05)",
         cardHover:
           "0 1px 2px rgba(16, 17, 26, 0.04), 0 12px 32px -16px rgba(16, 17, 26, 0.18)",
+        elevated: "0 4px 24px rgba(24, 24, 27, 0.08)",
       },
     },
   },

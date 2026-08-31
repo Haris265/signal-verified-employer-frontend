@@ -121,7 +121,7 @@ export default function PersonaPage() {
           <div className="flex items-center gap-5">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 rounded text-[13px] text-muted-foreground transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+              className="inline-flex items-center gap-1.5 rounded text-[13px] text-muted-foreground transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             >
               <ArrowLeftIcon />
               Back
@@ -160,7 +160,7 @@ export default function PersonaPage() {
           <button
             type="button"
             onClick={() => choose("candidate")}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-8 text-left transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25 lg:p-10"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-8 text-left transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-elevated focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25 lg:p-10"
           >
             <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-brand" />
             <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-tint text-brand">
@@ -190,7 +190,7 @@ export default function PersonaPage() {
                 Control what is shared
               </li>
             </ul>
-            <span className="mt-9 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-medium text-primary-foreground transition group-hover:bg-primary/90">
+            <span className="mt-9 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-medium text-white transition group-hover:bg-primary-dark">
               Continue as student or candidate
               <ArrowRightIcon />
             </span>
@@ -199,7 +199,7 @@ export default function PersonaPage() {
           <button
             type="button"
             onClick={() => choose("organization")}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-8 text-left transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25 lg:p-10"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-8 text-left transition hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-elevated focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/25 lg:p-10"
           >
             <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-signal" />
             <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-signal-tint text-signal-foreground">
@@ -229,7 +229,7 @@ export default function PersonaPage() {
                 Download summaries
               </li>
             </ul>
-            <span className="mt-9 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-medium text-primary-foreground transition group-hover:bg-primary/90">
+            <span className="mt-9 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-medium text-white transition group-hover:bg-primary-dark">
               Continue as an organization
               <ArrowRightIcon />
             </span>

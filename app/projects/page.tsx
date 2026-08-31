@@ -2,18 +2,13 @@
 
 import { Suspense } from "react";
 import { RequireEmployer } from "@/components/RequireEmployer";
+import { LoadingState } from "@/components/ui/LoadingState";
 import ProjectsClient from "./ProjectsClient";
 
 export default function ProjectsPage() {
   return (
     <RequireEmployer>
-      <Suspense
-        fallback={
-          <div className="flex min-h-screen items-center justify-center text-sm text-ink-500">
-            Loading…
-          </div>
-        }
-      >
+      <Suspense fallback={<LoadingState fullScreen />}>
         <ProjectsClient />
       </Suspense>
     </RequireEmployer>

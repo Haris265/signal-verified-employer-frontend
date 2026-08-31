@@ -5,6 +5,7 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { RequireEmployer } from "@/components/RequireEmployer";
+import { LoadingState } from "@/components/ui/LoadingState";
 import {
   getEntitlement,
   getParticipants,
@@ -235,7 +236,7 @@ function ProjectDetailInner() {
   if (loading) {
     return (
       <AppShell entitlement={entitlement} mainClassName="py-12">
-        <p className="text-sm text-muted-foreground">Loading project…</p>
+        <LoadingState />
       </AppShell>
     );
   }
@@ -269,7 +270,7 @@ function ProjectDetailInner() {
           ← Projects
         </Link>
         <details className="group relative print:hidden">
-          <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg border border-input bg-background px-3 py-1.5 text-sm text-foreground transition hover:bg-secondary">
+          <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg border border-input bg-background px-3 py-1.5 text-sm text-foreground transition hover:bg-mist">
             <span className="max-w-[16rem] truncate">{detail.name}</span>
             <ChevronDownIcon />
           </summary>
@@ -281,7 +282,7 @@ function ProjectDetailInner() {
               <Link
                 key={p.id}
                 href={`/projects/${p.id}`}
-                className={`block truncate rounded-lg px-2.5 py-2 text-sm transition hover:bg-secondary ${
+                className={`block truncate rounded-lg px-2.5 py-2 text-sm transition hover:bg-mist ${
                   p.id === projectId ? "text-foreground" : "text-foreground"
                 }`}
               >
@@ -335,7 +336,7 @@ function ProjectDetailInner() {
         <button
           type="button"
           onClick={() => window.print()}
-          className="inline-flex h-10 items-center gap-2 rounded-lg border border-input bg-background px-4 text-sm font-medium text-foreground transition hover:bg-secondary"
+          className="inline-flex h-10 items-center gap-2 rounded-lg border border-input bg-background px-4 text-sm font-medium text-foreground transition hover:bg-mist"
         >
           <DownloadIcon />
           Download summary
@@ -429,7 +430,7 @@ function ProjectDetailInner() {
             className={`rounded-lg px-3 py-1.5 text-sm transition ${
               resultFilter === "All"
                 ? "bg-secondary font-medium text-foreground"
-                : "text-muted-foreground hover:text-foreground"
+                : "text-muted-foreground hover:text-ink"
             }`}
           >
             All
@@ -442,7 +443,7 @@ function ProjectDetailInner() {
               className={`rounded-lg px-3 py-1.5 text-sm transition ${
                 resultFilter === key
                   ? "bg-secondary font-medium text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-ink"
               }`}
             >
               {key}
@@ -470,7 +471,7 @@ function ProjectDetailInner() {
                 return (
                   <tr
                     key={row.id}
-                    className="group border-b border-border transition last:border-0 hover:bg-secondary/60"
+                    className="group border-b border-border transition last:border-0 hover:bg-primary/5"
                   >
                     <td className="p-0">
                       <Link href={href} className="flex items-center px-6 py-3.5 font-medium text-foreground">
@@ -577,7 +578,7 @@ function ProjectDetailInner() {
 export default function ProjectDetailPage() {
   return (
     <RequireEmployer>
-      <Suspense fallback={<div className="p-10 text-sm text-muted-foreground">Loading…</div>}>
+      <Suspense fallback={<LoadingState />}>
         <ProjectDetailInner />
       </Suspense>
     </RequireEmployer>

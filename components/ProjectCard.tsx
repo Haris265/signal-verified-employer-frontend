@@ -75,7 +75,7 @@ export function ProjectCardItem({ project }: { project: ProjectCard }) {
   );
 
   const cardClass =
-    "group rounded-2xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-cardHover";
+    "group rounded-2xl border border-border bg-card p-6 transition hover:border-primary/25 hover:shadow-elevated";
 
   if (!project.view_enabled) {
     return <div className={`${cardClass} cursor-not-allowed opacity-85`}>{inner}</div>;

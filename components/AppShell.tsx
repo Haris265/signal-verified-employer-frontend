@@ -53,8 +53,8 @@ export function AppShell({
               href="/projects"
               className={`rounded-md px-2.5 py-1.5 transition ${
                 onProjects
-                  ? "bg-secondary text-foreground"
-                  : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                  ? "bg-primary text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-primary/10 hover:text-ink"
               }`}
             >
               Projects

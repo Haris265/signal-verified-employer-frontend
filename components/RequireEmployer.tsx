@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { LoadingState } from "@/components/ui/LoadingState";
 import { getToken, getUser, isEmployer } from "@/lib/auth";
 
 export function RequireEmployer({ children }: { children: React.ReactNode }) {
@@ -19,11 +20,7 @@ export function RequireEmployer({ children }: { children: React.ReactNode }) {
   }, [router]);
 
   if (!ready) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-muted text-sm text-muted-foreground">
-        Loading…
-      </div>
-    );
+    return <LoadingState fullScreen />;
   }
 
   return <>{children}</>;

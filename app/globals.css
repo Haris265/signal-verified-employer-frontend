@@ -5,15 +5,19 @@
 @tailwind utilities;
 
 :root {
+  --ink: 24 24 27;
+  --primary: 192 96 240;
+  --primary-dark: 147 51 234;
+  --mist: 244 244 245;
+  --border: 228 228 231;
+  --destructive: 239 68 68;
   --background: #faf9fc;
   --foreground: #1a1525;
-  --primary: #7c3aed;
   --primary-foreground: #faf9fc;
   --brand: #c026f5;
   --secondary: #f3f0f7;
   --muted: #f3f0f7;
   --muted-foreground: #6b6578;
-  --border: #e8e4ef;
   --card: #ffffff;
   --radius: 0.625rem;
   /* Exact showcase stack */
@@ -38,13 +42,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 1.6s ease-in-out infinite;
+}
+
 @layer components {
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
   .btn-primary {
-    @apply inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-medium text-white transition hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-[0.625rem] border border-border bg-white px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-muted disabled:cursor-not-allowed disabled:opacity-50;
+    @apply inline-flex items-center justify-center rounded-[0.625rem] border border-primary/25 bg-white/60 px-4 py-2.5 text-sm font-semibold text-primary transition hover:border-primary/50 hover:bg-white/80 disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   .input-field {

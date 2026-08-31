@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { RequireEmployer } from "@/components/RequireEmployer";
+import { LoadingState } from "@/components/ui/LoadingState";
 import { getEntitlement, getParticipantDetail, ApiError } from "@/lib/api";
 import type { Entitlement, ParticipantDetail } from "@/lib/types";
 
@@ -67,7 +68,7 @@ function ParticipantDetailInner() {
   if (loading) {
     return (
       <AppShell entitlement={entitlement}>
-        <p className="text-sm text-muted-foreground">Loading Signal…</p>
+        <LoadingState />
       </AppShell>
     );
   }
@@ -187,7 +188,7 @@ function ParticipantDetailInner() {
 export default function ParticipantDetailPage() {
   return (
     <RequireEmployer>
-      <Suspense fallback={<div className="p-10 text-sm text-muted-foreground">Loading…</div>}>
+      <Suspense fallback={<LoadingState />}>
         <ParticipantDetailInner />
       </Suspense>
     </RequireEmployer>
