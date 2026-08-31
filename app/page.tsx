@@ -320,7 +320,7 @@ export default function LoginPage() {
                   href={CONTACT_MAIL}
                   className="text-primary underline-offset-4 hover:underline"
                 >
-                  questions@signalverified.net
+                  customersupport@signalverified.net
                 </a>
               </span>
             </p>
