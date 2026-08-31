@@ -406,10 +406,10 @@ export default function RegisterPage() {
               <span>
                 Prototype environment · Mock data only · Questions?{" "}
                 <a
-                  href="mailto:questions@signalverified.net"
+                  href="mailto:customersupport@signalverified.net"
                   className="text-primary underline-offset-4 hover:underline"
                 >
-                  questions@signalverified.net
+                  customersupport@signalverified.net
                 </a>
               </span>
             </p>

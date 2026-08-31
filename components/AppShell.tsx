@@ -97,10 +97,10 @@ export function AppShell({
             <p className="mt-2">
               Email{" "}
               <a
-                href="mailto:questions@signalverified.net"
+                href="mailto:customersupport@signalverified.net"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                questions@signalverified.net
+                customersupport@signalverified.net
               </a>{" "}
               and a member of the SignalVerified team will follow up within one business day.
             </p>
