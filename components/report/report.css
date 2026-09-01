@@ -1,0 +1,277 @@
+/* Admin self-report PDF parity — scoped to .report-document */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.report-document {
+  --report-teal: #14b8a6;
+  --report-teal-dark: #0d9488;
+  --report-teal-bg: #ecfdf5;
+  --report-teal-border: #5eead4;
+  --report-purple: #9333ea;
+  --report-purple-light: #a855f7;
+  --report-purple-bg: #faf5ff;
+  --report-purple-border: #e9d5ff;
+  --report-orange: #f59e0b;
+  --report-orange-bg: #fffbeb;
+  --report-orange-border: #fde68a;
+  --report-text: #111827;
+  --report-text-secondary: #374151;
+  --report-muted: #6b7280;
+  --report-border: #e5e7eb;
+  --report-surface: #f9fafb;
+  --report-header-bg: #f3f4f6;
+
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  color: var(--report-text);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.report-document .report-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--report-muted);
+}
+
+.report-document .report-divider {
+  border: 0;
+  border-top: 1px solid var(--report-border);
+  margin: 1.5rem 0;
+}
+
+.report-document .report-header-bar {
+  background: var(--report-header-bg);
+  padding: 0.875rem 2rem;
+  border-bottom: 1px solid var(--report-border);
+}
+
+.report-document .report-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--report-teal-border);
+  background: var(--report-teal-bg);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--report-teal-dark);
+}
+
+.report-document .report-skill-pill {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid var(--report-border);
+  background: var(--report-surface);
+  font-size: 13px;
+  color: var(--report-text-secondary);
+}
+
+.report-document .report-verified-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--report-purple-border);
+  background: var(--report-purple-bg);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--report-purple);
+  flex-shrink: 0;
+}
+
+.report-document .report-card {
+  border-radius: 12px;
+  border: 1px solid var(--report-border);
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.report-document .report-score-bar {
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--report-border);
+  overflow: hidden;
+}
+
+.report-document .report-score-bar-fill-teal {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--report-teal);
+}
+
+.report-document .report-score-bar-fill-purple {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--report-purple-light);
+}
+
+.report-document .report-accent-box-orange {
+  border-left: 4px solid var(--report-orange);
+  background: var(--report-orange-bg);
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.report-document .report-accent-box-purple {
+  border-left: 4px solid var(--report-purple);
+  background: var(--report-purple-bg);
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.report-document .report-growth-card {
+  border-radius: 12px;
+  border: 1px solid var(--report-border);
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.report-document .report-growth-num {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--report-purple);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.report-document .report-quote-box {
+  border-radius: 12px;
+  background: var(--report-surface);
+  padding: 1.5rem 2rem;
+}
+
+.report-document .report-quote-box blockquote {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--report-text-secondary);
+}
+
+.report-document .report-quote-box blockquote:last-child {
+  margin-bottom: 0;
+}
+
+.report-document .report-usage-card {
+  border-radius: 12px;
+  border: 1px solid var(--report-border);
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+}
+
+.report-document .report-watermark {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.report-document .report-watermark-inner {
+  transform: rotate(-35deg);
+  text-align: center;
+  opacity: 0.07;
+  user-select: none;
+}
+
+.report-document .report-watermark-inner p:first-child {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--report-muted);
+}
+
+.report-document .report-watermark-inner p:last-child {
+  margin-top: 0.5rem;
+  max-width: 28rem;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--report-muted);
+}
+
+.report-document .report-section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.report-document .report-disclaimer-bar {
+  border-radius: 8px;
+  background: var(--report-surface);
+  padding: 1rem 1.25rem;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--report-muted);
+}
+
+.report-document .report-capability-card {
+  border-radius: 12px;
+  border: 1px solid var(--report-border);
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+}
+
+.report-document .report-capability-score {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--report-teal-dark);
+}
+
+.report-document .report-composite-score {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--report-text);
+}
+
+.report-document .report-composite-denom {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--report-muted);
+}
+
+.report-document .report-private-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--report-muted);
+  text-align: center;
+}
+
+@media print {
+  .report-document .report-section {
+    break-after: page;
+    page-break-after: always;
+    min-height: auto;
+  }
+
+  .report-document .report-section:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}

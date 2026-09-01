@@ -5,8 +5,10 @@ import { Suspense, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { RequireEmployer } from "@/components/RequireEmployer";
+import { CandidateResultsSummary } from "@/components/report/CandidateResultsSummary";
 import { LoadingState } from "@/components/ui/LoadingState";
 import { getEntitlement, getParticipantDetail, ApiError } from "@/lib/api";
+import { mapParticipantToReport } from "@/lib/mapParticipantReport";
 import type { Entitlement, ParticipantDetail } from "@/lib/types";
 
 function DownloadIcon() {
@@ -29,7 +31,7 @@ function DownloadIcon() {
   );
 }
 
-/** B2B Signal: HTML document with final score only — no capability buckets. */
+/** B2B Signal: full Candidate Results Summary report. */
 function ParticipantDetailInner() {
   const params = useParams();
   const projectId = String(params.projectId || "");
@@ -121,66 +123,7 @@ function ParticipantDetailInner() {
         </div>
       </div>
 
-      <article className="print-area card-surface mx-auto max-w-3xl p-6 sm:p-10">
-        <header className="border-b border-border pb-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            The Signal · B2B
-          </p>
-          <h1 className="mt-3 text-[1.875rem] font-semibold leading-tight tracking-[-0.02em] text-foreground sm:text-[2rem]">
-            {detail.name}
-          </h1>
-          <p className="mt-1 text-sm text-muted-foreground">{detail.role}</p>
-          <p className="mt-3 text-sm text-muted-foreground">
-            {detail.project.name} · {detail.project.engagement_type}
-          </p>
-        </header>
-
-        <div className="mt-8 rounded-[0.625rem] border border-border bg-secondary/50 px-6 py-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Final result
-          </p>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-primary">
-            {detail.designation || "—"}
-          </p>
-          {detail.overall_score != null && (
-            <p className="mt-3 text-sm tabular-nums text-foreground">
-              Overall score{" "}
-              <span className="font-semibold">{detail.overall_score.toFixed(2)}</span>
-              <span className="text-muted-foreground"> / 4.00</span>
-            </p>
-          )}
-        </div>
-
-        <section className="mt-10">
-          <h2 className="text-lg font-semibold text-foreground">Evidence summary</h2>
-          <p className="mt-3 text-sm leading-relaxed text-foreground">
-            {detail.evidence_summary || "No evidence summary available yet."}
-          </p>
-        </section>
-
-        <div className="mt-10 grid gap-8 border-t border-border pt-10 md:grid-cols-2">
-          <section>
-            <h2 className="text-lg font-semibold text-foreground">Strengths</h2>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground">
-              {(detail.strengths || []).length > 0 ? (
-                detail.strengths.map((item) => <li key={item}>{item}</li>)
-              ) : (
-                <li className="list-none pl-0 text-muted-foreground">None listed yet.</li>
-              )}
-            </ul>
-          </section>
-          <section>
-            <h2 className="text-lg font-semibold text-foreground">Watch areas</h2>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground">
-              {(detail.watch_areas || []).length > 0 ? (
-                detail.watch_areas.map((item) => <li key={item}>{item}</li>)
-              ) : (
-                <li className="list-none pl-0 text-muted-foreground">None listed yet.</li>
-              )}
-            </ul>
-          </section>
-        </div>
-      </article>
+      <CandidateResultsSummary report={mapParticipantToReport(detail)} />
     </AppShell>
   );
 }
