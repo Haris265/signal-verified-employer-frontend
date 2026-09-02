@@ -1,7 +1,7 @@
 import { getToken, clearSession } from "./auth";
 import type { ApiEnvelope, AuthUser, Entitlement, ParticipantDetail, ParticipantRow, ProjectCard, ProjectDetail } from "./types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://airtable.hnhsofttechsolutions.com";
 
 export class ApiError extends Error {
   status: number;

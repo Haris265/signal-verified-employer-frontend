@@ -1,14 +1,16 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/Button";
+import { LoadingState } from "@/components/ui/LoadingState";
 import { Spinner } from "@/components/ui/Spinner";
-import { getToken, getUser, isEmployer } from "@/lib/auth";
-import { loginEmployer } from "@/lib/session";
 import { ApiError } from "@/lib/api";
+import { getToken, getUser, isEmployer, setPersona, setSession } from "@/lib/auth";
+import { loginEmployer } from "@/lib/session";
+import { EMPLOYER_ROLE, type AuthUser } from "@/lib/types";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { FormEvent, Suspense, useEffect, useState } from "react";
 
 const CONTACT_MAIL = "mailto:questions@signalverified.net";
 
@@ -108,20 +110,43 @@ function ShieldCheckIcon() {
   );
 }
 
-export default function LoginPage() {
+function LoginPageContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const tokenFromUrl = searchParams.get("token");
+  const userFromUrl = searchParams.get("user");
+  const hasSessionParams = !!(tokenFromUrl && userFromUrl);
+
   const [email, setEmail] = useState("loreal.ta@test.com");
   const [password, setPassword] = useState("TestPass123!");
   const [showPassword, setShowPassword] = useState(false);
   const [keepSignedIn, setKeepSignedIn] = useState(true);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [importingSession, setImportingSession] = useState(hasSessionParams);
 
   useEffect(() => {
-    if (getToken() && isEmployer(getUser())) {
-      router.replace("/projects");
+    if (!tokenFromUrl || !userFromUrl) {
+      setImportingSession(false);
+      if (getToken() && isEmployer(getUser())) {
+        router.replace("/projects");
+      }
+      return;
     }
-  }, [router]);
+    setImportingSession(true);
+    const user = JSON.parse(decodeURIComponent(userFromUrl)) as AuthUser;
+    if (user.role === EMPLOYER_ROLE) {
+      setSession(tokenFromUrl, user);
+      setPersona("organization");
+      router.replace("/projects");
+      return;
+    }
+    setImportingSession(false);
+  }, [router, tokenFromUrl, userFromUrl]);
+
+  if (importingSession) {
+    return <LoadingState fullScreen />;
+  }
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -337,5 +362,13 @@ export default function LoginPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<LoadingState fullScreen />}>
+      <LoginPageContent />
+    </Suspense>
   );
 }
