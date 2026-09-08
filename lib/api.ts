@@ -1,7 +1,7 @@
 import { getToken, clearSession } from "./auth";
 import type { ApiEnvelope, AuthUser, Entitlement, ParticipantDetail, ParticipantRow, ProjectCard, ProjectDetail } from "./types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://airtable.hnhsofttechsolutions.com";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.signalverified.net";
 
 export class ApiError extends Error {
   status: number;
@@ -77,6 +77,12 @@ export async function login(email: string, password: string) {
   );
 
   return { message: json.message, raw: json };
+}
+
+export async function logout() {
+  return apiFetch<ApiEnvelope<unknown>>("/authentication/v1/user/logout/", {
+    method: "POST",
+  });
 }
 
 /** B2C candidate self-registration. Falls back to mailto if endpoint is unavailable. */

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
-import { clearSession, getUser } from "@/lib/auth";
+import { getUser } from "@/lib/auth";
+import { logoutEmployer } from "@/lib/session";
 import type { AuthUser, Entitlement } from "@/lib/types";
 
 export function AppShell({
@@ -19,7 +20,6 @@ export function AppShell({
   mainClassName?: string;
 }) {
   const pathname = usePathname();
-  const router = useRouter();
   const [user, setUser] = useState<AuthUser | null>(null);
   const org = orgName || entitlement?.name;
   const onProjects = pathname.startsWith("/projects");
@@ -28,9 +28,9 @@ export function AppShell({
     setUser(getUser());
   }, []);
 
-  function signOut() {
-    clearSession();
-    router.replace("/");
+  async function signOut() {
+    await logoutEmployer();
+    window.location.href = "https://portal.signalverified.net/";
   }
 
   return (

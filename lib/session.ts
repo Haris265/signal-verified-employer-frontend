@@ -1,5 +1,5 @@
-import { login as loginRequest } from "./api";
-import { setPersona, setSession } from "./auth";
+import { login as loginRequest, logout as logoutRequest } from "./api";
+import { clearSession, setPersona, setSession } from "./auth";
 import { EMPLOYER_ROLE, type AuthUser } from "./types";
 
 type LoginResponse = {
@@ -24,4 +24,14 @@ export async function loginEmployer(email: string, password: string) {
   setSession(token, user);
   setPersona("organization");
   return user;
+}
+
+export async function logoutEmployer() {
+  try {
+    await logoutRequest();
+  } catch {
+    // Always clear local session even if the server call fails.
+  } finally {
+    clearSession();
+  }
 }
