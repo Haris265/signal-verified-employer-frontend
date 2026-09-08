@@ -6,7 +6,7 @@ import { Logo } from "@/components/Logo";
 import { setPersona, type Persona } from "@/lib/auth";
 
 const ORG_MAIL =
-  "mailto:questions@signalverified.net?subject=Organization%20account%20request&body=Hello%2C%0A%0AI%20represent%20an%20organization%20and%20would%20like%20an%20employer%20account%20on%20SignalVerified.%0A%0AOrganization%3A%20%0AName%3A%20%0AEmail%3A%20%0A";
+  "mailto:customersupport@signalverified.net?subject=Organization%20account%20request&body=Hello%2C%0A%0AI%20represent%20an%20organization%20and%20would%20like%20an%20employer%20account%20on%20SignalVerified.%0A%0AOrganization%3A%20%0AName%3A%20%0AEmail%3A%20%0A";
 
 function ArrowLeftIcon() {
   return (
