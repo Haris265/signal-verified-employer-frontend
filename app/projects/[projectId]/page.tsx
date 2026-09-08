@@ -11,6 +11,7 @@ import {
   getParticipants,
   getProjectDetail,
   getProjects,
+  deleteStudent,
   ApiError,
 } from "@/lib/api";
 import type { Entitlement, ParticipantRow, ProjectCard, ProjectDetail } from "@/lib/types";
@@ -143,10 +144,14 @@ function ChevronDownIcon() {
   );
 }
 
-function ChevronRightIcon() {
+function TrashIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-muted-foreground opacity-0 transition group-hover:opacity-100" aria-hidden>
-      <path d="m9 18 6-6-6-6" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
+      <path d="M3 6h18" />
+      <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+      <path d="M10 11v6" />
+      <path d="M14 11v6" />
     </svg>
   );
 }
@@ -163,6 +168,9 @@ function ProjectDetailInner() {
   const [resultFilter, setResultFilter] = useState("All");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [deleteTarget, setDeleteTarget] = useState<ParticipantRow | null>(null);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState("");
 
   useEffect(() => {
     let cancelled = false;
@@ -232,6 +240,27 @@ function ProjectDetailInner() {
       .slice()
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [participants, search, resultFilter]);
+
+  async function handleConfirmDelete() {
+    if (!deleteTarget || deleting) return;
+    setDeleting(true);
+    setDeleteError("");
+    try {
+      await deleteStudent(deleteTarget.student_id);
+      const [d, p] = await Promise.all([
+        getProjectDetail(projectId),
+        getParticipants(projectId),
+      ]);
+      setDetail(d.data || null);
+      setParticipants(p.data?.participants || []);
+      setTableLabel(p.data?.table_label || d.data?.table_label || tableLabel);
+      setDeleteTarget(null);
+    } catch (err) {
+      setDeleteError(err instanceof ApiError ? err.message : "Failed to delete participant");
+    } finally {
+      setDeleting(false);
+    }
+  }
 
   if (loading) {
     return (
@@ -461,7 +490,7 @@ function ProjectDetailInner() {
                 <th className="px-6 py-3">Name</th>
                 <th className="px-6 py-3">Status</th>
                 <th className="px-6 py-3">Result</th>
-                <th className="w-10 px-6 py-3" />
+                <th className="px-6 py-3 text-right">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -488,8 +517,18 @@ function ProjectDetailInner() {
                         <ResultBadge result={result} />
                       </Link>
                     </td>
-                    <td className="px-6 py-3.5">
-                      <ChevronRightIcon />
+                    <td className="px-6 py-3.5 text-right">
+                      <button
+                        type="button"
+                        aria-label={`Delete ${row.name}`}
+                        onClick={() => {
+                          setDeleteError("");
+                          setDeleteTarget(row);
+                        }}
+                        className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-red-50 hover:text-red-600"
+                      >
+                        <TrashIcon />
+                      </button>
                     </td>
                   </tr>
                 );
@@ -505,6 +544,51 @@ function ProjectDetailInner() {
           </table>
         </div>
       </section>
+
+      {deleteTarget && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="delete-participant-title"
+        >
+          <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-xl">
+            <h3 id="delete-participant-title" className="text-lg font-semibold text-foreground">
+              Delete participant?
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Are you sure you want to delete <span className="font-medium text-foreground">{deleteTarget.name}</span>?
+            </p>
+            {deleteError && (
+              <div className="mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+                {deleteError}
+              </div>
+            )}
+            <div className="mt-6 flex justify-end gap-3">
+              <button
+                type="button"
+                disabled={deleting}
+                onClick={() => {
+                  if (deleting) return;
+                  setDeleteTarget(null);
+                  setDeleteError("");
+                }}
+                className="inline-flex h-10 items-center rounded-lg border border-input bg-background px-4 text-sm font-medium text-foreground transition hover:bg-mist disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                disabled={deleting}
+                onClick={handleConfirmDelete}
+                className="inline-flex h-10 items-center rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition hover:bg-red-700 disabled:opacity-50"
+              >
+                {deleting ? "Deleting…" : "Yes, delete"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section id="project-insights" className="mt-16">
         <h2 className="text-lg font-semibold tracking-tight text-foreground">Project Insights</h2>

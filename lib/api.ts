@@ -152,6 +152,13 @@ export async function getParticipantDetail(assignmentId: string) {
   );
 }
 
+export async function deleteStudent(id: string) {
+  return apiFetch<ApiEnvelope<unknown>>(
+    `/adminside/v1/student/management/student_delete/${encodeURIComponent(id)}/`,
+    { method: "DELETE" },
+  );
+}
+
 export async function requestProject(payload: {
   engagement_type: number;
   requested_role_name: string;

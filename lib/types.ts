@@ -72,6 +72,7 @@ export type ProjectDetail = {
 
 export type ParticipantRow = {
   id: string;
+  student_id: string;
   name: string;
   status: string;
   result: string | null;
