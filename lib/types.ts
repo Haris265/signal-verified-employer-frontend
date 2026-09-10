@@ -72,11 +72,12 @@ export type ProjectDetail = {
 
 export type ParticipantRow = {
   id: string;
-  student_id: string;
+  student_id?: string;
   name: string;
   status: string;
   result: string | null;
   overall_score: number | null;
+  is_archived?: boolean;
 };
 
 export type ParticipantDetail = {
@@ -99,6 +100,7 @@ export type ParticipantDetail = {
   strengths: string[];
   watch_areas: string[];
   the_signal_url: string | null;
+  is_archived?: boolean;
 };
 
 export type ApiEnvelope<T> = {

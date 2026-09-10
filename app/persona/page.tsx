@@ -109,7 +109,7 @@ export default function PersonaPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-white">
       <header className="border-b border-border/70">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link

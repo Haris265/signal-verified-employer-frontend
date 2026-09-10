@@ -9,9 +9,11 @@ import { LoadingState } from "@/components/ui/LoadingState";
 import {
   getEntitlement,
   getParticipants,
+  getArchivedParticipants,
   getProjectDetail,
   getProjects,
-  deleteStudent,
+  archiveParticipant,
+  unarchiveParticipant,
   ApiError,
 } from "@/lib/api";
 import type { Entitlement, ParticipantRow, ProjectCard, ProjectDetail } from "@/lib/types";
@@ -30,28 +32,36 @@ function normalizeResult(row: ParticipantRow): string {
 }
 
 const RESULT_BAR: Record<string, string> = {
+  "Verified Completes": "bg-primary",
   Verified: "bg-primary",
   Exceptional: "bg-primary",
   Meets: "bg-primary",
   Emerging: "bg-primary/55",
   Developing: "bg-primary/25",
+  Withheld: "bg-border",
   Pending: "bg-border",
   "No Consent": "bg-primary",
 };
 
 const RESULT_DOT: Record<string, string> = {
+  "Verified Completes": "bg-primary",
   Verified: "bg-primary",
   Exceptional: "bg-primary",
   Meets: "bg-primary",
   Emerging: "bg-primary/55",
   Developing: "bg-primary/25",
+  Withheld: "bg-border",
   Pending: "bg-border",
   "No Consent": "bg-primary",
 };
 
 function ResultBadge({ result }: { result: string }) {
-  const isVerified = result === "Verified" || result === "Exceptional" || result === "Meets";
-  const isMuted = result === "No Consent";
+  const isVerified =
+    result === "Verified Completes" ||
+    result === "Verified" ||
+    result === "Exceptional" ||
+    result === "Meets";
+  const isMuted = result === "No Consent" || result === "Withheld";
 
   if (isVerified) {
     return (
@@ -144,14 +154,21 @@ function ChevronDownIcon() {
   );
 }
 
-function TrashIcon() {
+function ArchiveIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
-      <path d="M3 6h18" />
-      <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
-      <path d="M10 11v6" />
-      <path d="M14 11v6" />
+      <rect width="20" height="5" x="2" y="3" rx="1" />
+      <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
+      <path d="M10 12h4" />
+    </svg>
+  );
+}
+
+function RestoreIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
+      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+      <path d="M3 3v5h5" />
     </svg>
   );
 }
@@ -162,15 +179,31 @@ function ProjectDetailInner() {
   const [entitlement, setEntitlement] = useState<Entitlement | null>(null);
   const [detail, setDetail] = useState<ProjectDetail | null>(null);
   const [participants, setParticipants] = useState<ParticipantRow[]>([]);
+  const [archivedParticipants, setArchivedParticipants] = useState<ParticipantRow[]>([]);
   const [projects, setProjects] = useState<ProjectCard[]>([]);
   const [tableLabel, setTableLabel] = useState("Participants");
   const [search, setSearch] = useState("");
   const [resultFilter, setResultFilter] = useState("All");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
-  const [deleteTarget, setDeleteTarget] = useState<ParticipantRow | null>(null);
-  const [deleting, setDeleting] = useState(false);
-  const [deleteError, setDeleteError] = useState("");
+  const [archiveTarget, setArchiveTarget] = useState<ParticipantRow | null>(null);
+  const [archiving, setArchiving] = useState(false);
+  const [archiveError, setArchiveError] = useState("");
+  const [restoringId, setRestoringId] = useState<string | null>(null);
+
+  const showingArchived = resultFilter === "Archived";
+
+  async function refreshLists() {
+    const [d, p, archived] = await Promise.all([
+      getProjectDetail(projectId),
+      getParticipants(projectId),
+      getArchivedParticipants(projectId),
+    ]);
+    setDetail(d.data || null);
+    setParticipants(p.data?.participants || []);
+    setArchivedParticipants(archived.data?.participants || []);
+    setTableLabel(p.data?.table_label || d.data?.table_label || tableLabel);
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -178,16 +211,18 @@ function ProjectDetailInner() {
       setLoading(true);
       setError("");
       try {
-        const [ent, d, p, list] = await Promise.all([
+        const [ent, d, p, archived, list] = await Promise.all([
           getEntitlement(),
           getProjectDetail(projectId),
           getParticipants(projectId),
+          getArchivedParticipants(projectId),
           getProjects(),
         ]);
         if (cancelled) return;
         setEntitlement(ent.data?.primary || null);
         setDetail(d.data || null);
         setParticipants(p.data?.participants || []);
+        setArchivedParticipants(archived.data?.participants || []);
         setTableLabel(p.data?.table_label || d.data?.table_label || "Participants");
         setProjects((list.data?.projects || []).filter((x) => x.view_enabled));
       } catch (err) {
@@ -214,11 +249,13 @@ function ProjectDetailInner() {
 
   const resultOrder = useMemo(() => {
     const preferred = [
+      "Verified Completes",
       "Verified",
       "Exceptional",
       "Meets",
       "Emerging",
       "Developing",
+      "Withheld",
       "Pending",
       "No Consent",
     ];
@@ -231,34 +268,45 @@ function ProjectDetailInner() {
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    return participants
+    const source = showingArchived ? archivedParticipants : participants;
+    return source
       .filter((row) => {
-        if (resultFilter !== "All" && normalizeResult(row) !== resultFilter) return false;
+        if (!showingArchived && resultFilter !== "All" && normalizeResult(row) !== resultFilter) {
+          return false;
+        }
         if (!q) return true;
         return row.name.toLowerCase().includes(q);
       })
       .slice()
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [participants, search, resultFilter]);
+  }, [participants, archivedParticipants, search, resultFilter, showingArchived]);
 
-  async function handleConfirmDelete() {
-    if (!deleteTarget || deleting) return;
-    setDeleting(true);
-    setDeleteError("");
+  async function handleConfirmArchive() {
+    if (!archiveTarget || archiving) return;
+    setArchiving(true);
+    setArchiveError("");
     try {
-      await deleteStudent(deleteTarget.student_id);
-      const [d, p] = await Promise.all([
-        getProjectDetail(projectId),
-        getParticipants(projectId),
-      ]);
-      setDetail(d.data || null);
-      setParticipants(p.data?.participants || []);
-      setTableLabel(p.data?.table_label || d.data?.table_label || tableLabel);
-      setDeleteTarget(null);
+      await archiveParticipant(archiveTarget.id);
+      await refreshLists();
+      setArchiveTarget(null);
     } catch (err) {
-      setDeleteError(err instanceof ApiError ? err.message : "Failed to delete participant");
+      setArchiveError(err instanceof ApiError ? err.message : "Failed to archive participant");
     } finally {
-      setDeleting(false);
+      setArchiving(false);
+    }
+  }
+
+  async function handleRestore(row: ParticipantRow) {
+    if (restoringId) return;
+    setRestoringId(row.id);
+    setArchiveError("");
+    try {
+      await unarchiveParticipant(row.id);
+      await refreshLists();
+    } catch (err) {
+      setArchiveError(err instanceof ApiError ? err.message : "Failed to restore participant");
+    } finally {
+      setRestoringId(null);
     }
   }
 
@@ -481,7 +529,27 @@ function ProjectDetailInner() {
               </span>
             </button>
           ))}
+          <button
+            type="button"
+            onClick={() => setResultFilter("Archived")}
+            className={`rounded-lg px-3 py-1.5 text-sm transition ${
+              showingArchived
+                ? "bg-secondary font-medium text-foreground"
+                : "text-muted-foreground hover:text-ink"
+            }`}
+          >
+            Archived
+            <span className="ml-1.5 tabular-nums text-xs text-muted-foreground">
+              {archivedParticipants.length}
+            </span>
+          </button>
         </div>
+
+        {archiveError && !archiveTarget && (
+          <div className="mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+            {archiveError}
+          </div>
+        )}
 
         <div className="mt-5 overflow-hidden rounded-2xl border border-border bg-card">
           <table className="w-full text-sm">
@@ -518,17 +586,29 @@ function ProjectDetailInner() {
                       </Link>
                     </td>
                     <td className="px-6 py-3.5 text-right">
-                      <button
-                        type="button"
-                        aria-label={`Delete ${row.name}`}
-                        onClick={() => {
-                          setDeleteError("");
-                          setDeleteTarget(row);
-                        }}
-                        className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-red-50 hover:text-red-600"
-                      >
-                        <TrashIcon />
-                      </button>
+                      {showingArchived ? (
+                        <button
+                          type="button"
+                          aria-label={`Restore ${row.name}`}
+                          disabled={restoringId === row.id}
+                          onClick={() => handleRestore(row)}
+                          className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-primary/10 hover:text-primary disabled:opacity-50"
+                        >
+                          <RestoreIcon />
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          aria-label={`Archive ${row.name}`}
+                          onClick={() => {
+                            setArchiveError("");
+                            setArchiveTarget(row);
+                          }}
+                          className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-mist hover:text-foreground"
+                        >
+                          <ArchiveIcon />
+                        </button>
+                      )}
                     </td>
                   </tr>
                 );
@@ -536,7 +616,7 @@ function ProjectDetailInner() {
               {filtered.length === 0 && (
                 <tr>
                   <td colSpan={4} className="px-6 py-8 text-center text-muted-foreground">
-                    No participants to show.
+                    {showingArchived ? "No archived participants." : "No participants to show."}
                   </td>
                 </tr>
               )}
@@ -545,33 +625,35 @@ function ProjectDetailInner() {
         </div>
       </section>
 
-      {deleteTarget && (
+      {archiveTarget && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
           role="dialog"
           aria-modal="true"
-          aria-labelledby="delete-participant-title"
+          aria-labelledby="archive-participant-title"
         >
           <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-xl">
-            <h3 id="delete-participant-title" className="text-lg font-semibold text-foreground">
-              Delete participant?
+            <h3 id="archive-participant-title" className="text-lg font-semibold text-foreground">
+              Archive participant?
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Are you sure you want to delete <span className="font-medium text-foreground">{deleteTarget.name}</span>?
+              Are you sure you want to archive{" "}
+              <span className="font-medium text-foreground">{archiveTarget.name}</span>? They will
+              move to the Archived tab and can be restored later.
             </p>
-            {deleteError && (
+            {archiveError && (
               <div className="mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
-                {deleteError}
+                {archiveError}
               </div>
             )}
             <div className="mt-6 flex justify-end gap-3">
               <button
                 type="button"
-                disabled={deleting}
+                disabled={archiving}
                 onClick={() => {
-                  if (deleting) return;
-                  setDeleteTarget(null);
-                  setDeleteError("");
+                  if (archiving) return;
+                  setArchiveTarget(null);
+                  setArchiveError("");
                 }}
                 className="inline-flex h-10 items-center rounded-lg border border-input bg-background px-4 text-sm font-medium text-foreground transition hover:bg-mist disabled:opacity-50"
               >
@@ -579,11 +661,11 @@ function ProjectDetailInner() {
               </button>
               <button
                 type="button"
-                disabled={deleting}
-                onClick={handleConfirmDelete}
-                className="inline-flex h-10 items-center rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition hover:bg-red-700 disabled:opacity-50"
+                disabled={archiving}
+                onClick={handleConfirmArchive}
+                className="inline-flex h-10 items-center rounded-lg bg-foreground px-4 text-sm font-medium text-background transition hover:opacity-90 disabled:opacity-50"
               >
-                {deleting ? "Deleting…" : "Yes, delete"}
+                {archiving ? "Archiving…" : "Yes, archive"}
               </button>
             </div>
           </div>

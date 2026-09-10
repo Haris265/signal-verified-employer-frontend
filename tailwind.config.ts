@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#FAF9FC",
+        background: "#ffffff",
         foreground: "#1A1525",
         brand: {
           DEFAULT: "#C026F5",
@@ -69,8 +69,24 @@ const config: Config = {
         "2xl": "1rem",
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        display: ["var(--font-sans)"],
+        sans: [
+          "var(--font-dm-sans)",
+          "DM Sans",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+        display: [
+          "var(--font-dm-sans)",
+          "DM Sans",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
       },
       boxShadow: {
         soft: "0 1px 2px rgba(26, 21, 37, 0.04), 0 6px 20px rgba(26, 21, 37, 0.05)",

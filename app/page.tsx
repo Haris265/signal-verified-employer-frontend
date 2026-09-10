@@ -167,7 +167,7 @@ function LoginPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-background lg:grid lg:grid-cols-[minmax(0,42%)_minmax(0,58%)]">
+    <div className="min-h-screen bg-white lg:grid lg:grid-cols-[minmax(0,42%)_minmax(0,58%)]">
       <aside className="relative hidden flex-col justify-between overflow-hidden bg-brand-tint px-8 py-10 lg:flex lg:px-12 lg:py-12">
         <div
           aria-hidden

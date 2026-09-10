@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,7 +9,7 @@
   --mist: 244 244 245;
   --border: 228 228 231;
   --destructive: 239 68 68;
-  --background: #faf9fc;
+  --background: #ffffff;
   --foreground: #1a1525;
   --primary-foreground: #faf9fc;
   --brand: #c026f5;
@@ -20,24 +18,20 @@
   --muted-foreground: #6b6578;
   --card: #ffffff;
   --radius: 0.625rem;
-  /* Exact showcase stack */
-  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto,
     sans-serif;
 }
 
 html,
 body {
   min-height: 100%;
-}
-
-html {
-  font-family: var(--font-sans);
+  background-color: #ffffff !important;
+  font-family: var(--font-dm-sans), "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

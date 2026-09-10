@@ -34,8 +34,8 @@ export function AppShell({
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="no-print sticky top-0 z-20 border-b border-border/70 bg-background/85 backdrop-blur">
+    <div className="min-h-screen bg-white">
+      <header className="no-print sticky top-0 z-20 border-b border-border/70 bg-white/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-6">
           <Link href="/projects" className="shrink-0">
             <Logo height={40} className="h-10 w-auto" />

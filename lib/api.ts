@@ -152,6 +152,37 @@ export async function getParticipantDetail(assignmentId: string) {
   );
 }
 
+export async function getArchivedParticipants(projectId: string, search = "") {
+  const q = new URLSearchParams({ project_id: projectId });
+  if (search) q.set("search", search);
+  return apiFetch<
+    ApiEnvelope<{
+      table_label: string;
+      participants: ParticipantRow[];
+    }>
+  >(`/employer/v1/participant/management/archived_participants/?${q.toString()}`);
+}
+
+export async function archiveParticipant(assignmentId: string) {
+  return apiFetch<ApiEnvelope<{ id: string; is_archived: boolean }>>(
+    `/employer/v1/participant/management/archive/?assignment_id=${encodeURIComponent(assignmentId)}`,
+    {
+      method: "POST",
+      body: JSON.stringify({ assignment_id: assignmentId }),
+    },
+  );
+}
+
+export async function unarchiveParticipant(assignmentId: string) {
+  return apiFetch<ApiEnvelope<{ id: string; is_archived: boolean }>>(
+    `/employer/v1/participant/management/unarchive/?assignment_id=${encodeURIComponent(assignmentId)}`,
+    {
+      method: "POST",
+      body: JSON.stringify({ assignment_id: assignmentId }),
+    },
+  );
+}
+
 export async function deleteStudent(id: string) {
   return apiFetch<ApiEnvelope<unknown>>(
     `/adminside/v1/student/management/student_delete/${encodeURIComponent(id)}/`,
