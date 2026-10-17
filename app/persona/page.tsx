@@ -116,7 +116,7 @@ export default function PersonaPage() {
             href="/"
             className="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           >
-            <Logo height={40} className="h-10 w-auto object-contain" />
+            <Logo height={60} className="h-10 w-auto object-contain" />
           </Link>
           <div className="flex items-center gap-5">
             <Link
@@ -240,7 +240,7 @@ export default function PersonaPage() {
       <footer className="mt-24 border-t border-border/70">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-[1.4fr_1fr]">
           <div>
-            <Logo height={40} className="h-10 w-auto object-contain" />
+            <Logo height={60} className="h-10 w-auto object-contain" />
             <p className="mt-4 max-w-xl text-[13px] leading-relaxed text-muted-foreground">
               SignalVerified produces decision-grade evidence of demonstrated capability through a
               human-governed, AI-assisted process, scored against the published 4.0 rubric. We do

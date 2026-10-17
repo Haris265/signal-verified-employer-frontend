@@ -23,6 +23,7 @@ export function AppShell({
   const [user, setUser] = useState<AuthUser | null>(null);
   const org = orgName || entitlement?.name;
   const onProjects = pathname.startsWith("/projects");
+  const onLibrary = pathname.startsWith("/library");
 
   useEffect(() => {
     setUser(getUser());
@@ -38,7 +39,7 @@ export function AppShell({
       <header className="no-print sticky top-0 z-20 border-b border-border/70 bg-white/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-6">
           <Link href="/projects" className="shrink-0">
-            <Logo height={40} className="h-10 w-auto" />
+            <Logo height={60} className="h-10 w-auto" />
           </Link>
           {org && (
             <>
@@ -58,6 +59,16 @@ export function AppShell({
               }`}
             >
               Projects
+            </Link>
+            <Link
+              href="/library"
+              className={`rounded-md px-2.5 py-1.5 transition ${
+                onLibrary
+                  ? "bg-primary text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-primary/10 hover:text-ink"
+              }`}
+            >
+              Library
             </Link>
             {/* Visual parity — People route out of MVP scope */}
             <span className="cursor-default rounded-md px-2.5 py-1.5 text-muted-foreground">
@@ -84,7 +95,7 @@ export function AppShell({
       <footer className="no-print mt-24 border-t border-border/70">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-[1.4fr_1fr]">
           <div>
-            <Logo height={40} className="h-10 w-auto" />
+            <Logo height={60} className="h-10 w-auto" />
             <p className="mt-4 max-w-xl text-[13px] leading-relaxed text-muted-foreground">
               SignalVerified produces decision-grade evidence of demonstrated capability through a
               human-governed, AI-assisted process, scored against the published 4.0 rubric. We do

@@ -12,7 +12,7 @@ export function Logo({
   return (
     <span className={`inline-flex items-center ${className}`}>
       <Image
-        src="/brand/signalverified-logo.png"
+        src="/signalverified-logo.png"
         alt="SignalVerified"
         width={width}
         height={height}
