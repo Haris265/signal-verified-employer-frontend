@@ -1,47 +1,86 @@
 "use client";
 
-import { Eye, FileText, Search, User } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Eye, FileText, Loader2, Search, User } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
-import { STATIC_STUDENTS } from "@/lib/library/data";
+import { LoadingState } from "@/components/ui/LoadingState";
+import { ApiError } from "@/lib/api";
+import { getLibrary, type LibraryRow } from "@/lib/library/api";
 
 export default function LibraryStudentsClient() {
   const router = useRouter();
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [rows, setRows] = useState<LibraryRow[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const students = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    if (!q) return [...STATIC_STUDENTS];
-    return STATIC_STUDENTS.filter(
-      (s) =>
-        s.student_name.toLowerCase().includes(q) ||
-        s.project_brief.toLowerCase().includes(q),
-    );
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(search), 350);
+    return () => clearTimeout(t);
   }, [search]);
 
-  const openLibrary = (student: (typeof STATIC_STUDENTS)[number]) => {
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      try {
+        setLoading(true);
+        const res = await getLibrary(debouncedSearch);
+        if (cancelled) return;
+        setRows(Array.isArray(res?.data) ? res.data : []);
+      } catch (err) {
+        if (cancelled) return;
+        setRows([]);
+        toast.error(err instanceof ApiError ? err.message : "Failed to load library");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [debouncedSearch]);
+
+  const openLibrary = (row: LibraryRow) => {
+    if (!row?.has_project_zip || !row?.team_id) {
+      toast.error("Project zip not available");
+      return;
+    }
     if (typeof window !== "undefined") {
       sessionStorage.setItem(
-        `library-student-${student.id}`,
+        `library-team-${row.team_id}`,
         JSON.stringify({
-          student_name: student.student_name,
-          student_brief: student.project_brief,
-          project_brief: student.project_brief,
+          team_id: row.team_id,
+          student_id: row.student_id,
+          student_name: row.student_name,
+          project_id: row.project_id,
+          project_brief_title: row.project_brief_title,
+          project_brief_summary: row.project_brief_summary,
+          project_zip_name: row.project_zip_name,
         }),
       );
     }
-    router.push(`/library/${student.id}`);
+    router.push(`/library/${row.team_id}`);
   };
 
-  const openBriefPdf = (student: (typeof STATIC_STUDENTS)[number]) => {
-    if (!student?.brief_pdf_url) {
+  const openBriefPdf = (row: LibraryRow) => {
+    const url = row?.brief_documents?.[0]?.file_url;
+    if (!url) {
       toast.error("Brief PDF not available");
       return;
     }
-    window.open(student.brief_pdf_url, "_blank", "noopener,noreferrer");
+    window.open(url, "_blank", "noopener,noreferrer");
   };
+
+  if (loading && rows.length === 0) {
+    return (
+      <AppShell>
+        <LoadingState />
+      </AppShell>
+    );
+  }
 
   return (
     <AppShell>
@@ -63,9 +102,15 @@ export default function LibraryStudentsClient() {
               type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search student or project brief…"
+              placeholder="Search student or project…"
               className="w-full rounded-full border border-gray-200 bg-white py-2.5 pl-9 pr-4 text-sm outline-none focus:border-primary/50 focus:ring-4 focus:ring-primary/10"
             />
+            {loading && (
+              <Loader2
+                size={14}
+                className="absolute right-3 top-1/2 -translate-y-1/2 animate-spin text-primary"
+              />
+            )}
           </div>
         </div>
 
@@ -78,7 +123,7 @@ export default function LibraryStudentsClient() {
                     Student Name
                   </th>
                   <th className="px-6 py-3.5 text-left text-xs font-bold uppercase tracking-wide text-gray-500">
-                    Project Brief
+                    Brief title
                   </th>
                   <th className="px-6 py-3.5 text-center text-xs font-bold uppercase tracking-wide text-gray-500">
                     Brief PDF
@@ -89,56 +134,72 @@ export default function LibraryStudentsClient() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {students.length > 0 ? (
-                  students.map((student) => (
-                    <tr
-                      key={student.id}
-                      className="transition hover:bg-primary/5"
-                    >
-                      <td className="px-6 py-4">
-                        <div className="flex min-w-0 items-center gap-3">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f3f0ff] text-primary">
-                            <User size={18} />
+                {rows.length > 0 ? (
+                  rows.map((row) => {
+                    const briefDoc = row.brief_documents?.[0];
+                    const rowKey = `${row.team_id}-${row.student_id}`;
+                    return (
+                      <tr
+                        key={rowKey}
+                        className="transition hover:bg-primary/5"
+                      >
+                        <td className="px-6 py-4">
+                          <div className="flex min-w-0 items-center gap-3">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f3f0ff] text-primary">
+                              <User size={18} />
+                            </div>
+                            <p className="truncate font-semibold text-[#0B0B0F]">
+                              {row.student_name || "—"}
+                            </p>
                           </div>
-                          <p className="truncate font-semibold text-[#0B0B0F]">
-                            {student.student_name}
+                        </td>
+                        <td className="max-w-xl px-6 py-4">
+                          <p className="line-clamp-1 text-sm font-medium text-[#0B0B0F]">
+                            {row.project_brief_title || "—"}
                           </p>
-                        </div>
-                      </td>
-                      <td className="max-w-xl px-6 py-4">
-                        <p className="line-clamp-2 text-sm text-gray-600">
-                          {student.project_brief}
-                        </p>
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <button
-                          type="button"
-                          onClick={() => openBriefPdf(student)}
-                          className="inline-flex items-center justify-center rounded-lg p-2 text-red-600 transition hover:bg-red-50"
-                          title="View project brief PDF"
-                        >
-                          <FileText size={18} />
-                        </button>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <button
-                          type="button"
-                          onClick={() => openLibrary(student)}
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-primary/25 bg-primary/5 px-3 py-1.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white"
-                        >
-                          <Eye size={14} />
-                          Preview
-                        </button>
-                      </td>
-                    </tr>
-                  ))
+                          {row.project_brief_summary && (
+                            <p className="mt-0.5 line-clamp-2 text-xs text-gray-500">
+                              {row.project_brief_summary}
+                            </p>
+                          )}
+                        </td>
+                        <td className="px-6 py-4 text-center">
+                          <button
+                            type="button"
+                            onClick={() => openBriefPdf(row)}
+                            disabled={!briefDoc?.file_url}
+                            className="inline-flex items-center justify-center rounded-lg p-2 text-red-600 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-40"
+                            title={briefDoc?.doc_name || "View project brief PDF"}
+                          >
+                            <FileText size={18} />
+                          </button>
+                        </td>
+                        <td className="px-6 py-4 text-right">
+                          <button
+                            type="button"
+                            onClick={() => openLibrary(row)}
+                            disabled={!row.has_project_zip}
+                            title={
+                              row.has_project_zip
+                                ? `Preview ${row.project_zip_name || "zip"}`
+                                : "Project zip not available"
+                            }
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-primary/25 bg-primary/5 px-3 py-1.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-primary/5 disabled:hover:text-primary"
+                          >
+                            <Eye size={14} />
+                            Preview
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
                 ) : (
                   <tr>
                     <td
                       colSpan={4}
                       className="px-6 py-10 text-center text-gray-500"
                     >
-                      No students found
+                      {loading ? "Loading…" : "No library rows found"}
                     </td>
                   </tr>
                 )}

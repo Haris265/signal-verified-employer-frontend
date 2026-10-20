@@ -5,7 +5,7 @@ import { RequireEmployer } from "@/components/RequireEmployer";
 import { LoadingState } from "@/components/ui/LoadingState";
 import ProjectZipsClient from "./ProjectZipsClient";
 
-export default function LibraryStudentPage() {
+export default function LibraryTeamPage() {
   return (
     <RequireEmployer>
       <Suspense fallback={<LoadingState fullScreen />}>
