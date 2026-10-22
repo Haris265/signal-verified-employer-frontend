@@ -1,5 +1,5 @@
-import { getToken, clearSession } from "@/lib/auth";
 import { ApiError, apiFetch } from "@/lib/api";
+import { clearSession, getToken } from "@/lib/auth";
 import type { ApiEnvelope } from "@/lib/types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.signalverified.net";

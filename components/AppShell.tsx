@@ -1,15 +1,15 @@
 "use client";
 
+import { getUser } from "@/lib/auth";
+import { logoutEmployer } from "@/lib/session";
+import type { AuthUser, Entitlement } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
-import { getUser } from "@/lib/auth";
-import { logoutEmployer } from "@/lib/session";
-import type { AuthUser, Entitlement } from "@/lib/types";
 
 export function AppShell({
-  children, 
+  children,
   orgName,
   entitlement,
   mainClassName = "",
@@ -24,6 +24,7 @@ export function AppShell({
   const org = orgName || entitlement?.name;
   const onProjects = pathname.startsWith("/projects");
   const onLibrary = pathname.startsWith("/library");
+  const onPeople = pathname.startsWith("/people");
 
   useEffect(() => {
     setUser(getUser());
@@ -52,28 +53,31 @@ export function AppShell({
           <nav className="ml-6 hidden items-center gap-1 text-sm md:flex">
             <Link
               href="/projects"
-              className={`rounded-md px-2.5 py-1.5 transition ${
-                onProjects
+              className={`rounded-md px-2.5 py-1.5 transition ${onProjects
                   ? "bg-primary text-white shadow-sm"
                   : "text-muted-foreground hover:bg-primary/10 hover:text-ink"
-              }`}
+                }`}
             >
               Projects
             </Link>
             <Link
               href="/library"
-              className={`rounded-md px-2.5 py-1.5 transition ${
-                onLibrary
+              className={`rounded-md px-2.5 py-1.5 transition ${onLibrary
                   ? "bg-primary text-white shadow-sm"
                   : "text-muted-foreground hover:bg-primary/10 hover:text-ink"
-              }`}
+                }`}
             >
               Library
             </Link>
-            {/* Visual parity — People route out of MVP scope */}
-            <span className="cursor-default rounded-md px-2.5 py-1.5 text-muted-foreground">
+            <Link
+              href="/people"
+              className={`rounded-md px-2.5 py-1.5 transition ${onPeople
+                  ? "bg-primary text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-primary/10 hover:text-ink"
+                }`}
+            >
               People
-            </span>
+            </Link>
           </nav>
           <div className="ml-auto flex items-center gap-3 text-sm text-muted-foreground">
             <span className="hidden sm:inline">{user?.email}</span>

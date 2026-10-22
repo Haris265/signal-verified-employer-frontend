@@ -103,6 +103,20 @@ export type ParticipantDetail = {
   is_archived?: boolean;
 };
 
+/** Candidate row from people_view (candidates only — no staff). */
+export type PeopleRow = {
+  id: string;
+  student_id?: string;
+  assignment_id?: string;
+  name: string;
+  email?: string | null;
+  project_id?: string | null;
+  project_name?: string | null;
+  status?: string | null;
+  result?: string | null;
+  overall_score?: number | null;
+};
+
 export type ApiEnvelope<T> = {
   status: boolean;
   message: string;

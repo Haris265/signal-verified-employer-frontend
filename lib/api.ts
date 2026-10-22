@@ -1,5 +1,14 @@
-import { getToken, clearSession } from "./auth";
-import type { ApiEnvelope, AuthUser, Entitlement, ParticipantDetail, ParticipantRow, ProjectCard, ProjectDetail } from "./types";
+import { clearSession, getToken } from "./auth";
+import type {
+  ApiEnvelope,
+  AuthUser,
+  Entitlement,
+  ParticipantDetail,
+  ParticipantRow,
+  PeopleRow,
+  ProjectCard,
+  ProjectDetail,
+} from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.signalverified.net";
 
@@ -150,6 +159,85 @@ export async function getParticipantDetail(assignmentId: string) {
   return apiFetch<ApiEnvelope<ParticipantDetail>>(
     `/employer/v1/participant/management/participant_detail/?assignment_id=${encodeURIComponent(assignmentId)}`,
   );
+}
+
+function pickStr(obj: Record<string, unknown>, ...keys: string[]) {
+  for (const key of keys) {
+    const v = obj[key];
+    if (typeof v === "string" && v.trim()) return v.trim();
+  }
+  return "";
+}
+
+function normalizePeopleRow(raw: unknown, index: number): PeopleRow | null {
+  if (!raw || typeof raw !== "object") return null;
+  const o = raw as Record<string, unknown>;
+
+  const first = pickStr(o, "first_name", "firstName");
+  const last = pickStr(o, "last_name", "lastName");
+  const fullFromParts = `${first} ${last}`.trim();
+  const name =
+    pickStr(o, "name", "student_name", "full_name", "candidate_name") ||
+    fullFromParts;
+  const email = pickStr(o, "email", "student_email", "candidate_email") || null;
+  const id =
+    pickStr(o, "id", "assignment_id", "student_id", "participant_id") ||
+    `people-${index}`;
+
+  if (!name && !email) return null;
+
+  const project =
+    o.project && typeof o.project === "object"
+      ? (o.project as Record<string, unknown>)
+      : null;
+
+  return {
+    id,
+    student_id: pickStr(o, "student_id") || undefined,
+    assignment_id: pickStr(o, "assignment_id", "id") || undefined,
+    name: name || email || "—",
+    email,
+    project_id:
+      pickStr(o, "project_id") ||
+      (project ? pickStr(project, "id") : "") ||
+      null,
+    project_name:
+      pickStr(o, "project_name", "project_title") ||
+      (project ? pickStr(project, "name") : "") ||
+      null,
+    status: pickStr(o, "status") || null,
+    result: pickStr(o, "result") || null,
+    overall_score:
+      typeof o.overall_score === "number"
+        ? o.overall_score
+        : typeof o.score === "number"
+          ? o.score
+          : null,
+  };
+}
+
+function extractPeopleList(data: unknown): unknown[] {
+  if (Array.isArray(data)) return data;
+  if (!data || typeof data !== "object") return [];
+  const o = data as Record<string, unknown>;
+  for (const key of ["people", "candidates", "participants", "results", "rows"]) {
+    if (Array.isArray(o[key])) return o[key] as unknown[];
+  }
+  return [];
+}
+
+/** GET /employer/v1/participant/management/people_view/?search= */
+export async function getPeopleView(search = "") {
+  const q = new URLSearchParams();
+  if (search.trim()) q.set("search", search.trim());
+  const suffix = q.toString() ? `?${q.toString()}` : "";
+  const res = await apiFetch<ApiEnvelope<unknown>>(
+    `/employer/v1/participant/management/people_view/${suffix}`,
+  );
+  const people = extractPeopleList(res.data)
+    .map(normalizePeopleRow)
+    .filter((row): row is PeopleRow => !!row);
+  return { ...res, data: people };
 }
 
 export async function getArchivedParticipants(projectId: string, search = "") {

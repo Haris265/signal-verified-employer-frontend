@@ -1,5 +1,14 @@
 "use client";
 
+import { AppShell } from "@/components/AppShell";
+import { LoadingState } from "@/components/ui/LoadingState";
+import {
+  getTeamZipContents,
+  libraryErrorMessage,
+  openZipMember,
+  type ZipMemberFile,
+} from "@/lib/library/api";
+import { fileExt, formatTypeLabel } from "@/lib/library/fileType";
 import { renderAsync as renderDocx } from "docx-preview";
 import {
   ArrowLeft,
@@ -16,19 +25,12 @@ import {
   Search,
   X,
 } from "lucide-react";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import * as XLSX from "xlsx";
-import { AppShell } from "@/components/AppShell";
-import { LoadingState } from "@/components/ui/LoadingState";
-import {
-  getTeamZipContents,
-  libraryErrorMessage,
-  openZipMember,
-  type ZipMemberFile,
-} from "@/lib/library/api";
+import { FileTypeThumb } from "../FileTypeThumb";
 
 const formatBytes = (bytes: number | undefined) => {
   const n = Number(bytes);
@@ -36,12 +38,6 @@ const formatBytes = (bytes: number | undefined) => {
   if (n < 1024) return `${n} B`;
   if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
   return `${(n / (1024 * 1024)).toFixed(1)} MB`;
-};
-
-const fileExt = (file: ZipMemberFile | null | undefined) => {
-  const fromName = (file?.name || file?.path || "").split(".").pop() || "";
-  const fromType = file?.content_type || file?.mime_type || "";
-  return (fromName || fromType).toLowerCase().replace(/^\./, "");
 };
 
 type PreviewKind = "pdf" | "docx" | "xlsx" | "image" | "text" | null;
@@ -222,11 +218,10 @@ function XlsxBlobPreview({ blob }: { blob: Blob }) {
               key={s.name}
               type="button"
               onClick={() => setActive(i)}
-              className={`shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium transition ${
-                i === active
+              className={`shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium transition ${i === active
                   ? "bg-primary text-white"
                   : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-100"
-              }`}
+                }`}
             >
               {s.name}
             </button>
@@ -244,9 +239,8 @@ function XlsxBlobPreview({ blob }: { blob: Blob }) {
                   {(Array.isArray(row) ? row : []).map((cell, ci) => (
                     <td
                       key={ci}
-                      className={`whitespace-nowrap border border-gray-200 px-3 py-1.5 text-[#0B0B0F] ${
-                        ri === 0 ? "font-semibold" : ""
-                      }`}
+                      className={`whitespace-nowrap border border-gray-200 px-3 py-1.5 text-[#0B0B0F] ${ri === 0 ? "font-semibold" : ""
+                        }`}
                     >
                       {cell == null || cell === "" ? "\u00A0" : String(cell)}
                     </td>
@@ -661,13 +655,9 @@ export default function ProjectZipsClient() {
                 key={file.path || file.name}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:border-primary/30 hover:shadow-md"
               >
-                <div className="relative flex h-36 items-center justify-center bg-gradient-to-br from-[#f3f0ff] to-[#ebe6ff]">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/15 bg-white shadow-sm">
-                    <File className="text-primary" size={32} />
-                  </div>
-                </div>
+                <FileTypeThumb file={file} size="lg" />
 
-                <div className="flex flex-1 flex-col gap-3 p-4">
+                <div className="flex min-w-0 flex-1 flex-col gap-3 p-4">
                   <div className="min-w-0">
                     <h3
                       className="truncate font-semibold text-[#0B0B0F]"
@@ -680,13 +670,16 @@ export default function ProjectZipsClient() {
                     </p>
                   </div>
 
-                  <div className="mt-auto flex items-center justify-between gap-2 text-xs text-gray-500">
-                    <span className="inline-flex items-center gap-1">
+                  <div className="mt-auto flex min-w-0 items-center justify-between gap-2 text-xs text-gray-500">
+                    <span className="inline-flex shrink-0 items-center gap-1">
                       <HardDrive size={12} />
                       {formatBytes(file.size_bytes)}
                     </span>
-                    <span className="uppercase">
-                      {file.mime_type || file.content_type || "—"}
+                    <span
+                      className="max-w-[45%] truncate rounded-md bg-gray-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gray-600"
+                      title={file.mime_type || file.content_type || formatTypeLabel(file)}
+                    >
+                      {formatTypeLabel(file)}
                     </span>
                   </div>
 
@@ -730,16 +723,13 @@ export default function ProjectZipsClient() {
                   >
                     <td className="px-5 py-3.5">
                       <div className="flex min-w-0 items-center gap-3">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f3f0ff] text-primary">
-                          <File size={20} />
-                        </div>
+                        <FileTypeThumb file={file} size="sm" />
                         <div className="min-w-0">
                           <p className="truncate font-medium text-[#0B0B0F]">
                             {file.name || file.path}
                           </p>
-                          <p className="truncate text-xs uppercase text-gray-500 sm:hidden">
-                            {file.mime_type || file.content_type || "—"} ·{" "}
-                            {formatBytes(file.size_bytes)}
+                          <p className="truncate text-xs text-gray-500 sm:hidden">
+                            {formatTypeLabel(file)} · {formatBytes(file.size_bytes)}
                           </p>
                         </div>
                       </div>
